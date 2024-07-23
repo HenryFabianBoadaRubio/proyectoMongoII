@@ -6,7 +6,7 @@
   "name": "proyectomongo2",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "dev": "node --watch --env-file=.env main.js"
   },
