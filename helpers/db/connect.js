@@ -8,7 +8,7 @@ export class connect {
     cluster;
     #url;
     #host;
-    #pass;
+    #pass; 
     #dbName;
 
     //mongodb://mongo:IwcZMInZpiWQFGCIHilYIjdEurpFUfuX@viaduct.proxy.rlwy.net:56173
@@ -48,7 +48,7 @@ export class connect {
     }
     async #open() {
         console.log("Conexion exitosa");
-        this.#url = `${this.#host}${this.user}:${this.#pass}@${this.cluster}:${this.port}`;
+        this.#url = `${this.#host}${this.user}:${this.#pass}@${this.cluster}:${this.port}/${this.getDbName}`;
         this.conexion = new MongoClient(this.#url);
         await this.conexion.connect();
         console.log("Conexion realizada correctamente");
