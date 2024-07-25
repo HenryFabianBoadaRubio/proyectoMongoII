@@ -65,3 +65,9 @@ A continuación, se llama al método `getAllMoviesProjection()` de la instancia 
 
 }]
 ```
+
+
+### 2) Compra de Boletos:
+
+### getAllMovieInformation():
+
