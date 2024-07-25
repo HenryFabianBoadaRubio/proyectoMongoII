@@ -84,4 +84,57 @@ export class pelicula extends connect {
             await this.conexion.close();
         }
     }
+
+        /**
+     * Obtiene la información detallada de una película específica.
+     *
+     * @param {ObjectId} id - El identificador único de la película.
+     *
+     * @returns {Promise<Array>} Una promesa que se resuelve a un array de objetos de películas con información detallada.
+     * El array contendrá un solo objeto si la película existe, o un array vacío si no se encuentra.
+     *
+     * @throws {Error} Lanza un error si hay algún problema durante la conexión a la base de datos o durante la ejecución
+     * de la operación de agregación.
+     */
+
+    async getAllMovieInformation(id){
+        try {
+            await this.conexion.connect();
+
+            //verificar laexistencia de la pelicula
+            let peliExist=await this.db.collection('pelicula').findOne({_id: new ObjectId(id)})
+            if(!peliExist){
+                return{
+                    error: "Not found",
+                    message: "La pelicula no existe."
+                }
+            
+            }
+
+            let res= await this.collection.aggregate(
+                [
+                    {
+                      $match: {
+                        _id:id
+                      }
+                    },
+                    {
+                      $project: {
+                        titulo:1,
+                        genero:1,
+                        duracion:1,
+                        actores:1,
+                        sinopsis:1
+                      }
+                    }
+                  ]
+            ).toArray();
+            return res;
+        } catch (error) {
+            return { error: "Error", message: error.message,details: error.errInfo};
+            
+        }finally{
+            await this.conexion.close();
+        }
+    }
 }
