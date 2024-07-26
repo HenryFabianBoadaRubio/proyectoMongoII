@@ -40,7 +40,7 @@ export class connect {
         this.#dbName = dbName;
     }
 
-    get getDbName() {
+    get getDbName() {   
         return this.#dbName;
     }
     async reConnect() {
