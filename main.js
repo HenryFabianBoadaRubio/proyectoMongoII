@@ -11,12 +11,12 @@ import { boleto } from "./js/modules/boleto.js";
 // objPractica.destructor();
 
 /////////················································CASO DE USO 1 Selección de Películas:······································///////////
+//parte 1 Listar Películas: 
 // let objPelicula;
 // objPelicula= new pelicula();
 
-//parte 1 Listar Películas: 
 // console.log(await objPelicula.getAllMoviesProjection());
-
+// objPelicula.destructor();
 
 
 //Parte 2 Obtener Detalles de Película:
@@ -27,14 +27,20 @@ import { boleto } from "./js/modules/boleto.js";
 
 
 
+/////////················································CASO DE USO 2 COMPRAR BOLETOS:······································///////////
+
 let objBoleto;
 objBoleto= new boleto()
 
+//parte 1
 console.log(await objBoleto.registerBuyTicket({
-    _id:"66a12e9a1219e115c8e79e89",
+    pelicula_id:"66a12e9a1219e115c8e79e89",
     proyeccion_id:"66a12e9b1219e115c8e79e95",
     usuario_id: "66a12e9b1219e115c8e79e9b",
     asientos: [{fila: "A", numero: 1}],
-    precio_total: 100,
-    descuento_aplicado: 50
+    metodo_pago: "tarjeta_debito",
+    
+
 }));
+objBoleto.destructor();
+// /////////···············································FINAL COMPRAR BOLETO:······································///////////

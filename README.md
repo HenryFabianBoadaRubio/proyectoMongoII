@@ -14,24 +14,26 @@ Este método recupera todas las películas disponibles junto con sus horarios de
 
 ### Usuarios que pueden utiizar este metodo:
 este metodo puede ser usado por todos los usuarios (admin, VIP y user )
-### Retorno:
+#### Retorno:
 
-Promise<Array>: Una promesa que se resuelve en un array de objetos. Cada objeto representa una película e incluye detalles de sus proyecciones y la información de la sala.
-Errores:
+- `Promise<Array>`: Este método retorna una promesa que, al resolverse, proporciona un array de objetos. Cada objeto en el array contiene detalles sobre una película, sus proyecciones asociadas, y la información relacionada con la sala de cine donde se proyectará.
 
-### Error:
+#### Excepciones:
 
- Lanza un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación.
+- `Error`: El método puede lanzar un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación. Esto asegura que cualquier problema en la recuperación de los datos sea manejado adecuadamente y pueda ser diagnosticado.
 
 ### Metodo de uso:
 
-Se crea una instancia de la clase `Pelicula` utilizando la siguiente sintaxis: 
+```javascript
+let objPelicula;
+objPelicula= new pelicula();
 
-`let objPelicula;`
+console.log(await objPelicula.getAllMoviesProjection());
+objPelicula.destructor();
 
-` objPelicula= new pelicula();`
+```
 
-A continuación, se llama al método `getAllMoviesProjection()` de la instancia creada. Este método es asíncrono, por lo que se utiliza `await` para esperar a que la promesa devuelta por el método se resuelva antes de continuar con la ejecución del código. El uso de `await` asegura que se obtengan todos los datos de las películas antes de proceder  .`console.log(await objPelicula.getAllMoviesProjection());`
+
 
 
 ### Ejemplo busqueda exitosa:
@@ -79,29 +81,30 @@ este metodo puede ser usado por todos los usuarios (admin, VIP y user )
 
 **Parámetros:**
 
-- **id (ObjectId)**: El identificador único de la película.
+- `id `(ObjectId): El identificador único de la película.
 
 **Retorno:**
 
-- **Promise<Array>**: Una promesa que se resuelve en un array de objetos. El array contendrá un solo objeto que representa la película con información detallada si la película existe, o un array vacío si no se encuentra.
+- `Promise<Array>`: Una promesa que se resuelve en un array de objetos. El array contendrá un solo objeto que representa la película con información detallada si la película existe, o un array vacío si no se encuentra.
 
 **Errores:**
 
-- **Error**: Lanza un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación.
+- `Error`: Lanza un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación.
 
-### Metodo de uso:
+### Metodo de uso: 
 
-Se crea una instancia de la clase `Pelicula` utilizando la siguiente sintaxis: 
+Como parametro se ingresa el Id de la pelicula a consultar.
 
-`let objPelicula;`
+```javascript
+let objPelicula;
+objPelicula= new pelicula();
 
-` objPelicula= new pelicula();`
+console.log(await objPelicula.getAllMovieInformation(new ObjectId("66a12e9a1219e115c8e79e89")));
+objPelicula.destructor();
 
-A continuación, se llama al método `getAllMovieInformation()` de la instancia creada. Este método es asíncrono, por lo que se utiliza `await` para esperar a que la promesa devuelta por el método se resuelva antes de continuar con la ejecución del código. El uso de `await` garantiza que se obtengan todos los datos de las películas antes de proceder. El siguiente código muestra cómo se realiza esta operación:
+```
 
-`console.log(await objPelicula.getAllMovieInformation(new ObjectId("66a12e9a1219e115c8e79e89")));`
 
-se pasa un parámetro al método, en este caso, un identificador único de película (`ObjectId`), para obtener la información detallada de una película específica.
 
 ### Ejemplo busqueda exitosa:
 
@@ -124,5 +127,90 @@ se pasa un parámetro al método, en este caso, un identificador único de pelí
 
 { error: 'Not found', message: 'La pelicula no existe.' }
 Completed running 'main.js'
+```
+
+## **Compra de Boletos:**
+
+## 2)Comprar Boletos:** 
+
+### registerBuyTicket():
+
+Metodo para la compra de un boleto nuevo ingresando asientos, pelicula y metodo de pago.
+
+### Usuarios que pueden utiizar este metodo:
+
+este metodo puede ser usado por todos los usuarios (admin, VIP y user )
+
+#### Parámetros:
+
+- `params`(Object): Objeto que contiene los parámetros necesarios para la compra de boletos.
+- `pelicula_id`(string): Identificador único de la película.
+- `proyeccion_id`(string): Identificador único de la proyección.
+- `usuario_id` (string): Identificador único del usuario que realiza la compra.
+- `asientos` (Array): Lista de objetos que representan los asientos a reservar, cada uno con las propiedades:
+- `fila`(string): La fila del asiento.
+- `numero` (number): El número del asiento.
+- `metodo_pago` (string): El método de pago utilizado para la compra.
+
+#### Retorno:
+
+El método devuelve un objeto con los siguientes campos:
+
+- `result.message` (string): Un mensaje que indica el éxito o el fracaso de la operación de compra de boletos.
+- `result.boleto_id`(string): El identificador del nuevo boleto creado, si la compra es exitosa.
+- `result.descuento`(string): Información sobre el descuento aplicado, si corresponde.
+- `result.pago_registrado` (Object): Detalles del pago registrado.
+- `result.error` (Object): Un objeto que contiene información de error, en caso de que la operación falle.
+- `message` (string): Mensaje de error detallado.
+- `details` (Object): Detalles adicionales sobre el error.
+
+### Metodo de uso: 
+
+Como parametro se ingresa id(pelicula, proyecion, usuario , asientos que desea y metodo de pago.)
+
+```javascript
+let objBoleto;
+objBoleto= new boleto()
+
+console.log(await objBoleto.registerBuyTicket({
+    pelicula_id:"66a12e9a1219e115c8e79e89",
+    proyeccion_id:"66a12e9b1219e115c8e79e95",
+    usuario_id: "66a12e9b1219e115c8e79e9b",
+    asientos: [{fila: "A", numero: 1}],
+    metodo_pago: "tarjeta_debito",
+}));
+objBoleto.destructor();
+```
+
+### Ejemplo busqueda exitosa:
+
+```javascript
+
+Conexion realizada correctamente
+{
+  message: 'Boleto registrado correctamente.',
+  boleto_id: new ObjectId('66a3d5c3f931befcdcc6cd63'),
+  descuento: 'Descuento aplicado: 20',
+  pago_registrado: {
+    boleto_id: new ObjectId('66a3d5c3f931befcdcc6cd63'),
+    metodo_pago: 'tarjeta_debito',
+    fecha_pago: 2024-07-26T16:58:43.547Z,
+    estado: 'completado',
+    monto: 2080,
+    _id: new ObjectId('66a3d5c3f931befcdcc6cd64')
+  }
+}
+```
+
+### Ejemplos error:
+
+```
+{
+  error: 'Not found',
+  message: 'el asiento no está disponible: ',
+  asiento: { fila: 'A', numero: 1 }
+}
+------------------------------------------
+{ error: 'Not found', message: 'La proyeccion no existe.' }
 ```
 
