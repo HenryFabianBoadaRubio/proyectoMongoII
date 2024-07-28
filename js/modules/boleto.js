@@ -151,5 +151,46 @@ export class boleto extends connect {
             return { error: "Error", message: error.message,details: error.errInfo};
         }
     }
-
-}
+        /**
+    Obtiene los asientos disponibles para una proyección dada.
+    @param {Object} params - Los parámetros de la función.
+    @param {string} params.proyeccion_id - El ID de la proyección.
+    @returns {Object} - El resultado de la operación.
+    @returns {Array} result.asientosDisponibles - Un array de strings que representan los asientos disponibles en la forma 'filaNumero'.
+    @returns {Object} result.error - Un objeto de error en caso de fracaso.
+    @returns {string} result.error.message - El mensaje de error.
+    */
+    async getAvailableSeats({ proyeccion_id }) {
+        try {
+            // Verificar si la proyección existe
+            const proExist = await this.db.collection('proyeccion').findOne({ _id: new ObjectId(proyeccion_id) });
+            if (!proExist) {
+                return { error: "Not found", message: `La proyección con id ${proyeccion_id} no existe.` };
+            }
+    
+            // Obtener todos los asientos de la sala
+            const seats = await this.db.collection('asiento').find({ sala_id: proExist.sala_id }).toArray();
+    
+            // Obtener los boletos para esta proyección
+            const boletos = await this.db.collection('boleto').find({ proyeccion_id: new ObjectId(proyeccion_id) }).toArray();
+    
+            // Obtener los asientos no disponibles
+            const asientosNoDisponibles = boletos.flatMap(boleto => 
+                boleto.asientos.map(asiento => `${asiento.fila}${asiento.numero}`)
+            );
+    
+            // Filtrar los asientos disponibles
+            const availableSeats = seats.filter(seat => 
+                !asientosNoDisponibles.includes(`${seat.fila}${seat.numero}`)
+            );
+            
+            return {
+                asientosDisponibles: availableSeats.map(seat =>` ${seat.fila}${seat.numero}`)
+               
+            };
+    
+        } catch (error) {
+            console.error("Error en getAvailableSeats:", error);
+            throw error;
+        }
+    }}
