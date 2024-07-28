@@ -131,7 +131,7 @@ Completed running 'main.js'
 
 ## **Compra de Boletos:**
 
-## 2)Comprar Boletos:** 
+## 2)Comprar Boletos:
 
 ### registerBuyTicket():
 
@@ -263,5 +263,70 @@ Conexion realizada correctamente
   message: 'La proyección con id 11a12e9b1219e115c8e79e95 no existe.'
 }
 
+```
+
+## **Asignación de Asientos:**
+
+## 3)Reservar Asientos:
+
+### reserveSeats():
+
+Método para realizar la reserva de asientos validando la proyección.
+
+#### Parámetros:
+
+- `params `(Object): Un objeto que contiene los parámetros necesarios para realizar la reserva.
+- `proyeccion_id` (string): El identificador único de la proyección para la cual se desea hacer la reserva.
+- `usuario_id` (string): El identificador único del usuario que realiza la reserva.
+- `asientos` (Array): Un array de objetos, cada uno representando un asiento a reservar con las propiedades:
+- `fila `(string): La fila del asiento.
+- `numero` (string): El número del asiento dentro de la fila.
+
+#### Retorno:
+
+- `Object`: El resultado de la operación de reserva, que incluye:
+- `string `message: Un mensaje que indica si la operación fue exitosa o si hubo un error.
+- `string `boleto_id:El identificador único del boleto creado para la reserva, si la operación fue exitosa.
+- `string `descuento: El descuento aplicado a la reserva, en caso de que el usuario sea elegible para un descuento VIP.
+- `Object `error: Un objeto de error que se devuelve en caso de que la operación falle, que contiene:
+- `string `message: Un mensaje descriptivo del error ocurrido.
+- `Object `details: Información adicional que detalla el motivo del error.
+
+### Método de uso: 
+
+```javascript
+let objBoleto;
+objBoleto= new boleto()
+
+console.log(await objBoleto.reserveSeats({
+    proyeccion_id:"66a12e9b1219e115c8e79e99",
+    usuario_id: "66a12e9b1219e115c8e79e9e",
+    asientos: [{fila: "C", numero: 2},{fila: "C", numero: 1}],
+    
+}));
+objBoleto.destructor();
+
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+Conexion realizada correctamente
+{
+  message: 'Boleto reservado correctamente.',
+  boleto_id: new ObjectId('66a6c0216ff2b6904d25bf72'),
+  descuento: 'Descuento aplicado: 30'
+}
+```
+
+### Ejemplos error:
+
+```javascript
+Conexion realizada correctamente
+{
+  error: 'Not found',
+  message: 'el asiento no está disponible O no existe. ',
+  asiento: { fila: 'X', numero: 2 }
+}
 ```
 
