@@ -33,14 +33,18 @@ let objBoleto;
 objBoleto= new boleto()
 
 //parte 1
-console.log(await objBoleto.registerBuyTicket({
-    pelicula_id:"66a12e9a1219e115c8e79e89",
-    proyeccion_id:"66a12e9b1219e115c8e79e95",
-    usuario_id: "66a12e9b1219e115c8e79e9b",
-    asientos: [{fila: "A", numero: 1}],
-    metodo_pago: "tarjeta_debito",
+// console.log(await objBoleto.registerBuyTicket({
+//     pelicula_id:"66a12e9a1219e115c8e79e89",
+//     proyeccion_id:"66a12e9b1219e115c8e79e95",
+//     usuario_id: "66a12e9b1219e115c8e79e9b",
+//     asientos: [{fila: "A", numero: 1}],
+//     metodo_pago: "tarjeta_debito",
     
 
-}));
+// }));
+
+//parte 2
+
+console.log(await objBoleto.getAvailableSeats({proyeccion_id:"66a12e9b1219e115c8e79e95"}));
 objBoleto.destructor();
 // /////////···············································FINAL COMPRAR BOLETO:······································///////////
