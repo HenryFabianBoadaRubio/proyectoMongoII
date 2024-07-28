@@ -56,13 +56,17 @@ import { boleto } from "./js/modules/boleto.js";
 let objBoleto;
 objBoleto= new boleto()
 
-console.log(await objBoleto.reserveSeats({
-    proyeccion_id:"66a12e9b1219e115c8e79e99",
-    usuario_id: "66a12e9b1219e115c8e79e9e",
-    asientos: [{fila: "C", numero: 2},{fila: "C", numero: 1}],
+// console.log(await objBoleto.reserveSeats({
+//     proyeccion_id:"66a12e9b1219e115c8e79e99",
+//     usuario_id: "66a12e9b1219e115c8e79e9e",
+//     asientos: [{fila: "C", numero: 2},{fila: "C", numero: 1}],
     
-}));
+// }));
 objBoleto.destructor();
+
+// //parte 2
+// al momento de poner el id asegurarse de que exista.
+console.log(await objBoleto.cancelReservation(new ObjectId("11a6c94a180370662293a5bc")));
 
 /////////················································CASO DE USO 3  Asientos······································///////////
 

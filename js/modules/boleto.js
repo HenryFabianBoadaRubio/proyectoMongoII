@@ -281,4 +281,47 @@ export class boleto extends connect {
             
         }
     }
+
+    async cancelReservation(_id){
+        let res;
+        try {
+            // Verificar si el boleto existe
+            let boletoExist = await this.db.collection('boleto').findOne({_id: new ObjectId(_id)});
+            if (!boletoExist) {
+                return {
+                    error: "Not found",
+                    message: "El boleto no existe."
+                };
+            }
+    
+            // Eliminar el boleto
+            res = await this.db.collection('boleto').deleteOne({_id: new ObjectId(boletoExist._id)});
+            if (res.deletedCount === 1) {
+                // Cambiar el estado de los asientos a disponible
+                for (let asiento of boletoExist.asientos) {
+                    await this.db.collection('asiento').updateOne(
+                        { fila: asiento.fila, numero: asiento.numero },
+                        { $set: { estado: "disponible" } }
+                    );
+                }
+                return {
+                    message: "Boleto y asientos cancelados correctamente.",
+                    boleto_id: boletoExist._id
+                };
+            } else {
+                return {
+                    error: "Error",
+                    message: "No se pudo eliminar el boleto."
+                };
+            }
+        } catch (error) {
+            return { 
+                error: "Error", 
+                message: error.message, 
+                details: error.errInfo 
+            };
+        }
+    }
+    
+
 }
