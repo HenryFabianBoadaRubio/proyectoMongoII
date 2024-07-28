@@ -195,7 +195,21 @@ export class boleto extends connect {
         }
     }
 
-
+        /**
+     * Reserva asientos para una proyección específica, usuario y asientos.
+     * También maneja el descuento VIP y las comprobaciones de disponibilidad de asientos.
+     * @param {Object} params - Los parámetros para la reserva de boletos.
+     * @param {string} params.proyeccion_id - El ID de la proyección.
+     * @param {string} params.usuario_id - El ID del usuario.
+     * @param {Array} params.asientos - La lista de asientos a reservar. Cada asiento es un objeto con propiedades 'fila' y 'numero'.
+     * @returns {Object} - El resultado de la reserva de boletos.
+     * @returns {string} result.message - Un mensaje indicando el éxito o fracaso de la operación.
+     * @returns {string} result.boleto_id - El ID del nuevo boleto creado.
+     * @returns {string} result.descuento - El descuento aplicado, si lo hay.
+     * @returns {Object} result.error - Un objeto de error en caso de fracaso.
+     * @returns {string} result.error.message - El mensaje de error.
+     * @returns {Object} result.error.details - Los detalles adicionales del error.
+     */
     async reserveSeats({proyeccion_id,usuario_id,asientos,}){
         let res;
         try { 
