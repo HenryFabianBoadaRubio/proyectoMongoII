@@ -151,7 +151,15 @@ export class boleto extends connect {
             return { error: "Error", message: error.message,details: error.errInfo};
         }
     }
-
+        /**
+    Obtiene los asientos disponibles para una proyección dada.
+    @param {Object} params - Los parámetros de la función.
+    @param {string} params.proyeccion_id - El ID de la proyección.
+    @returns {Object} - El resultado de la operación.
+    @returns {Array} result.asientosDisponibles - Un array de strings que representan los asientos disponibles en la forma 'filaNumero'.
+    @returns {Object} result.error - Un objeto de error en caso de fracaso.
+    @returns {string} result.error.message - El mensaje de error.
+    */
     async getAvailableSeats({ proyeccion_id }) {
         try {
             // Verificar si la proyección existe

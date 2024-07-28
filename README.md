@@ -1,6 +1,6 @@
 ## Proyecto: CineCampus
 
-### Problemtica
+### Problemática
 
 CineCampus es una empresa de entretenimiento que se especializa en ofrecer una experiencia de cine completa y personalizada. La empresa desea desarrollar una aplicación web que permita a los usuarios seleccionar películas, comprar boletos y asignar asientos de manera eficiente y cómoda. La aplicación también ofrecerá opciones de descuento para usuarios con tarjeta VIP y permitirá realizar compras en línea.
 
@@ -22,7 +22,7 @@ este metodo puede ser usado por todos los usuarios (admin, VIP y user )
 
 - `Error`: El método puede lanzar un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación. Esto asegura que cualquier problema en la recuperación de los datos sea manejado adecuadamente y pueda ser diagnosticado.
 
-### Metodo de uso:
+### Método de uso:
 
 ```javascript
 let objPelicula;
@@ -36,7 +36,7 @@ objPelicula.destructor();
 
 
 
-### Ejemplo busqueda exitosa:
+### Ejemplo búsqueda exitosa:
 
   ```javascript
   [{
@@ -73,11 +73,11 @@ objPelicula.destructor();
 
 ### getAllMovieInformation():
 
-Metodo para obtener la informacion detallada de una pelicula existente o en su defecto informar si la pelicula consultada no existe en la base de datos.
+Método para obtener la información detallada de una pelicula existente o en su defecto informar si la pelicula consultada no existe en la base de datos.
 
-### Usuarios que pueden utiizar este metodo:
+### Usuarios que pueden utilizar este método:
 
-este metodo puede ser usado por todos los usuarios (admin, VIP y user )
+este método puede ser usado por todos los usuarios (admin, VIP y user )
 
 **Parámetros:**
 
@@ -91,9 +91,9 @@ este metodo puede ser usado por todos los usuarios (admin, VIP y user )
 
 - `Error`: Lanza un error si ocurre algún problema durante la conexión a la base de datos o durante la ejecución de la operación de agregación.
 
-### Metodo de uso: 
+### Método de uso: 
 
-Como parametro se ingresa el Id de la pelicula a consultar.
+Como parámetro se ingresa el Id de la pelicula a consultar.
 
 ```javascript
 let objPelicula;
@@ -106,7 +106,7 @@ objPelicula.destructor();
 
 
 
-### Ejemplo busqueda exitosa:
+### Ejemplo búsqueda exitosa:
 
 ```javascript
 [
@@ -135,11 +135,11 @@ Completed running 'main.js'
 
 ### registerBuyTicket():
 
-Metodo para la compra de un boleto nuevo ingresando asientos, pelicula y metodo de pago.
+Método para la compra de un boleto nuevo ingresando asientos, pelicula y método de pago.
 
-### Usuarios que pueden utiizar este metodo:
+### Usuarios que pueden utilizar este método:
 
-este metodo puede ser usado por todos los usuarios (admin, VIP y user )
+este método puede ser usado por todos los usuarios (admin, VIP y user )
 
 #### Parámetros:
 
@@ -164,9 +164,9 @@ El método devuelve un objeto con los siguientes campos:
 - `message` (string): Mensaje de error detallado.
 - `details` (Object): Detalles adicionales sobre el error.
 
-### Metodo de uso: 
+### Método de uso: 
 
-Como parametro se ingresa id(pelicula, proyecion, usuario , asientos que desea y metodo de pago.)
+Como parámetro se ingresa id(pelicula, proyección, usuario , asientos que desea y método de pago.)
 
 ```javascript
 let objBoleto;
@@ -182,7 +182,7 @@ console.log(await objBoleto.registerBuyTicket({
 objBoleto.destructor();
 ```
 
-### Ejemplo busqueda exitosa:
+### Ejemplo búsqueda exitosa:
 
 ```javascript
 
@@ -212,5 +212,56 @@ Conexion realizada correctamente
 }
 ------------------------------------------
 { error: 'Not found', message: 'La proyeccion no existe.' }
+```
+
+## 2.1Verificar Disponibilidad de Asientos:
+
+### getAvailableSeats():
+
+Método para conocer la disponibilidad de asientos en una sala dependiendo la proyección.
+
+### Usuarios que pueden utilizar este método:
+
+este método puede ser usado por todos los usuarios (admin, VIP y user )
+
+#### Parámetros:
+
+- `params` (Object): Un objeto que contiene los parámetros necesarios para ejecutar la función.
+- `proyeccion_id` (string): El identificador único de la proyección para la cual se desean consultar los asientos disponibles.
+
+#### Retorno:
+
+- `Object`: El resultado de la operación, que incluye:
+- `Array `asientosDisponibles`: Un array de strings, cada uno representando un asiento disponible en el formato 'filaNumero'. Esto proporciona a los usuarios una lista clara de los asientos que aún están desocupados y disponibles para su selección.
+- `Object error`: Un objeto de error que se devuelve en caso de que la operación falle. Este objeto contiene:
+- `message` (string): Un mensaje descriptivo que detalla la naturaleza del error ocurrido.
+
+### Método de uso: 
+
+```javascript
+let objBoleto;
+objBoleto= new boleto()
+console.log(await objBoleto.getAvailableSeats({proyeccion_id:
+                                               "66a12e9b1219e115c8e79e95"}));
+objBoleto.destructor();
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+Conexion realizada correctamente
+{ asientosDisponibles: [ ' A2', ' A3' ] }
+
+```
+
+### Ejemplos error:
+
+```javascript
+Conexion realizada correctamente
+{
+  error: 'Not found',
+  message: 'La proyección con id 11a12e9b1219e115c8e79e95 no existe.'
+}
+
 ```
 
