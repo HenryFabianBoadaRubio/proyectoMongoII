@@ -330,3 +330,52 @@ Conexion realizada correctamente
 }
 ```
 
+## 3.1 Cancelar Reserva de Asientos:
+
+### cancelReservation():
+
+Método para realizar la cancelación de la reserva al eliminar el boleto y devolver a estado disponible los asientos.
+
+#### Parámetros:
+
+- `_id` (string): El identificador único de la reservación del boleto que se desea cancelar.
+
+#### Retorno:
+
+- `Object`: El resultado de la operación de cancelación, que incluye:
+- `string `(message): Un mensaje que indica si la cancelación fue exitosa o si hubo algún problema.
+- `string `(boleto_id): El identificador del boleto que fue cancelado.
+- `Object `(error): Un objeto de error que se proporciona en caso de que la operación falle, conteniendo:
+- `string `(message): Un mensaje que describe el error ocurrido.
+- `Object `(details): Información adicional que proporciona detalles sobre la naturaleza del error.
+
+### Método de uso: 
+
+```javascript
+
+let objBoleto;
+objBoleto= new boleto()
+console.log(await objBoleto.cancelReservation(new ObjectId("11a6c94a180370662293a5bc")));
+objBoleto.destructor();
+
+```
+
+### Ejemplo búsqueda exitosa:
+
+Tener presente que se debe colocar un id de boleto existente.
+
+```javascript
+Conexion realizada correctamente
+{
+  message: 'Boleto y asientos cancelados correctamente.',
+  boleto_id: new ObjectId('66a6c94a180370662293a5bc')
+}
+```
+
+### Ejemplo error:
+
+```javascript
+Conexion exitosa
+{ error: 'Not found', message: 'El boleto no existe.' }
+```
+

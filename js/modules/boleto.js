@@ -281,7 +281,17 @@ export class boleto extends connect {
             
         }
     }
-
+        /**
+     * Cancela una reservación de un boleto de película.
+     * 
+     * @param {string} _id - El ID de la reservación del boleto a cancelar.
+     * @returns {Object} - El resultado de la operación de cancelación.
+     * @returns {string} result.message - Un mensaje que indica el éxito o fracaso de la operación.
+     * @returns {string} result.boleto_id - El ID del boleto cancelado.
+     * @returns {Object} result.error - Un objeto de error en caso de fracaso.
+     * @returns {string} result.error.message - El mensaje de error.
+     * @returns {Object} result.error.details - Los detalles adicionales del error.
+     */
     async cancelReservation(_id){
         let res;
         try {
