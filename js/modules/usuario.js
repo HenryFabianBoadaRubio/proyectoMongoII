@@ -236,4 +236,37 @@ export class usuario extends connect {
             return { error: "Error", message: error.message, details: error.errInfo };
         }
     }
+
+    /**
+     * Obtiene todos los usuarios de la colección MongoDB según el rol especificado.
+     * Si no se proporciona ningún rol, obtiene todos los usuarios de la colección.
+     *
+     * @param {string} [rol] - El rol de los usuarios a recuperar.
+     * @returns {Promise} - Una promesa que se resuelve a un array de usuarios o un objeto de error.
+     * @throws {Error} - Si no se encuentran usuarios con el rol especificado o si no se encuentran usuarios en la colección.
+     */
+    async getAllUsersMongo(rol){
+        try {
+            let res;
+            //obtener todos los usuarios de un rol especifico que se pase como parametro.
+            if(rol){
+                res = await this.db.collection('usuario').find({rol:rol}).toArray();
+                if (res.length === 0) {
+                    throw new Error(`No se encontraron usuarios con el rol: ${rol}`);
+                }
+    
+            }else{
+                res = await this.db.collection('usuario').find().toArray();
+                if (res.length === 0) {
+                    throw new Error('No se encontraron usuarios en la colección');
+                }
+            }
+            return res;
+
+            
+        } catch (error) {
+            return { error: "Error", message: error.message, details: error.errInfo };
+            
+        }
+    }
 }
