@@ -164,7 +164,23 @@ export class usuario extends connect {
         }
 
     }
-
+        /**
+     * Actualiza un usuario en la base de datos y actualiza sus permisos.
+     *
+     * @param {string} _id - El identificador único del usuario a actualizar.
+     * @param {Object} user - Los nuevos valores para el usuario.
+     * @param {string} user.nombre - El nuevo nombre del usuario.
+     * @param {string} user.email - El nuevo correo electrónico del usuario.
+     * @param {string} user.rol - El nuevo rol del usuario.
+     * @param {string} user.nick - El nuevo nombre de usuario (nick).
+     *
+     * @returns {Promise} - Una promesa que se resuelve a un objeto con el resultado de la operación o un objeto de error.
+     * @returns {Object} - El resultado de la operación si es exitosa.
+     * @returns {Object.error} - Si hay un error, este campo contendrá el string "Error".
+     * @returns {Object.message} - Mensaje de éxito o error.
+     * @returns {Object.details} - Detalles adicionales del error (en caso de error).
+     * @returns {Object.user_id} - ID del usuario actualizado (en caso de éxito).
+     */
     async updateUser(_id, { nombre, email, rol, nick }) {
         try {
             

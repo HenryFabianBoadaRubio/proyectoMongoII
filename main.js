@@ -93,10 +93,10 @@ objUsuario = new usuario();
 
 //parte 3
 console.log(await objUsuario.updateUser("66a70bd227bf34870d1cc561",{
-    nombre: "Karen pinto",
-    email: "karen.espejo@example.com",
+    nombre: "Henry pinto",
+    email: "Henry.espejo@example.com",
     rol:"estandar",
-    nick:"karen_espejo"
+    nick:"Henry_espejo"
 }));
 
 /////////················································CASO DE USO 5  ROLES······································///////////
