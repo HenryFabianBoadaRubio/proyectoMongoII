@@ -614,3 +614,63 @@ Conexion realizada correctamente
 }
 ```
 
+## 5.3) Listar Usuarios:
+
+### getAllUsersMongo():
+
+Método para obtener todos los usuarios dependiendo del rol como parámetro se le pase.
+
+**Parámetros:**
+
+- **`rol`** *(opcional)*: Un string que representa el rol de los usuarios que se desean recuperar. Si no se proporciona, el método obtiene todos los usuarios sin filtrar por rol.
+
+**Retorno:**
+
+- **`Promise`**: Devuelve una promesa que se resuelve con un array de usuarios si la operación es exitosa. Si ocurre un error, la promesa se resuelve con un objeto de error.
+
+**Excepciones:**
+
+- **`Error`**: Lanza un error si no se encuentran usuarios con el rol especificado o si no se encuentran usuarios en la colección.
+
+  
+
+### Método de uso: 
+
+```javascript
+let objUsuario;
+objUsuario = new usuario();
+console.log(await objUsuario.getAllUsersMongo("estandar")); 
+objUsuario.destructor();
+
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+[ {
+    _id: new ObjectId('66a12e9b1219e115c8e79e9a'),
+    nombre: 'Ana García',
+    email: 'ana@example.com',
+    rol: 'estandar',
+    nick: 'ana_garcia'
+  },
+  {
+    _id: new ObjectId('66a12e9b1219e115c8e79e9d'),
+    nombre: 'Juan Pérez',
+    email: 'juan@example.com',
+    rol: 'estandar',
+    nick: 'juan_perez'
+  }...]
+```
+
+### Ejemplo error:
+
+```javascript
+Conexion exitosa
+{
+  error: 'Error',
+  message: 'No se encontraron usuarios con el rol: 1',
+  details: undefined
+}
+```
+

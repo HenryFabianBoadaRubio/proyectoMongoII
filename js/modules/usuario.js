@@ -237,7 +237,14 @@ export class usuario extends connect {
         }
     }
 
-
+    /**
+     * Obtiene todos los usuarios de la colección MongoDB según el rol especificado.
+     * Si no se proporciona ningún rol, obtiene todos los usuarios de la colección.
+     *
+     * @param {string} [rol] - El rol de los usuarios a recuperar.
+     * @returns {Promise} - Una promesa que se resuelve a un array de usuarios o un objeto de error.
+     * @throws {Error} - Si no se encuentran usuarios con el rol especificado o si no se encuentran usuarios en la colección.
+     */
     async getAllUsersMongo(rol){
         try {
             let res;

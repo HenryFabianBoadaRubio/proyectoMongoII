@@ -101,6 +101,6 @@ objUsuario = new usuario();
 
 
 //parte 4 todoso los usuarios de un rol
-console.log(await objUsuario.getAllUsersMongo(1)); 
+console.log(await objUsuario.getAllUsersMongo("estandar")); 
 
 /////////················································CASO DE USO 5  ROLES······································///////////
