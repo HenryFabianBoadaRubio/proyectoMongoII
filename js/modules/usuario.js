@@ -97,22 +97,55 @@ export class usuario extends connect {
 
     async getDetailsUser(_id){
         try {
+            await this.conexion.connect();
+
             //Verificar la existencia del usuario por id
-            let userExist=await this.db.collection('usuario').findOne({_id: ObjectId(_id)})
+            let userExist=await this.db.collection('usuario').findOne({_id:new ObjectId(_id)})
             if (!userExist){
                 return {
                     error: "Error",
                     message: "El usuario no existe."
                 };
             }
-            // Permitir la consulta de información detallada sobre un usuario, incluyendo su rol y estado de tarjeta VIP.
-            let user = await this.db.collection('usuario').findOne({_id: ObjectId(_id)}, {projection: {rol: 1, vip: 1}});
-            return user;
+            
+            let res= await this.collection.aggregate([
+                    {
+                  $match: {
+                     _id: new ObjectId(_id) 
+                  }
+                },
+                {
+                  $lookup: {
+                    from: "tarjetaVIP",
+                    localField: "_id",
+                    foreignField: "usuario_id",
+                    as: "usuarios"
+                  }
+                  
+                },
+                {
+                  $unwind: "$usuarios"
+                },
+                {
+                  $project: {
+                    nombre:1,
+                    email:1,
+                    rol:1,
+                    nick:1,
+                    estado:"$usuarios.estado",
+                    num_Tarjeta:"$usuarios.numero_tarjeta"
+                    
+                  }
+                }
+            ]).toArray();
+            return res;
+              
             
 
         } catch (error) {
             return { error: "Error", message: error.message,details: error.errInfo};
             
         }
+
     }
 }
