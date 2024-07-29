@@ -4,6 +4,7 @@ import {connect} from "../proyectoMongoII/helpers/db/connect.js";
 import { pelicula } from "./js/modules/pelicula.js";
 import {practica} from './js/modules/practica.js'
 import { boleto } from "./js/modules/boleto.js";
+import { usuario } from "./js/modules/usuario.js";
 
 
 // let objPractica = new practica();
@@ -29,19 +30,19 @@ import { boleto } from "./js/modules/boleto.js";
 
 /////////················································CASO DE USO 2 COMPRAR BOLETOS:······································///////////
 
-let objBoleto;
-objBoleto= new boleto()
+// let objBoleto;
+// objBoleto= new boleto()
 
-//parte 1
-console.log(await objBoleto.registerBuyTicket({
-    pelicula_id:"66a12e9a1219e115c8e79e89",
-    proyeccion_id:"66a12e9b1219e115c8e79e95",
-    usuario_id: "66a12e9b1219e115c8e79e9b",
-    asientos: [{fila: "A", numero: 1}],
-    metodo_pago: "tarjeta_debito",
+// //parte 1
+// console.log(await objBoleto.registerBuyTicket({
+//     pelicula_id:"66a12e9a1219e115c8e79e89",
+//     proyeccion_id:"66a12e9b1219e115c8e79e95",
+//     usuario_id: "66a12e9b1219e115c8e79e9b",
+//     asientos: [{fila: "A", numero: 1}],
+//     metodo_pago: "tarjeta_debito",
     
 
-}));
+// }));
 
 // //parte 2
 
@@ -70,3 +71,17 @@ console.log(await objBoleto.registerBuyTicket({
 
 /////////················································CASO DE USO 3  Asientos······································///////////
 
+
+
+/////////················································CASO DE USO 5 ROLES:······································///////////
+
+let objUsuario;
+objUsuario = new usuario();
+
+console.log(await objUsuario.registerUser({
+    nombre: "Karen espejo",
+    email: "karen.espejo@example.com",
+    rol:"estandar",
+    nick:"karen_espejo"
+}));
+/////////················································CASO DE USO 5  ROLES······································///////////
