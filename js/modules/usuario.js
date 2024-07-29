@@ -82,4 +82,26 @@ export class usuario extends connect {
             
         }
     }
+
+
+    async getDetailsUser(_id){
+        try {
+            //Verificar la existencia del usuario por id
+            let userExist=await this.db.collection('usuario').findOne({_id: ObjectId(_id)})
+            if (!userExist){
+                return {
+                    error: "Error",
+                    message: "El usuario no existe."
+                };
+            }
+            // Permitir la consulta de información detallada sobre un usuario, incluyendo su rol y estado de tarjeta VIP.
+            let user = await this.db.collection('usuario').findOne({_id: ObjectId(_id)}, {projection: {rol: 1, vip: 1}});
+            return user;
+            
+
+        } catch (error) {
+            return { error: "Error", message: error.message,details: error.errInfo};
+            
+        }
+    }
 }
