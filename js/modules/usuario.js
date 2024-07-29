@@ -164,4 +164,76 @@ export class usuario extends connect {
         }
 
     }
+        /**
+     * Actualiza un usuario en la base de datos y actualiza sus permisos.
+     *
+     * @param {string} _id - El identificador único del usuario a actualizar.
+     * @param {Object} user - Los nuevos valores para el usuario.
+     * @param {string} user.nombre - El nuevo nombre del usuario.
+     * @param {string} user.email - El nuevo correo electrónico del usuario.
+     * @param {string} user.rol - El nuevo rol del usuario.
+     * @param {string} user.nick - El nuevo nombre de usuario (nick).
+     *
+     * @returns {Promise} - Una promesa que se resuelve a un objeto con el resultado de la operación o un objeto de error.
+     * @returns {Object} - El resultado de la operación si es exitosa.
+     * @returns {Object.error} - Si hay un error, este campo contendrá el string "Error".
+     * @returns {Object.message} - Mensaje de éxito o error.
+     * @returns {Object.details} - Detalles adicionales del error (en caso de error).
+     * @returns {Object.user_id} - ID del usuario actualizado (en caso de éxito).
+     */
+    async updateUser(_id, { nombre, email, rol, nick }) {
+        try {
+            
+            const collection = this.db.collection('usuario');
+            // Verificar existencia del usuario por nickname (para asegurarse de que el nuevo nick no esté en uso)
+            let userExist = await collection.findOne({ nick: nick, _id: { $ne: new ObjectId(_id) } });
+            if (userExist) {
+                return {
+                    error: "Error",
+                    message: "El nick ya existe."
+                };
+            }
+    
+            // Validar que el email sea correcto
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(email)) {
+                return {
+                    error: "Error",
+                    message: "El email no es válido."
+                };
+            }
+    
+            // Validar que el email no exista ya en la base de datos (para asegurarse de que el nuevo email no esté en uso)
+            let userExistEmail = await collection.findOne({ email: email, _id: { $ne: new ObjectId(_id) } });
+            if (userExistEmail) {
+                return {
+                    error: "Error",
+                    message: "El email ya existe."
+                };
+            }
+    
+            // Actualizar el usuario en la colección
+            await collection.updateOne(
+                { _id: new ObjectId(_id) },
+                { $set: { nombre: nombre, email: email, rol: rol, nick: nick } }
+            );
+    
+            // Eliminar el usuario en la base de datos de MongoDB (para permisos)
+            await this.db.removeUser(nick);
+    
+            // Crear el nuevo usuario en la base de datos de MongoDB con los permisos actualizados
+            await this.db.command({
+                createUser: nick,
+                pwd: new ObjectId().toString(),  // Genera una nueva contraseña segura
+                roles: [{ role: rol, db: 'cineCampus' }]
+            });
+    
+            return {
+                message: "Usuario actualizado y permisos actualizados correctamente.",
+                user_id: _id
+            };
+        } catch (error) {
+            return { error: "Error", message: error.message, details: error.errInfo };
+        }
+    }
 }

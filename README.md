@@ -554,3 +554,63 @@ Conexion realizada correctamente
 { error: 'Error', message: 'El usuario no existe.' }
 ```
 
+## 5.2)Actualizar Rol de Usuario:
+
+### updateUser():
+
+Método para actualizar un usuario en la colección y en la base de datos junto con sus permisos.
+
+#### Parámetros:
+
+- `_id `(string): El identificador único del usuario que se desea actualizar.
+- `user `(Object): Un objeto que contiene los nuevos valores para el usuario.
+- `nombre `(string): El nuevo nombre del usuario.
+- `email `(string): El nuevo correo electrónico del usuario.
+- `rol `(string): El nuevo rol del usuario.
+- `nick `(string): El nuevo nombre de usuario (nick).
+
+#### Retorno:
+
+- `Promise`: Una promesa que se resuelve con un objeto que contiene el resultado de la operación.
+- `Object`: Un objeto que representa el resultado de la operación o un objeto de error en caso de fallo.
+- `error `(string): Si ocurre un error durante la operación, este campo contendrá el string `"Error"`.
+- `message `(string): Un mensaje que indica el éxito o fracaso de la operación.
+- `details `(Object): Información adicional sobre el error, si se produjo alguno.
+- `user_id` (string): El ID del usuario actualizado, proporcionado en caso de éxito.
+
+### Método de uso: 
+
+```javascript
+let objUsuario;
+objUsuario = new usuario();
+console.log(await objUsuario.updateUser("66a70bd227bf34870d1cc561",{
+    nombre: "Henry pinto",
+    email: "Henry.espejo@example.com",
+    rol:"estandar",
+    nick:"Henry_espejo"
+}));
+objUsuario.destructor();
+
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+Conexion realizada correctamente
+{
+  message: 'Usuario actualizado y permisos actualizados correctamente.',
+  user_id: '66a70bd227bf34870d1cc561'
+}
+```
+
+### Ejemplo error:
+
+```javascript
+Conexion realizada correctamente
+{
+  error: 'Error',
+  message: "User 'Henry_espejo@cineCampus' not found",
+  details: undefined
+}
+```
+
