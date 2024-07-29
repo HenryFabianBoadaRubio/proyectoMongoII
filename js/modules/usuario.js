@@ -94,7 +94,23 @@ export class usuario extends connect {
         }
     }
 
-
+        /**
+     * Obtiene los detalles detallados del usuario de la base de datos.
+     *
+     * @param {string} _id - El identificador único del usuario.
+     *
+     * @returns {Promise} - Una promesa que se resuelve a los detalles del usuario o un objeto de error.
+     * @returns {Object} - Los detalles del usuario si la operación es exitosa.
+     * @returns {Object.error} - Si hay un error, este campo contendrá el string "Error".
+     * @returns {Object.message} - Mensaje de éxito o error.
+     * @returns {Object.details} - Detalles adicionales del error (en caso de error).
+     * @returns {Object.nombre} - Nombre del usuario.
+     * @returns {Object.email} - Correo electrónico del usuario.
+     * @returns {Object.rol} - Rol del usuario.
+     * @returns {Object.nick} - Nombre de usuario (nick).
+     * @returns {Object.estado} - Estado de la tarjeta VIP del usuario (si existe).
+     * @returns {Object.num_Tarjeta} - Número de tarjeta VIP del usuario (si existe).
+     */
     async getDetailsUser(_id){
         try {
             await this.conexion.connect();

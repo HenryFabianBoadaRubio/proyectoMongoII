@@ -381,6 +381,58 @@ Conexion exitosa
 
 ## Roles Definidos:
 
+super admin:`mongodb://mongo:IwcZMInZpiWQFGCIHilYIjdEurpFUfuX@viaduct.proxy.rlwy.net:56173`
+
+Administrador: Posee autorización total para administrar el sistema, incluyendo la venta de boletos en taquilla. Los administradores no participan en las transacciones en línea que realizan los usuarios.
+
+```javascript
+db.createUser(
+    {
+        user: "adminCineCampus",
+        pwd: "Cine2024",
+        roles:[
+            {role:"dbAdmin", db: "cineCampus" },
+            {role:"userAdmin", db:"cineCampus"},
+            {role:"readWrite", db:"cineCampus"}
+        ]
+    }
+)
+
+mongodb://adminCineCampus:Cine2024@viaduct.proxy.rlwy.net:56173/cineCampus
+```
+
+Se creo el usuario de Administrador con rol de superAdmin, que tiene todos los permisos en todas las colecciones.
+
+`Usuario Estándar`: Puede comprar boletos en línea sin la intervención del administrador.
+
+```javascript
+db.createUser({
+    user: "estandar",
+    pwd: "estandar2024",
+    roles: [
+        { role: "estandar", db: "cineCampus" }
+    ]
+})
+mongodb://estandar:estandar2024@viaduct.proxy.rlwy.net:56173/cineCampus
+```
+
+Se creo el usuario de estandar con rol de estandar el cual tiene algunos permisos en las colecciones como buscar, insertar .
+
+Usuario VIP: Puede comprar boletos en línea con descuentos aplicables para titulares de tarjetas VIP.
+
+```javascript
+db.createUser({
+    user: "vip",
+    pwd: "vip2024",
+    roles: [
+        { role: "vip", db: "cineCampus" }
+    ]
+})
+mongodb://vip:vip2024@viaduct.proxy.rlwy.net:56173/cineCampus
+```
+
+Se creo el usuario de VIP con rol de VIP el cual tiene algunos permisos en las colecciones como buscar, insertar y borrar.
+
 ## 5)Crear Usuario:
 
 ### registerUser():
@@ -440,5 +492,65 @@ Conexion realizada correctamente
   message: 'User "karen_espejo@cineCampus" already exists',
   details: undefined
 }
+```
+
+## 5.1)Obtener Detalles de Usuario:
+
+### getDetailsUser():
+
+Metodo para obtener la informacion detallada de un usuario de la base de datos , incluido su rol y estado de tarjeta.
+
+#### Parámetros:
+
+- `id `(string): El identificador único del usuario cuya información se desea obtener.
+
+#### Retorno:
+
+- `Promise`: Una promesa que, al resolverse, proporciona la información detallada del usuario.
+- `Object`: Un objeto que contiene los detalles del usuario si la operación es exitosa, o información sobre el error si la operación falla.
+- `error` (Object): Si ocurre un error durante la operación, este campo contendrá el string `"Error"`.
+- `message `(string): Un mensaje que indica el éxito o fracaso de la operación.
+- `details` (Object): Información adicional sobre el error, si se produjo alguno.
+- `nombre` (string): El nombre completo del usuario.
+- `email `(string): La dirección de correo electrónico del usuario.
+- `rol `(string): El rol asignado al usuario (por ejemplo, "administrador", "usuario estándar").
+- `nick (`string): El apodo o nombre de usuario.
+- `estado `(string): El estado de la tarjeta VIP del usuario, si existe.
+- `num_Tarjeta `(string): El número de tarjeta VIP del usuario, si existe.
+
+### Método de uso: 
+
+Tener presente colocar el id de un user existente para evitar errores al momento de la ejecucion 
+
+```javascript
+
+let objUsuario;
+objUsuario = new usuario();
+console.log(await objUsuario.getDetailsUser("66a12e9b1219e115c8e79e9b"));
+objUsuario.destructor();
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+Conexion realizada correctamente
+[
+  {
+    _id: new ObjectId('66a12e9b1219e115c8e79e9b'),
+    nombre: 'Carlos Rodríguez',
+    email: 'carlos@example.com',
+    rol: 'vip',
+    nick: 'carlos_rod',
+    estado: 'activa',
+    num_Tarjeta: 'VIP123456'
+  }
+]
+```
+
+### Ejemplo error:
+
+```javascript
+Conexion realizada correctamente
+{ error: 'Error', message: 'El usuario no existe.' }
 ```
 
