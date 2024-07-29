@@ -74,7 +74,7 @@ import { usuario } from "./js/modules/usuario.js";
 
 
 /////////················································CASO DE USO 5 ROLES:······································///////////
-// parte 1
+// parte 1 crear un usuario
 let objUsuario;
 objUsuario = new usuario();
 // // si ya esta creado el user debemos cambiar los datos por unos nuevos.
@@ -86,17 +86,21 @@ objUsuario = new usuario();
 // // }));
 
 
-// //parte 2
+// //parte 2 detalles user
 // console.log(await objUsuario.getDetailsUser("66a12e9b1219e115c8e79e9b"));
 // objUsuario.destructor();
 
 
-//parte 3
-console.log(await objUsuario.updateUser("66a70bd227bf34870d1cc561",{
-    nombre: "Henry pinto",
-    email: "Henry.espejo@example.com",
-    rol:"estandar",
-    nick:"Henry_espejo"
-}));
+//parte 3 actualizar
+// console.log(await objUsuario.updateUser("66a70bd227bf34870d1cc561",{
+//     nombre: "Henry pinto",
+//     email: "Henry.espejo@example.com",
+//     rol:"estandar",
+//     nick:"Henry_espejo"
+// }));
+
+
+//parte 4 todoso los usuarios de un rol
+console.log(await objUsuario.getAllUsersMongo(1)); 
 
 /////////················································CASO DE USO 5  ROLES······································///////////

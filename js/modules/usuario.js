@@ -236,4 +236,30 @@ export class usuario extends connect {
             return { error: "Error", message: error.message, details: error.errInfo };
         }
     }
+
+
+    async getAllUsersMongo(rol){
+        try {
+            let res;
+            //obtener todos los usuarios de un rol especifico que se pase como parametro.
+            if(rol){
+                res = await this.db.collection('usuario').find({rol:rol}).toArray();
+                if (res.length === 0) {
+                    throw new Error(`No se encontraron usuarios con el rol: ${rol}`);
+                }
+    
+            }else{
+                res = await this.db.collection('usuario').find().toArray();
+                if (res.length === 0) {
+                    throw new Error('No se encontraron usuarios en la colección');
+                }
+            }
+            return res;
+
+            
+        } catch (error) {
+            return { error: "Error", message: error.message, details: error.errInfo };
+            
+        }
+    }
 }
