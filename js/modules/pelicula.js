@@ -50,6 +50,11 @@ export class pelicula extends connect {
                   $unwind: "$proyecciones"
                 },
                 {
+                  $match: {
+                    "proyecciones.fecha": { $gt: new Date() }
+                  }
+                },
+                {
                   $lookup: {
                     from: "sala",
                     localField: "proyecciones.sala_id",
