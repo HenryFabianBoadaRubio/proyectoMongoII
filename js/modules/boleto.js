@@ -99,15 +99,21 @@ export class boleto extends connect {
                     }
                 }
             }
-            let precio_total= proExist.precio*asientos.length;
-            let descuentoUser= 0;
-            //verificar si el usuario es VIP y aplica el descuento en caso de serlo 
+        
+            //verificamos si el user tiene tarjeta vip y que descuento aplica sino tiene pasa como user estandar
+            let precio_total = proExist.precio * asientos.length;
+            let descuentoUser = 0;
             let cardVip = await this.db.collection('tarjetaVIP').findOne({usuario_id: userExist._id})
-            if (cardVip){
-                precio_total=(proExist.precio - cardVip.descuento)*asientos.length;
-                descuentoUser= cardVip.descuento*asientos.length;
-                
-            } 
+            if (cardVip) {
+                // Verificar que la tarjeta VIP esté activa
+                if (cardVip.estado === "activa") {
+                    // Aplicar descuento
+                     descuentoUser = cardVip.descuento * asientos.length;
+                     precio_total = (proExist.precio - cardVip.descuento) * asientos.length;
+                    
+                    
+                }
+            }
            //ingresar el precio_total al boleto que se esta creando
             let nuevoBoleto={
                 proyeccion_id: new ObjectId(proyeccion_id),
@@ -281,17 +287,17 @@ export class boleto extends connect {
             
         }
     }
-        /**
-     * Cancela una reservación de un boleto de película.
-     * 
-     * @param {string} _id - El ID de la reservación del boleto a cancelar.
-     * @returns {Object} - El resultado de la operación de cancelación.
-     * @returns {string} result.message - Un mensaje que indica el éxito o fracaso de la operación.
-     * @returns {string} result.boleto_id - El ID del boleto cancelado.
-     * @returns {Object} result.error - Un objeto de error en caso de fracaso.
-     * @returns {string} result.error.message - El mensaje de error.
-     * @returns {Object} result.error.details - Los detalles adicionales del error.
-     */
+    /**
+ * Cancela una reservación de un boleto de película.
+ * 
+ * @param {string} _id - El ID de la reservación del boleto a cancelar.
+ * @returns {Object} - El resultado de la operación de cancelación.
+ * @returns {string} result.message - Un mensaje que indica el éxito o fracaso de la operación.
+ * @returns {string} result.boleto_id - El ID del boleto cancelado.
+ * @returns {Object} result.error - Un objeto de error en caso de fracaso.
+ * @returns {string} result.error.message - El mensaje de error.
+ * @returns {Object} result.error.details - Los detalles adicionales del error.
+ */
     async cancelReservation(_id){
         let res;
         try {
