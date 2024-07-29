@@ -164,4 +164,60 @@ export class usuario extends connect {
         }
 
     }
+
+    async updateUser(_id, { nombre, email, rol, nick }) {
+        try {
+            
+            const collection = this.db.collection('usuario');
+            // Verificar existencia del usuario por nickname (para asegurarse de que el nuevo nick no esté en uso)
+            let userExist = await collection.findOne({ nick: nick, _id: { $ne: new ObjectId(_id) } });
+            if (userExist) {
+                return {
+                    error: "Error",
+                    message: "El nick ya existe."
+                };
+            }
+    
+            // Validar que el email sea correcto
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(email)) {
+                return {
+                    error: "Error",
+                    message: "El email no es válido."
+                };
+            }
+    
+            // Validar que el email no exista ya en la base de datos (para asegurarse de que el nuevo email no esté en uso)
+            let userExistEmail = await collection.findOne({ email: email, _id: { $ne: new ObjectId(_id) } });
+            if (userExistEmail) {
+                return {
+                    error: "Error",
+                    message: "El email ya existe."
+                };
+            }
+    
+            // Actualizar el usuario en la colección
+            await collection.updateOne(
+                { _id: new ObjectId(_id) },
+                { $set: { nombre: nombre, email: email, rol: rol, nick: nick } }
+            );
+    
+            // Eliminar el usuario en la base de datos de MongoDB (para permisos)
+            await this.db.removeUser(nick);
+    
+            // Crear el nuevo usuario en la base de datos de MongoDB con los permisos actualizados
+            await this.db.command({
+                createUser: nick,
+                pwd: new ObjectId().toString(),  // Genera una nueva contraseña segura
+                roles: [{ role: rol, db: 'cineCampus' }]
+            });
+    
+            return {
+                message: "Usuario actualizado y permisos actualizados correctamente.",
+                user_id: _id
+            };
+        } catch (error) {
+            return { error: "Error", message: error.message, details: error.errInfo };
+        }
+    }
 }
