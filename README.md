@@ -379,3 +379,66 @@ Conexion exitosa
 { error: 'Not found', message: 'El boleto no existe.' }
 ```
 
+## Roles Definidos:
+
+## 5)Crear Usuario:
+
+### registerUser():
+
+Método para registrar un nuevo usuario y su rol respectivo en la base de datos.
+
+#### Parámetros:
+
+- `usuario` (Object): Un objeto que contiene la información del usuario a registrar:
+- `nombre` (string): El nombre completo del usuario.
+- `email` (string): La dirección de correo electrónico del usuario.
+- `rol `(string): El rol asignado al usuario (por ejemplo, "administrador", "usuario estándar").
+- `nick` (string): El apodo o nombre de usuario elegido por el usuario.
+
+#### Retorno:
+
+- `Object`: Un objeto que contiene el resultado del proceso de registro, incluyendo:
+- `error` (Object): Si ocurre un error durante el registro, este campo contendrá el string `"Error"`.
+- `message` (string): Un mensaje que indica el éxito o fracaso del registro.
+- `user_id` (Object): El identificador único del usuario registrado (solo en caso de éxito).
+- `details` (Object): Información adicional sobre el error, si se produjo alguno.
+
+### Método de uso: 
+
+Tener presente que si ya esta creado este  user debemos colocar datos nuevos.
+
+```javascript
+let objUsuario;
+objUsuario = new usuario();
+
+console.log(await objUsuario.registerUser({
+    nombre: "Karen espejo",
+    email: "karen.espejo@example.com",
+    rol:"estandar",
+    nick:"karen_espejo"
+}));
+objUsuario.destructor();
+```
+
+### Ejemplo búsqueda exitosa:
+
+```javascript
+{
+  message: 'Usuario registrado correctamente.',
+  user_id: new ObjectId('66a70bd227bf34870d1cc561')
+}
+```
+
+### Ejemplo error:
+
+tener presente mas que error solo significa que este user ya esta creado solo debemos ingresar un user nuevo.
+
+```
+Conexion realizada correctamente
+{
+  error: 'Error',
+  message: 'User "karen_espejo@cineCampus" already exists',
+  details: undefined
+}
+```
+

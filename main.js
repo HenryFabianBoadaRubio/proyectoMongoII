@@ -77,11 +77,13 @@ import { usuario } from "./js/modules/usuario.js";
 
 let objUsuario;
 objUsuario = new usuario();
-
+// si ya esta creado el user debemos cambiar los datos por unos nuevos.
 console.log(await objUsuario.registerUser({
     nombre: "Karen espejo",
     email: "karen.espejo@example.com",
     rol:"estandar",
     nick:"karen_espejo"
 }));
+objUsuario.destructor();
+
 /////////················································CASO DE USO 5  ROLES······································///////////

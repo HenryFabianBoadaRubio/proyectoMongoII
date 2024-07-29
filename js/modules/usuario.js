@@ -24,7 +24,21 @@ export class usuario extends connect {
         await this.conexion.close();
         return res;
     }
-
+        /**
+     * Registra un nuevo usuario en la base de datos.
+     *
+     * @param {Object} usuario - El objeto de usuario que contiene la información del usuario.
+     * @param {string} usuario.nombre - El nombre del usuario.
+     * @param {string} usuario.email - El correo electrónico del usuario.
+     * @param {string} usuario.rol - El rol del usuario.
+     * @param {string} usuario.nick - El nombre de usuario (nick).
+     *
+     * @returns {Object} - Objeto con el resultado del registro.
+     * @returns {Object.error} - Si hay un error, este campo contendrá el string "Error".
+     * @returns {Object.message} - Mensaje de éxito o error.
+     * @returns {Object.user_id} - ID del usuario registrado (en caso de éxito).
+     * @returns {Object.details} - Detalles adicionales del error (en caso de error).
+     */
     async registerUser({nombre,email,rol,nick}){
         try {
             
