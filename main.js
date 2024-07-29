@@ -78,16 +78,16 @@ import { usuario } from "./js/modules/usuario.js";
 let objUsuario;
 objUsuario = new usuario();
 // si ya esta creado el user debemos cambiar los datos por unos nuevos.
-// console.log(await objUsuario.registerUser({
-//     nombre: "Karen espejo",
-//     email: "karen.espejo@example.com",
-//     rol:"estandar",
-//     nick:"karen_espejo"
-// }));
+console.log(await objUsuario.registerUser({
+    nombre: "Karen espejo",
+    email: "karen.espejo@example.com",
+    rol:"estandar",
+    nick:"karen_espejo"
+}));
 
 
 //parte 2
-console.log(await objUsuario.getDetailsUser(new ObjectId("66a12e9b1219e115c8e79e9b")));
-objUsuario.destructor();
+// console.log(await objUsuario.getDetailsUser(new ObjectId("66a12e9b1219e115c8e79e9b")));
+// objUsuario.destructor();
 
 /////////················································CASO DE USO 5  ROLES······································///////////

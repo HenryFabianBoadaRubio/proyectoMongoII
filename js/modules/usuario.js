@@ -60,6 +60,17 @@ export class usuario extends connect {
                 };
             }
 
+            //validar que el gmail no exista ya en la base de datos
+            let userExistEmail=await this.db.collection('usuario').findOne({email:email})
+            if (userExistEmail){
+                return {
+                    error: "Error",
+                    message: "El email ya existe."
+                };
+            }
+            
+        
+
             const usuario ={
                 nombre:nombre,
                 email:email,
