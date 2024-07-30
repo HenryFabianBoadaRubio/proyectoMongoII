@@ -1,0 +1,25 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "numero",
+        "capacidad",
+        "tipo"
+      ],
+      "properties": {
+        "numero": {
+          "bsonType": "int"
+        },
+        "capacidad": {
+          "bsonType": "int"
+        },
+        "tipo": {
+          "enum": [
+            "2d",
+            "3d"
+          ]
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,33 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "pelicula_id",
+        "sala_id",
+        "fecha",
+        "precio",
+        "formato"
+      ],
+      "properties": {
+        "pelicula_id": {
+          "bsonType": "objectId"
+        },
+        "sala_id": {
+          "bsonType": "objectId"
+        },
+        "fecha": {
+          "bsonType": "date"
+        },
+        "precio": {
+          "bsonType": "int"
+        },
+        "formato": {
+          "enum": [
+            "2d",
+            "3d"
+          ]
+        }
+      }
+    }
+  }
+  

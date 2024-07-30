@@ -1,0 +1,154 @@
+[{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea6"
+  },
+  "boleto_id": {
+    "$oid": "66a12e9b1219e115c8e79ea1"
+  },
+  "metodo_pago": "tarjeta_credito",
+  "fecha_pago": {
+    "$date": "2024-07-24T17:30:00.000Z"
+  },
+  "estado": "completado",
+  "monto": 1050
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea7"
+  },
+  "boleto_id": {
+    "$oid": "66a12e9b1219e115c8e79ea2"
+  },
+  "metodo_pago": "efectivo",
+  "fecha_pago": {
+    "$date": "2024-07-24T18:30:00.000Z"
+  },
+  "estado": "completado",
+  "monto": 1125
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea8"
+  },
+  "boleto_id": {
+    "$oid": "66a12e9b1219e115c8e79ea3"
+  },
+  "metodo_pago": "transferencia",
+  "fecha_pago": {
+    "$date": "2024-07-24T19:30:00.000Z"
+  },
+  "estado": "pendiente",
+  "monto": 1050
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea9"
+  },
+  "boleto_id": {
+    "$oid": "66a12e9b1219e115c8e79ea4"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-24T20:30:00.000Z"
+  },
+  "estado": "completado",
+  "monto": 1250
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79eaa"
+  },
+  "boleto_id": {
+    "$oid": "66a12e9b1219e115c8e79ea5"
+  },
+  "metodo_pago": "tarjeta_credito",
+  "fecha_pago": {
+    "$date": "2024-07-24T21:30:00.000Z"
+  },
+  "estado": "completado",
+  "monto": 945
+},
+{
+  "_id": {
+    "$oid": "66a6eae3a9f550a6b8e01b3d"
+  },
+  "boleto_id": {
+    "$oid": "66a6eae3a9f550a6b8e01b3c"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:05:39.675Z"
+  },
+  "estado": "completado",
+  "monto": 1040
+},
+{
+  "_id": {
+    "$oid": "66a6ebdd61ffcff39b582888"
+  },
+  "boleto_id": {
+    "$oid": "66a6ebdc61ffcff39b582887"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:09:49.203Z"
+  },
+  "estado": "completado",
+  "monto": 1040
+},
+{
+  "_id": {
+    "$oid": "66a6ecc880fb1aad306285ab"
+  },
+  "boleto_id": {
+    "$oid": "66a6ecc780fb1aad306285aa"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:13:44.343Z"
+  },
+  "estado": "completado",
+  "monto": 1040
+},
+{
+  "_id": {
+    "$oid": "66a6ed5b4490b82871f3598c"
+  },
+  "boleto_id": {
+    "$oid": "66a6ed5b4490b82871f3598b"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:16:11.680Z"
+  },
+  "estado": "completado",
+  "monto": 1040
+},
+{
+  "_id": {
+    "$oid": "66a6ee61dec299b742c1ee5d"
+  },
+  "boleto_id": {
+    "$oid": "66a6ee61dec299b742c1ee5c"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:20:33.659Z"
+  },
+  "estado": "completado",
+  "monto": 1050
+},
+{
+  "_id": {
+    "$oid": "66a6ee98882386f5da392765"
+  },
+  "boleto_id": {
+    "$oid": "66a6ee97882386f5da392764"
+  },
+  "metodo_pago": "tarjeta_debito",
+  "fecha_pago": {
+    "$date": "2024-07-29T01:21:28.122Z"
+  },
+  "estado": "completado",
+  "monto": 1040
+}]
