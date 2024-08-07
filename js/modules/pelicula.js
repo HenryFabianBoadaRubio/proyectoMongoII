@@ -1,7 +1,8 @@
-import { connect } from "../../helpers/db/connect.js";
-import { ObjectId } from "mongodb";
+const connect = require("../../helpers/db/connect");
+const {ObjectId} =require("mongodb");
 
-export class pelicula extends connect {
+
+module.exports= class pelicula extends connect {
     static instancePelicula;
     db;
     collection;
@@ -35,7 +36,6 @@ export class pelicula extends connect {
  * de la operación de agregación.
  */
     async getAllMoviesProjection(){
-        try {
             await this.conexion.connect();
             let res = await this.collection.aggregate([
                 {
@@ -77,12 +77,9 @@ export class pelicula extends connect {
                 }
               
               ]).toArray();
+              await this.conexion.close();
               return res;
-        } catch (error) {
-            return { error: "Error", message: error.message,details: error.errInfo};
-        }finally{
-            await this.conexion.close();
-        }
+              
     }
 
         /**

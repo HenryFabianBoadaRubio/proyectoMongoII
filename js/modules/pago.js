@@ -1,5 +1,5 @@
-import { connect } from "../../helpers/db/connect.js";
-import { ObjectId } from "mongodb";
+const connect  = require("../../helpers/db/connect");
+const {ObjectId} =require("mongodb");
 
 export class pago extends connect {
     static instancePago;
