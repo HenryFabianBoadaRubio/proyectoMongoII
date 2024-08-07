@@ -95,7 +95,7 @@ module.exports= class pelicula extends connect {
      */
 
     async getAllMovieInformation(id){
-        try {
+        
             await this.conexion.connect();
 
             //verificar laexistencia de la pelicula
@@ -108,11 +108,11 @@ module.exports= class pelicula extends connect {
             
             }
 
-            let res= await this.collection.aggregate(
+            let res= await this.db.collection('pelicula').aggregate(
                 [
                     {
                       $match: {
-                        _id:id
+                        _id:new ObjectId(id) 
                       }
                     },
                     {
@@ -125,13 +125,9 @@ module.exports= class pelicula extends connect {
                       }
                     }
                   ]
-            ).toArray();
-            return res;
-        } catch (error) {
-            return { error: "Error", message: error.message,details: error.errInfo};
-            
-        }finally{
-            await this.conexion.close();
-        }
+                  ).toArray();
+                  await this.conexion.close();
+                  return res;
+        
     }
 }
