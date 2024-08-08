@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8e"
+  },
+  "numero": 1,
+  "fila": "A",
+  "tipo": "regular",
+  "estado": "disponible",
+  "codigo_asiento": 1,
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8f"
+  },
+  "numero": 2,
+  "fila": "A",
+  "tipo": "regular",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e90"
+  },
+  "numero": 3,
+  "fila": "A",
+  "tipo": "vip",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e91"
+  },
+  "numero": 1,
+  "fila": "B",
+  "tipo": "regular",
+  "estado": "reservado",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e94"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e92"
+  },
+  "numero": 3,
+  "fila": "B",
+  "tipo": "vip",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e94"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a6b64460f50480f4f50f5c"
+  },
+  "numero": 1,
+  "fila": "A",
+  "tipo": "regular",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a6b64460f50480f4f50f61"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a6b64460f50480f4f50f5d"
+  },
+  "numero": 2,
+  "fila": "A",
+  "tipo": "regular",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a6b64460f50480f4f50f62"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a6b64460f50480f4f50f5e"
+  },
+  "numero": 3,
+  "fila": "A",
+  "tipo": "vip",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a6b64460f50480f4f50f5f"
+  },
+  "numero": 1,
+  "fila": "C",
+  "tipo": "regular",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a6b64460f50480f4f50f60"
+  },
+  "numero": 2,
+  "fila": "C",
+  "tipo": "vip",
+  "estado": "disponible",
+  "sala_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  }
+}]

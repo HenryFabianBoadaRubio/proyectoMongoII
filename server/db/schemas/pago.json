@@ -1,0 +1,39 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "boleto_id",
+        "metodo_pago",
+        "fecha_pago",
+        "estado",
+        "monto"
+      ],
+      "properties": {
+        "boleto_id": {
+          "bsonType": "objectId"
+        },
+        "metodo_pago": {
+          "enum": [
+            "tarjeta_credito",
+            "tarjeta_debito",
+            "efectivo",
+            "transferencia"
+          ]
+        },
+        "fecha_pago": {
+          "bsonType": "date"
+        },
+        "estado": {
+          "enum": [
+            "completado",
+            "pendiente",
+            "fallido"
+          ]
+        },
+        "monto": {
+          "bsonType": "int"
+        }
+      }
+    }
+  }
+  

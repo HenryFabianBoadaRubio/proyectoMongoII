@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9a"
+  },
+  "nombre": "Ana García",
+  "email": "ana@example.com",
+  "rol": "estandar",
+  "nick": "ana_garcia"
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9b"
+  },
+  "nombre": "Carlos Rodríguez",
+  "email": "carlos@example.com",
+  "rol": "vip",
+  "nick": "carlos_rod",
+  "tarjeta_vip_id": {
+    "$oid": "66a12e9b1219e115c8e79e9f"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9c"
+  },
+  "nombre": "María López",
+  "email": "maria@example.com",
+  "rol": "administrador",
+  "nick": "maria_admin"
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9d"
+  },
+  "nombre": "Juan Pérez",
+  "email": "juan@example.com",
+  "rol": "estandar",
+  "nick": "juan_perez"
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9e"
+  },
+  "nombre": "Laura Martínez",
+  "email": "laura@example.com",
+  "rol": "vip",
+  "nick": "laura_vip",
+  "tarjeta_vip_id": {
+    "$oid": "66a12e9b1219e115c8e79ea0"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a70bd227bf34870d1cc561"
+  },
+  "nombre": "Karen pinto",
+  "email": "karen.espejo@example.com",
+  "rol": "estandar",
+  "nick": "karen_espejo"
+}]

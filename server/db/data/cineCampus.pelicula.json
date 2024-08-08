@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e89"
+  },
+  "titulo": "Dune: Part Two",
+  "genero": "Ciencia Ficción",
+  "duracion": 166,
+  "actores": [
+    "Timothée Chalamet",
+    "Zendaya",
+    "Rebecca Ferguson"
+  ],
+  "sinopsis": "Paul Atreides se une a los Fremen en un viaje de venganza contra los conspiradores que destruyeron a su familia."
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8a"
+  },
+  "titulo": "Furiosa: A Mad Max Saga",
+  "genero": "Acción",
+  "duracion": 150,
+  "actores": [
+    "Anya Taylor-Joy",
+    "Chris Hemsworth"
+  ],
+  "sinopsis": "Precuela de Mad Max: Fury Road, centrada en el personaje de Furiosa."
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8b"
+  },
+  "titulo": "Deadpool 3",
+  "genero": "Acción/Comedia",
+  "duracion": 140,
+  "actores": [
+    "Ryan Reynolds",
+    "Hugh Jackman"
+  ],
+  "sinopsis": "Tercera entrega de la saga Deadpool, ahora parte del Universo Cinematográfico de Marvel."
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8c"
+  },
+  "titulo": "Inside Out 2",
+  "genero": "Animación",
+  "duracion": 105,
+  "actores": [
+    "Amy Poehler",
+    "Phyllis Smith"
+  ],
+  "sinopsis": "Secuela de la película de Pixar que explora las emociones de una adolescente."
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8d"
+  },
+  "titulo": "Joker: Folie à Deux",
+  "genero": "Drama/Crimen",
+  "duracion": 150,
+  "actores": [
+    "Joaquin Phoenix",
+    "Lady Gaga"
+  ],
+  "sinopsis": "Secuela del aclamado film 'Joker', explorando la relación entre el Joker y Harley Quinn."
+}]

@@ -1,0 +1,44 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "proyeccion_id",
+        "usuario_id",
+        "asientos",
+        "precio_total"
+      ],
+      "properties": {
+        "proyeccion_id": {
+          "bsonType": "objectId"
+        },
+        "usuario_id": {
+          "bsonType": "objectId"
+        },
+        "asientos": {
+          "bsonType": "array",
+          "items": {
+            "bsonType": "object",
+            "required": [
+              "fila",
+              "numero"
+            ],
+            "properties": {
+              "fila": {
+                "bsonType": "string"
+              },
+              "numero": {
+                "bsonType": "int"
+              }
+            }
+          }
+        },
+        "precio_total": {
+          "bsonType": "int"
+        },
+        "descuento_aplicado": {
+          "bsonType": "int"
+        }
+      }
+    }
+  }
+  

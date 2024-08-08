@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79e9f"
+  },
+  "numero_tarjeta": "VIP123456",
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9b"
+  },
+  "estado": "activa",
+  "descuento": 10,
+  "fecha_expiracion": {
+    "$date": "2025-12-31T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea0"
+  },
+  "numero_tarjeta": "VIP789012",
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9e"
+  },
+  "estado": "activa",
+  "descuento": 15,
+  "fecha_expiracion": {
+    "$date": "2025-06-30T00:00:00.000Z"
+  }
+}]

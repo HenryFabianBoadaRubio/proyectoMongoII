@@ -1,0 +1,36 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "numero",
+        "fila",
+        "tipo",
+        "sala_id"
+      ],
+      "properties": {
+        "numero": {
+          "bsonType": "int"
+        },
+        "fila": {
+          "bsonType": "string"
+        },
+        "tipo": {
+          "enum": [
+            "regular",
+            "vip"
+          ]
+        },
+        "estado": {
+          "enum": [
+            "disponible",
+            "ocupado",
+            "reservado"
+          ]
+        },
+        "sala_id": {
+          "bsonType": "objectId"
+        }
+      }
+    }
+  }
+  

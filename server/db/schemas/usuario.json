@@ -1,0 +1,33 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "nombre",
+        "email",
+        "rol",
+        "nick"
+      ],
+      "properties": {
+        "nombre": {
+          "bsonType": "string"
+        },
+        "email": {
+          "bsonType": "string"
+        },
+        "rol": {
+          "enum": [
+            "estandar",
+            "vip",
+            "administrador"
+          ]
+        },
+        "nick": {
+          "bsonType": "string"
+        },
+        "tarjeta_vip_id": {
+          "bsonType": "objectId"
+        }
+      }
+    }
+  }
+  

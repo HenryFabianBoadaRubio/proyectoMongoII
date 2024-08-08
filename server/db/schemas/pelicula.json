@@ -1,0 +1,32 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "titulo",
+        "genero",
+        "duracion",
+        "actores"
+      ],
+      "properties": {
+        "titulo": {
+          "bsonType": "string"
+        },
+        "genero": {
+          "bsonType": "string"
+        },
+        "duracion": {
+          "bsonType": "int"
+        },
+        "actores": {
+          "bsonType": "array",
+          "items": {
+            "bsonType": "string"
+          }
+        },
+        "sinopsis": {
+          "bsonType": "string"
+        }
+      }
+    }
+  }
+  
