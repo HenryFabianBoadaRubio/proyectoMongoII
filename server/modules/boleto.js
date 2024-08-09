@@ -45,7 +45,21 @@ module.exports=class boleto extends connect {
      * @returns {Object} result.error.details - Los detalles adicionales del error.
      */
     async registerBuyTicket({pelicula_id,proyeccion_id,usuario_id,asientos,metodo_pago}) {
-        let res;
+        let res;    
+        //validar los parámetros
+        if(!pelicula_id || !proyeccion_id || !usuario_id || !asientos || !metodo_pago) {
+            return {
+                error: "Faltan parámetros requeridos",
+                missingParams: [
+                    !pelicula_id ? "pelicula_id" : null,
+                    !proyeccion_id ? "proyeccion_id" : null,
+                    !usuario_id ? "usuario_id" : null,
+                    !asientos ? "asientos" : null,
+                    !metodo_pago ? "metodo_pago" : null
+                ].filter(Boolean)
+            }
+        }
+
         try {
             //verificar la existencia de la pelicula
             let peliExist=await this.db.collection('pelicula').findOne({_id: new ObjectId(pelicula_id)})

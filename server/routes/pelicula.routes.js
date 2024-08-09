@@ -20,7 +20,7 @@ appPelicula.get("/todasPeliculas", async(req, res, next)=>{
 appPelicula.get("/unaPelicula/:id", async(req, res, next)=>{
     try {
         let obj = new pelicula();
-        const peliculas= await obj.getAllMovieInformation(req.params.id)
+        const peliculas= await obj.getAllMovieInformation({id:req.params.id})
         res.status(200).send(peliculas)
     } catch (error) {
         next(error);

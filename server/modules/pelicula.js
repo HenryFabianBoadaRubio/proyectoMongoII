@@ -94,7 +94,7 @@ module.exports= class pelicula extends connect {
      * de la operación de agregación.
      */
 
-    async getAllMovieInformation(id){
+    async getAllMovieInformation({id}){
         
             await this.conexion.connect();
 
