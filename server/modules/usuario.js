@@ -126,7 +126,7 @@ module.exports=class usuario extends connect {
      * @returns {Object.estado} - Estado de la tarjeta VIP del usuario (si existe).
      * @returns {Object.num_Tarjeta} - Número de tarjeta VIP del usuario (si existe).
      */
-    async getDetailsUser(_id){
+    async getDetailsUser({_id}){
         try {
             await this.conexion.connect();
 
@@ -140,35 +140,33 @@ module.exports=class usuario extends connect {
             }
             
             let res= await this.collection.aggregate([
-                    {
-                  $match: {
-                     _id: new ObjectId(_id) 
-                  }
-                },
                 {
-                  $lookup: {
-                    from: "tarjetaVIP",
-                    localField: "_id",
-                    foreignField: "usuario_id",
-                    as: "usuarios"
-                  }
-                  
-                },
-                {
-                  $unwind: "$usuarios"
-                },
-                {
-                  $project: {
-                    nombre:1,
-                    email:1,
-                    rol:1,
-                    nick:1,
-                    estado:"$usuarios.estado",
-                    num_Tarjeta:"$usuarios.numero_tarjeta"
-                    
-                  }
+                $match: {
+                   _id: new ObjectId(_id) 
                 }
-            ]).toArray();
+              },
+              {
+                $lookup: {
+                  from: "tarjetaVIP",
+                  localField: "_id",
+                  foreignField: "usuario_id",
+                  as: "usuarios"
+                }
+                
+              },
+              
+              {
+                $project: {
+                  nombre:1,
+                  email:1,
+                  rol:1,
+                  nick:1,
+                  estado: {$arrayElemAt: ["$usuarios.estado", 0]},
+                  num_Tarjeta: {$arrayElemAt: ["$usuarios.numero_tarjeta", 0]}
+                  
+                }
+              }
+          ]).toArray();
             return res;
               
             

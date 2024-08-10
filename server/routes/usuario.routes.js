@@ -15,4 +15,16 @@ appUsuario.post("/crearUsuario", async(req, res, next )=>{
     }
 })
 
+
+
+appUsuario.get("/detallesUsuario/:_id", async(req, res, next)=>{
+    try {
+        let obj = new Usuario();
+        const usuario= await obj.getDetailsUser({_id:req.params._id});
+        res.status(200).send(usuario)
+    } catch (error) {
+        next(error);
+    }
+})
+
 module.exports= appUsuario
