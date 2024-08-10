@@ -265,22 +265,16 @@ module.exports=class usuario extends connect {
      * @returns {Promise} - Una promesa que se resuelve a un array de usuarios o un objeto de error.
      * @throws {Error} - Si no se encuentran usuarios con el rol especificado o si no se encuentran usuarios en la colección.
      */
-    async getAllUsersMongo(rol){
+    async getAllUsersMongo(){
         try {
             let res;
             //obtener todos los usuarios de un rol especifico que se pase como parametro.
-            if(rol){
-                res = await this.db.collection('usuario').find({rol:rol}).toArray();
-                if (res.length === 0) {
-                    throw new Error(`No se encontraron usuarios con el rol: ${rol}`);
-                }
-    
-            }else{
+            
                 res = await this.db.collection('usuario').find().toArray();
                 if (res.length === 0) {
                     throw new Error('No se encontraron usuarios en la colección');
                 }
-            }
+            
             return res;
 
             
@@ -289,4 +283,5 @@ module.exports=class usuario extends connect {
             
         }
     }
+  
 }
