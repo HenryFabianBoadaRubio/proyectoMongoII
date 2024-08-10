@@ -313,9 +313,9 @@ module.exports=class boleto extends connect {
  * @returns {string} result.error.message - El mensaje de error.
  * @returns {Object} result.error.details - Los detalles adicionales del error.
  */
-    async cancelReservation(_id){
+    async cancelReservation({_id}){
         let res;
-        try {
+     
             // Verificar si el boleto existe
             let boletoExist = await this.db.collection('boleto').findOne({_id: new ObjectId(_id)});
             if (!boletoExist) {
@@ -345,13 +345,7 @@ module.exports=class boleto extends connect {
                     message: "No se pudo eliminar el boleto."
                 };
             }
-        } catch (error) {
-            return { 
-                error: "Error", 
-                message: error.message, 
-                details: error.errInfo 
-            };
-        }
+        
     }
     
 

@@ -38,6 +38,17 @@ appBoleto.post("/reservarAsientos", async(req, res, next)=>{
     }
 })
 
+ 
+appBoleto.put("/cancelarAsientos/:boleto_id", async(req, res, next)=>{
+    try {
+        let obj= new boleto();
+        const cancelacion= await obj.cancelReservation({_id:req.params.boleto_id})
+        res.status(200).send(cancelacion)
+    } catch (error) {
+        next(error);
+    }
+})
+
 
 
 module.exports= appBoleto
