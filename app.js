@@ -3,6 +3,7 @@ const pelicula = require("./server/modules/pelicula");;
 const app = express();
 const appPelicula= require("./server/routes/pelicula.routes");
 const appBoleto = require("./server/routes/boleto.routes");
+const appUsuario = require("./server/routes/usuario.routes");
 app.use(express.json());
 
 const config={
@@ -25,6 +26,9 @@ app.get("/boleto", async(req, res) => {
 })
 app.use("/boleto", appBoleto)
 
+
+//usuarios
+app.use("/usuario", appUsuario)
 
 
 

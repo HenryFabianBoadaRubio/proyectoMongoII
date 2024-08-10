@@ -41,7 +41,13 @@ module.exports=class usuario extends connect {
      * @returns {Object.details} - Detalles adicionales del error (en caso de error).
      */
     async registerUser({nombre,email,rol,nick}){
-        try {
+       
+            if(rol != "estandar" && rol !="vip" && rol != "administrador"){
+                const error = new Error("rol no valido")
+                error.status = 400
+                throw error
+            }
+
             
             //verificar la existencia de usuario por nickname
             let userExist=await this.db.collection('usuario').findOne({nick:nick})
@@ -79,20 +85,28 @@ module.exports=class usuario extends connect {
                 nick:nick
             }
             const guardaUsuario = await this.db.collection('usuario').insertOne(usuario);
-            await this.db.command({
-                createUser: nick,
-                pwd: guardaUsuario.insertedId.toString(),
-                roles: [{role: rol, db: 'cineCampus'}]
+            
+            if (rol == "administrador") {
+                await this.db.command({
+                    createUser: nick,
+                    pwd: guardaUsuario.insertedId.toString(),
+                    roles: [{role: "dbOwner", db: 'cineCampus'}]
+    
+                })
+            } else {
+                await this.db.command({
+                    createUser: nick,
+                    pwd: guardaUsuario.insertedId.toString(),
+                    roles: [{role: rol, db: 'cineCampus'}]
+    
+                })
+            }
 
-            })
             return {
                 message: "Usuario registrado correctamente.",
                 user_id: guardaUsuario.insertedId
             };
-        } catch (error) {
-            return { error: "Error", message: error.message,details: error.errInfo};
-            
-        }
+        
     }
 
         /**

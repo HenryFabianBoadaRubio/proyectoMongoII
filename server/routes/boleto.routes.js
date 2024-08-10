@@ -1,5 +1,5 @@
 const express = require("express");
-const boleto= require("../modules/boleto");;
+const boleto= require("../modules/boleto");
 const appBoleto = express.Router();
 
 
