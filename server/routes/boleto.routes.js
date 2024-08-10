@@ -16,12 +16,23 @@ appBoleto.post("/nuevoBoleto", async(req, res,next)=>{
     }
 })
 
-
+//66a12e9b1219e115c8e79e99 parametro para verificar.
 appBoleto.get("/asientosDisponible/:proyeccion_id", async(req, res, next)=>{
     try {
         let obj= new boleto();
         const asientos= await obj.getAvailableSeats({proyeccion_id: req.params.proyeccion_id})
         res.status(200).send(asientos)
+    } catch (error) {
+        next(error);
+    }
+})
+
+
+appBoleto.post("/reservarAsientos", async(req, res, next)=>{
+    try {
+        let obj= new boleto();
+        const reserva= await obj.reserveSeats(req.body)
+        res.status(200).send(reserva)
     } catch (error) {
         next(error);
     }
