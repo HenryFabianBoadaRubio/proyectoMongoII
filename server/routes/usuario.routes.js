@@ -27,4 +27,17 @@ appUsuario.get("/detallesUsuario/:_id", async(req, res, next)=>{
     }
 })
 
+
+
+appUsuario.put("/actualizarUsuario", async(req, res, next)=>{
+    try {
+        let obj = new Usuario();
+        const {_id,rol}= req.body
+        const usuario = await obj.updateUser({_id: _id,rol:rol});
+        res.status(200).send(usuario)
+    } catch (error) {
+        next(error);
+    }
+})
+
 module.exports= appUsuario
