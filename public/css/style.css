@@ -11,24 +11,36 @@ body{
 
 }
 .header__perfil{
-    border: 1px solid red;
+    /* border: 1px solid rgb(157, 255, 0); */
     display: flex;
     height: 10vh;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 .header__perfil__foto{
     display: flex;
-    border: 1px solid red;
-    height: 4rem;
-    object-fit: contain;
+    /* border: 1px solid red; */
+    width: 3.5rem;
+    height: 3.5rem;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 5rem;
 }
+
+.header__perfil__foto img{
+    display: flex;
+   width: 4.5rem;
+    height: 6.5rem;
+   
+}
+
 .header__texto__bienvenida{
     display: flex;
     flex-direction: column;
     height: 4rem;
     justify-content: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     
 }
 
@@ -36,12 +48,12 @@ body{
     display: flex;
     font-size: 2rem;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
 .header__buscador{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     height: 3rem;
     align-items: center;
@@ -76,7 +88,7 @@ body{
 .main__carrusel {
     margin-top: 0.7rem;
     display: flex;
-    height: 17rem;
+    height: 20rem;
     width: 100%;
     flex-direction: row;
     overflow-x: scroll;
@@ -85,13 +97,13 @@ body{
     gap: 0.5rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; 
-    border: 1px solid red;
+    /* border: 1px solid rgb(68, 0, 255); */
 }
 
 .carrusel__img{
     
 
-    height: 16rem; 
+    height: 19rem; 
     flex: 0 0 calc(65% - 0.25rem); /* 50% del ancho menos la mitad del gap */
     scroll-snap-align: start;
    
@@ -121,3 +133,48 @@ body{
 .indicator.active {
     background-color: red;
 }
+
+
+/*MENU INFERIOR*/
+.menu {
+    background-color: #000000;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #888;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    text-align: center;
+  }
+  
+  .menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .menu .active a {
+    color: white;
+  }
+  
+  
