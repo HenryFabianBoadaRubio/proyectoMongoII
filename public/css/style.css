@@ -1,0 +1,123 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #121212;
+    color: white;
+
+}
+.header__perfil{
+    border: 1px solid red;
+    display: flex;
+    height: 10vh;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.header__perfil__foto{
+    display: flex;
+    border: 1px solid red;
+    height: 4rem;
+    object-fit: contain;
+}
+.header__texto__bienvenida{
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: center;
+    border: 1px solid red;
+    
+}
+
+.header__icono__notificacion{
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    border: 1px solid red;
+
+}
+
+.header__buscador{
+    border: 1px solid red;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+.header__buscador {
+    width: 300px; 
+    position: relative;
+    margin: 0 auto; 
+}
+
+.header__buscador input {
+    width: 100%;
+    padding: 10px 15px; 
+    font-size: 16px;
+    border: 1px solid #888; 
+    border-radius: 20px; 
+    outline: none;
+    background-color: #1d1d1d; 
+    color: #ccc; 
+}
+
+.header__buscador input::placeholder {
+    color: #aaa;
+}
+
+.estrenos{
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+/*carrusel*/
+.main__carrusel {
+    margin-top: 0.7rem;
+    display: flex;
+    height: 17rem;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: scroll;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; 
+    border: 1px solid red;
+}
+
+.carrusel__img{
+    
+
+    height: 16rem; 
+    flex: 0 0 calc(65% - 0.25rem); /* 50% del ancho menos la mitad del gap */
+    scroll-snap-align: start;
+   
+    
+}
+.carrusel__img img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain
+}
+
+.carrusel-indicators {
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.indicator {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0 0.2rem;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: red;
+}
