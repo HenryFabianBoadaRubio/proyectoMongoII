@@ -244,3 +244,63 @@ html, body {
     padding: 0;
     height: 100%; /* Asegura que el contenido ocupe toda la altura */
 }
+
+
+/*=========================================================================================*/
+/*DETALLES DE PELICULA VISTA 2*/
+.detallas__pelicula{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+}
+.detallas__pelicula__iconos{
+    display: flex;
+    width: 10%;
+    /* border: 1px solid red; */
+    font-size: 2rem;
+
+}
+.detallas__pelicula__iconos a{
+    color: white;
+}
+
+.informacion__pelicula{
+    display: flex;
+    width: 100%;
+    height: 45vh;
+
+    border: 1px solid red;
+
+}
+
+.carrusel__proyecciones{
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    border: 1px solid red;
+    margin-top: 2rem;
+}
+
+
+.boton__reservacion{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+    border: 1px solid red;
+
+}
+.boton__reservacion button{
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    border-radius: 0.6rem;
+    border-style: none;
+}
+/* .boton__reservacion h2{
+    font-weight: normal;
+} */
