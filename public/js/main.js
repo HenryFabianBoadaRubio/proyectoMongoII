@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         .then(peliculas => {
             console.log('Películas obtenidas:', peliculas); 
             displayMovies(peliculas);
+            displayMoviesComing(peliculas);
         })
         .catch(error => {
             console.error('Error al obtener las películas:', error);
@@ -32,7 +33,7 @@ function displayMovies(peliculas) {
         const movieName = pelicula.titulo;
         const movieGenres = pelicula.genero;
         movieItem.innerHTML =`
-            <img src="${imageUrl}" alt="${movieName}" class="movie-image">
+            <img src="${imageUrl}" alt="${movieName}" class="pelicula__imagen">
             <h3>${movieName}</h3>
             <p>${movieGenres}</p>
         `;
@@ -40,6 +41,31 @@ function displayMovies(peliculas) {
     });
 }
 
+
+function displayMoviesComing(peliculas) {
+    const container = document.getElementById('peliculas_contenedor__coming');
+   
+    container.innerHTML = ''; 
+    peliculas.forEach(pelicula => {
+        
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+        const imageUrl = pelicula.caratula;
+        const movieName = pelicula.titulo;
+        const movieGenres = pelicula.genero;
+        movieItem.innerHTML = `
+        <div class="movie_container">
+            <img src="${imageUrl}" alt="${movieName}" class="movie_image_coming">
+            <div class="movie_texts">
+                <h3>${movieName}</h3>
+                <p>${movieGenres}</p>
+            </div>
+        </div>
+         `;
+
+        container.appendChild(movieItem);
+    });
+}
 
 
 

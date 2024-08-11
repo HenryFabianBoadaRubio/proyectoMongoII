@@ -6,7 +6,8 @@
 }
 
 body{
-    background-color: #121212;
+    background-color: #000000;
+    /* background-color: #121212; */
     color: white;
 
 }
@@ -32,6 +33,7 @@ body{
     display: flex;
    width: 4.5rem;
     height: 6.5rem;
+    border: 1px solid rgb(180, 218, 43);
    
 }
 
@@ -54,16 +56,15 @@ body{
 
 .header__buscador{
     /* border: 1px solid red; */
+    width: 300px; 
     display: flex;
     height: 3rem;
     align-items: center;
     justify-content: center;
-}
-.header__buscador {
-    width: 300px; 
     position: relative;
     margin: 0 auto; 
 }
+
 
 .header__buscador input {
     width: 100%;
@@ -135,14 +136,59 @@ body{
     background-color: red;
 }
 
-.movie-image{
+.pelicula__imagen{
     display: flex;
-
-    /* width: 100%; */
     height: 22rem;
-    /* object-fit: contain; */
     border-radius: 0.5rem;
+   margin-bottom: 0.5rem;
+    /* width: 100%; */
+    /* object-fit: contain; */
     
+}
+/*CARRUSEL COMING*/
+.carrusel__coming{
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    height: 15rem;
+    /* align-items: center; */
+    padding: 0 0.8rem;
+    gap: 1rem;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; 
+    /* border: 1px solid rgb(68, 0, 255); */
+    flex-direction: column;
+    
+    /* object-fit: contain; */
+}
+/* .movie_image_coming{
+    display: flex;
+    width: 100%;
+    height: 10rem;
+    box-sizing: border-box;
+    flex-direction: row;
+} */
+.movie_container {
+    display: flex;
+    width: 100%;
+    height: 10rem;
+    background-color: #121212;
+    border-radius: 1rem;
+    /* border: 1px solid rgb(0, 255, 64); */
+    align-items: center; 
+}
+
+.movie_image_coming {
+    width: 26%;
+    border-radius: 1rem;
+    margin-right: 1rem; 
+    /* height: auto; */
+}
+
+.movie_texts {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -156,6 +202,7 @@ body{
     right: 0;
     border-radius: 1rem 1rem 0 0;
     border: 1px solid #888;
+    z-index: 1000; /* Añadido z-index */
   }
   
   .menu ul {
@@ -188,4 +235,12 @@ body{
     color: white;
   }
   
-  
+  main {
+    padding-bottom: 10rem; /* Ajusta según la altura de tu menú */
+}
+html, body {
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el contenido ocupe toda la altura */
+}
