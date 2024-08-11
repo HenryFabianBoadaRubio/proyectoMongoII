@@ -1,6 +1,8 @@
 const express = require("express");
-const pelicula = require("./server/modules/pelicula");;
+const cors= require("cors");
 const app = express();
+app.use(cors());
+const pelicula = require("./server/modules/pelicula");
 const appPelicula= require("./server/routes/pelicula.routes");
 const appBoleto = require("./server/routes/boleto.routes");
 const appUsuario = require("./server/routes/usuario.routes");

@@ -71,6 +71,7 @@ module.exports= class pelicula extends connect {
                     titulo:{$first:"$titulo"},
                     genero:{$first:"$genero"},
                     duracion:{$first:"$duracion"},
+                    caratula: { $first: "$caratula" }, 
                     proyecciones:{$push:"$proyecciones"},
                     
                   }
