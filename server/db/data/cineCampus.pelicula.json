@@ -10,7 +10,9 @@
     "Zendaya",
     "Rebecca Ferguson"
   ],
-  "sinopsis": "Paul Atreides se une a los Fremen en un viaje de venganza contra los conspiradores que destruyeron a su familia."
+  "sinopsis": "Paul Atreides se une a los Fremen en un viaje de venganza contra los conspiradores que destruyeron a su familia.",
+  "caratula": "https://i.postimg.cc/6qyJvTVP/Dune-Part-Two.jpg",
+  "caratula2": "https://cdn.theplaylist.net/wp-content/uploads/2023/05/03103744/Dune-part-Two--750x400.jpg"
 },
 {
   "_id": {
@@ -23,7 +25,9 @@
     "Anya Taylor-Joy",
     "Chris Hemsworth"
   ],
-  "sinopsis": "Precuela de Mad Max: Fury Road, centrada en el personaje de Furiosa."
+  "sinopsis": "Precuela de Mad Max: Fury Road, centrada en el personaje de Furiosa.",
+  "caratula": "https://i.postimg.cc/2yMpFm2S/Furiosa-A-Mad-Max-Saga.jpg",
+  "caratula2": "https://i.blogs.es/6e85de/furiosaportada/1200_800.jpeg"
 },
 {
   "_id": {
@@ -36,7 +40,9 @@
     "Ryan Reynolds",
     "Hugh Jackman"
   ],
-  "sinopsis": "Tercera entrega de la saga Deadpool, ahora parte del Universo Cinematográfico de Marvel."
+  "sinopsis": "Tercera entrega de la saga Deadpool, ahora parte del Universo Cinematográfico de Marvel.",
+  "caratula": "https://i.postimg.cc/xCsV8LmH/Deadpool-3.png",
+  "caratula2": "https://img.asmedia.epimg.net/resizer/v2/FBKI24HMARG3FMUSATKEXGQAH4.jpg?auth=b881306a2013f8d522d1d453e2e5ce4cfe2d8f03d6f1b7f0872a6b793070fb5a&width=644&height=362&smart=true"
 },
 {
   "_id": {
@@ -49,7 +55,9 @@
     "Amy Poehler",
     "Phyllis Smith"
   ],
-  "sinopsis": "Secuela de la película de Pixar que explora las emociones de una adolescente."
+  "sinopsis": "Secuela de la película de Pixar que explora las emociones de una adolescente.",
+  "caratula": "https://i.postimg.cc/zBD1qxy8/Inside-Out-2.jpg",
+  "caratula2": "https://www.bizcochito.es/Films/Gallery01/tt22022452.webp"
 },
 {
   "_id": {
@@ -62,5 +70,37 @@
     "Joaquin Phoenix",
     "Lady Gaga"
   ],
-  "sinopsis": "Secuela del aclamado film 'Joker', explorando la relación entre el Joker y Harley Quinn."
+  "sinopsis": "Secuela del aclamado film 'Joker', explorando la relación entre el Joker y Harley Quinn.",
+  "caratula": "https://i.postimg.cc/5tMRWJgD/joker-folie-a-deux.jpg",
+  "caratula2": "https://sm.ign.com/t/ign_latam/photo/default/joker11-1712712385006_9dy6.1280.jpg"
+},
+{
+  "_id": {
+    "$oid": "64e12f9a1219e115c8e79e8d"
+  },
+  "titulo": "Avatar: The Way of Water",
+  "genero": "Ciencia Ficción",
+  "duracion": 192,
+  "actores": [
+    "Sam Worthington",
+    "Zoe Saldana"
+  ],
+  "sinopsis": "Secuela de la exitosa película Avatar, que explora nuevas áreas del mundo de Pandora.",
+  "caratula": "https://i.postimg.cc/wxPFdHTF/avatar.jpg",
+  "caratula2": "https://phantom-marca-us.unidadeditorial.es/a5feda1459031728172d32ecb969dc1a/resize/660/f/webp/assets/multimedia/imagenes/2022/10/28/16669809325193.jpg"
+},
+{
+  "_id": {
+    "$oid": "64e12f9a1219e115c8e79e8e"
+  },
+  "titulo": "Guardians of the Galaxy",
+  "genero": "Acción",
+  "duracion": 150,
+  "actores": [
+    "Chris Pratt",
+    "Zoe Saldana"
+  ],
+  "sinopsis": "Los Guardianes se enfrentan a una amenaza intergaláctica mientras exploran su pasado.",
+  "caratula": "https://i.postimg.cc/tJ15VvDh/guardinaes.jpg",
+  "caratula2": "https://mayorparaleercomics.wordpress.com/wp-content/uploads/2014/08/guardians_poster_via_marvel.jpg"
 }]
