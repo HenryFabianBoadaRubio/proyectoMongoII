@@ -118,11 +118,14 @@ module.exports= class pelicula extends connect {
                     },
                     {
                       $project: {
+                        _id:1,
                         titulo:1,
                         genero:1,
                         duracion:1,
                         actores:1,
-                        sinopsis:1
+                        sinopsis:1,
+                        caratula:1,
+                        caratula2:1
                       }
                     }
                   ]

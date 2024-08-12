@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             console.log('Películas obtenidas:', peliculas); 
             displayMovies(peliculas);
             displayMoviesComing(peliculas);
+          
         })
         .catch(error => {
             console.error('Error al obtener las películas:', error);
@@ -29,6 +30,7 @@ function displayMovies(peliculas) {
         
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
+        movieItem.dataset.id= pelicula._id;
         const imageUrl = pelicula.caratula;
         const movieName = pelicula.titulo;
         const movieGenres = pelicula.genero;
@@ -37,6 +39,9 @@ function displayMovies(peliculas) {
             <h3>${movieName}</h3>
             <p>${movieGenres}</p>
         `;
+        movieItem.addEventListener('click', () => {
+            window.location.href = `./views/pelicula.html?peliculaId=${pelicula._id}`;
+        });
         container.appendChild(movieItem);
     });
 }
@@ -50,6 +55,7 @@ function displayMoviesComing(peliculas) {
         
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
+        movieItem.dataset.id= pelicula._id;
         const imageUrl = pelicula.caratula;
         const movieName = pelicula.titulo;
         const movieGenres = pelicula.genero;
@@ -62,7 +68,9 @@ function displayMoviesComing(peliculas) {
             </div>
         </div>
          `;
-
+         movieItem.addEventListener('click', () => {
+            window.location.href =`./views/pelicula.html?peliculaId=${pelicula._id}`;
+        });
         container.appendChild(movieItem);
     });
 }

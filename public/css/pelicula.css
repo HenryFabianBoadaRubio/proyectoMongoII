@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    /* background-color: #121212; */
+    color: white;
+
+}/*=========================================================================================*/
+/*DETALLES DE PELICULA VISTA 2*/
+.detalles__pelicula{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid rgb(0, 38, 255); */
+}
+.detalles__pelicula__iconos{
+    display: flex;
+    width: 10%;
+    /* border: 1px solid red; */
+    font-size: 2rem;
+
+}
+.detalles__pelicula__iconos a{
+    color: white;
+}
+
+/* .informacion__pelicula{
+    display: flex;
+    width: 100%;
+    /* height: 60vh; 
+
+    
+    } */
+    .movie_container__detalle{
+      display: flex;
+      width: 100%;
+      padding: 0 0.7rem;
+      height: 15rem;
+      align-items: center;
+      flex-direction: column; 
+      border: 1px solid rgb(200, 255, 0);
+ }
+ .movie_container__detalle img{
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+ }
+ .movie_texts__detalle{
+  display: flex;
+  width: 90%;
+  
+  flex-direction: column;
+  gap: 0.5rem;
+  /* border: 1px solid rgb(0, 89, 255); */
+
+ }
+ .movie_texts__detalle p {
+  font-size: 1rem;
+  color:rgba(255, 255, 255, 0.712);
+}
+ .movie_texts__detalle strong {
+  font-weight: bold; 
+  color: white;
+  font-size: 1.1rem;
+  /* Asegura que el texto en <strong> esté en negrita */
+}
+.movie_texts__detalle h2{
+  display: flex;
+  justify-content: center;
+}
+.carrusel__proyecciones{
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    border: 1px solid rgb(0, 255, 34);
+    margin-top: 10rem;
+}
+
+
+.boton__reservacion{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+    /* border: 1px solid red; */
+
+}
+.boton__reservacion button{
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    border-radius: 0.6rem;
+    border-style: none;
+}
+/* .boton__reservacion h2{
+    font-weight: normal;
+} */
+
+/* .informacion__pelicula{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10rem;
+} */
+.detallado__pelicula{
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  height: 10rem;
+  object-fit: contain;
+}
+
+
+/*MENU INFERIOR*/
+.menu {
+    background-color: #000000;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid #888;
+    z-index: 1000; /* Añadido z-index */
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    text-align: center;
+  }
+  
+  .menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .menu .active a {
+    color: white;
+  }
+  
+  main {
+    padding-bottom: 10rem; /* Ajusta según la altura de tu menú */
+}
+html, body {
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el contenido ocupe toda la altura */
+}
