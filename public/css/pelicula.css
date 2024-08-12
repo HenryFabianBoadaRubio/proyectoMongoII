@@ -45,7 +45,7 @@ body{
       height: 15rem;
       align-items: center;
       flex-direction: column; 
-      border: 1px solid rgb(200, 255, 0);
+      /* border: 1px solid rgb(200, 255, 0); */
  }
  .movie_container__detalle img{
    width: 100%;
@@ -99,6 +99,12 @@ body{
     padding: 10px 20px;
     border-radius: 0.6rem;
     border-style: none;
+}
+
+.boton__reservacion button:hover{
+  scale: 1.1;
+  color: red;
+  background-color: white;
 }
 /* .boton__reservacion h2{
     font-weight: normal;

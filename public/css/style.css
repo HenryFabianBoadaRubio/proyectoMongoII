@@ -90,7 +90,7 @@ body{
     margin-top: 0.7rem;
     display: flex;
     height: 25.5rem;
-    width: 100%;
+    width: 98%;
     overflow-x: scroll;
     align-items: center;
     padding: 0.5rem;
@@ -100,6 +100,7 @@ body{
     /* border: 1px solid rgb(68, 0, 255); */
     flex-direction: row;
     object-fit: contain;
+    margin-left: 0.1rem;
 }
 
 /* .carrusel__img{
@@ -147,7 +148,7 @@ body{
 }
 /*CARRUSEL COMING*/
 .carrusel__coming{
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     width: 100%;
     overflow-y: scroll;
@@ -183,6 +184,7 @@ body{
     width: 26%;
     border-radius: 1rem;
     margin-right: 1rem; 
+    margin-left: 0.7rem;
     /* height: auto; */
 }
 
@@ -225,7 +227,12 @@ body{
     flex-direction: column;
     align-items: center;
   }
-  
+  .menu a:hover{
+    scale: 1.1;
+    color: red;
+    cursor: pointer;
+
+  }
   .menu i {
     font-size: 24px;
     margin-bottom: 5px;
