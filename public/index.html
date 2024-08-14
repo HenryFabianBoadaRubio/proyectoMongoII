@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -39,18 +41,17 @@
             </div>
 
         </div>
-        <!-- <div class="contenedor__principal"> -->
-
-            <section id="peliculas_contenedor" class="main__carrusel"></section>
-                <div class="carrusel__indicators">
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-
-                </div>
-        <!-- </div> -->
+        
+            <div class="swiper-container">
+                <div id="peliculas_contenedor" class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="movie-info-center">
+                <h3 class="movie-title"></h3>
+                <p class="movie-genre"></p>
+            </div>
+            
+       
         <div class="estrenos">
             <div class="estrenos__text">
                 <h3>Coming soon</h3>
@@ -72,6 +73,6 @@
           <li><a href="#"><i class="bi bi-person-lines-fill"></i>Profile</a></li>
         </ul>
       </nav>
-    
+     
 </body>
 </html>

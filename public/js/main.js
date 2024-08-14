@@ -18,21 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+/*FIN PARTE FUNCIONAL*/
+/*FIN PARTE FUNCIONAL*/
+/*FIN PARTE FUNCIONAL*/
+
 function displayMovies(peliculas) {
     const container = document.getElementById('peliculas_contenedor');
 
     container.innerHTML = '';
     peliculas.forEach((pelicula, index) => {
         const movieItem = document.createElement('div');
-        movieItem.classList.add('movie-item');
+        movieItem.classList.add('swiper-slide');
         movieItem.dataset.id = pelicula._id;
         movieItem.innerHTML = `
             <div class="contenedor__pelicula__imagen">
                 <img src="${pelicula.caratula}" alt="${pelicula.titulo}" class="pelicula__imagen">
-             </div>
-            <div class="nombre__genero__principal">
-                <h3 class="pelicula__titulo">${pelicula.titulo}</h3>
-                <p class="pelicula__generos">${pelicula.genero}</p>
             </div>
         `;
 
@@ -43,8 +43,38 @@ function displayMovies(peliculas) {
         container.appendChild(movieItem);
     });
 
-    
+    initSwiper(peliculas);
 }
+
+function initSwiper(peliculas) {
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 2    ,
+        centeredSlides: true,
+        spaceBetween: 60,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        on: {
+            slideChange: function () {
+                updateCenterInfo(peliculas[this.activeIndex]);
+            },
+        },
+    });
+
+    updateCenterInfo(peliculas[0]);
+}
+
+function updateCenterInfo(pelicula) {
+    const titleElement = document.querySelector('.movie-info-center .movie-title');
+    const genreElement = document.querySelector('.movie-info-center .movie-genre');
+    
+    titleElement.textContent = pelicula.titulo;
+    genreElement.textContent = pelicula.genero;
+}
+/*FIN PARTE FUNCIONAL*/
+/*FIN PARTE FUNCIONAL*/
+/*FIN PARTE FUNCIONAL*/
 
 function displayMoviesComing(peliculas) {
     const container = document.getElementById('peliculas_contenedor__coming');

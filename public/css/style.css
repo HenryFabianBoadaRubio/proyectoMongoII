@@ -165,85 +165,136 @@ body{
 
 
 /*REVISAR*/
-.carrusel__indicators{
+
+.movie-item{
     display: flex;
-  
-    color: #ffffff;
-    justify-content: center;
-    margin-top: -60px;
-    margin-bottom: 10px;
-    margin-right: 3px;
-    border: 1px solid rgb(0, 255, 255);
+    flex-direction: column;
     
 
-}
-.indicator{
-    border: 1px solid rgb(51, 255, 0);
+    }
 
-    width: 9px;
-    height: 9px;
-    background-color: white;
-    border-radius: 50%;
-    margin:  0 2px;
-    margin-top: 12px; 
-    transition: background-color 0.3s ease, trasnform 0.3s ease;
-}
-.indicator.active{
-    margin-top: 14.3px;
-    width: 19px;
-    height: 5px;
-    border-radius: 30%;
-    background-color: red;
-    transform: scale(1.1);
-} 
-
-    .movie-item{
-        display: flex;
-        flex-direction: column;
-        /* width: 100%; */
-        /* height: 22rem; */
-        /* border: 1px solid rgb(229, 255, 0); */
-        /* margin-left: 10rem; */
-
-        }
-.pelicula__imagen{
-    display: flex;
-    width: 15rem;
-    height: 20rem;
-    border-radius: 0.5rem;
-   margin-bottom: 0.5rem;
-  
-   /* scroll-snap-align: start; */
-   /* border: 1px solid rgb(0, 255, 0); */
-    /* width: 100%; */
-    /* object-fit: contain; */
-    
-}
 .nombre__genero__principal{
     display: flex;
     width:100%;
     /* margin-top: 20rem; */
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(0, 204, 255);
+    /* border: 1px solid rgb(0, 204, 255); */
 }
 
-/* .main__carrusel .movie-item:first-child{
-    margin-left: 100px;
-}
-.main__carrusel .movie-item:last-child{
-    margin-right:100px;
+/*PARTE FUNCIONAL*/
+/*PARTE FUNCIONAL*/
+/*PARTE FUNCIONAL*/
 
-} */
-/* .contenedor__principal{
-    /* border: 2px solid green; 
-} */
+/*PARTE FUNCIONAL*/
+
+.swiper-container {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    
+    /* border: 1px solid rgb(0, 81, 255); */
+    position: relative;
+  }
+  .swiper-pagination{
+    /* display: flex; */
+    color: white;
+   /* border: 1px solid red; */
+    /* margin-bottom: 16.8rem; */
+   border: 1px solid rgb(0, 255, 21);
+   height: 1rem;
+   /* margin-top: 20rem; */
+   
+
+ }
+
+  .swiper-slide {
+    display: flex;
+    width: 15rem;
+    /* justify-content: center; */
+    /* align-items: center; */
+    transition: all 0.3s ease;
+    /* border: 1px solid rgb(30, 255, 0); */
+    
+
+  }
+  
+  .swiper-slide-active {
+    
+    transform: scale(1.2);
+    z-index: 1;
+    color: white;
+   
+    /* border: 1px solid rgb(225, 0, 255); */
+
+  }
+  
+  .movie-info-center {
+   
+    
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+    line-height: 1.7rem;
+    border: 1px solid rgb(251, 255, 0);
+
+  }
+  
+  .pelicula__imagen {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+     /* border: 1px solid red;  */
+  }
+  
+  .nombre__genero__principal {
+    display: none;
+
+  }
+  .contenedor__pelicula__imagen {
+    margin-top: 0.8rem;
+    margin-left: -1.15rem;
+    width: 14rem;  
+    height: 18.5rem;  
+   /* border: 1px solid red; */
+  } 
+ 
+
+
+
+.swiper-container .swiper-pagination-bullet  {
+    width: 7px;
+    height: 7px;
+    background-color: white; 
+    opacity: 1;
+    margin: 0 2px !important;
+    
+   
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+    width: 10px;
+    height: 10px;
+    background-color:red; /* Color rojo para el punto activo */
+   
+}
+
+
+.swiper-container .swiper-pagination-bullet-active {
+    width: 25px;
+    height: 7px;
+    border-radius: 10px;
+    
+}
+/*FIN PARTE FUNCIONAL*/
 
 
 
 /*CARRUSEL COMING*/
 .carrusel__coming{
-    margin-top: 1rem;
+    margin-top: 6rem;
     display: flex;
     width: 100%;
     overflow-y: scroll;
@@ -253,7 +304,7 @@ body{
     gap: 1rem;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; 
-    /* border: 1px solid rgb(68, 0, 255); */
+    border: 1px solid rgb(68, 0, 255);
     flex-direction: column;
     
     /* object-fit: contain; */
