@@ -117,7 +117,7 @@ body{
     font-size: 1.35rem;
     color:rgba(255, 255, 255, 0.555);
 }
-
+.estrenos2,
 .estrenos{
     display: flex;
     width: 100%;
@@ -128,20 +128,25 @@ body{
     align-items: center;
     justify-content: space-around;
 }
+.estrenos__text2,
 .estrenos__text{
     display: flex;
     margin-right: 1.1rem;
     /* border: 1px solid rgb(200, 255, 0); */
 }
+.estrenos__texto2,
 .estrenos__texto{
     display: flex;
     margin-left: 4rem;
     color: red;
     margin-top:0.4em ;
-    /* border: 1px solid rgb(200, 255, 0); */
     
 }
+.estrenos2{
+    margin-top: 2rem;
+    /* border: 1px solid rgb(200, 255, 0); */
 
+}
 /*carrusel*/
 
 .main__carrusel {
@@ -166,12 +171,7 @@ body{
 
 /*REVISAR*/
 
-.movie-item{
-    display: flex;
-    flex-direction: column;
-    
 
-    }
 
 .nombre__genero__principal{
     display: flex;
@@ -201,8 +201,9 @@ body{
     color: white;
    /* border: 1px solid red; */
     /* margin-bottom: 16.8rem; */
-   border: 1px solid rgb(0, 255, 21);
+   /* border: 1px solid rgb(0, 255, 21); */
    height: 1rem;
+   margin-bottom: -5rem;
    /* margin-top: 20rem; */
    
 
@@ -237,7 +238,7 @@ body{
     text-align: center;
     
     line-height: 1.7rem;
-    border: 1px solid rgb(251, 255, 0);
+    /* border: 1px solid rgb(251, 255, 0); */
 
   }
   
@@ -293,8 +294,10 @@ body{
 
 
 /*CARRUSEL COMING*/
+
+
 .carrusel__coming{
-    margin-top: 6rem;
+    margin-top: 0.4rem;
     display: flex;
     width: 100%;
     overflow-y: scroll;
@@ -304,11 +307,22 @@ body{
     gap: 1rem;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; 
-    border: 1px solid rgb(68, 0, 255);
+    /* border: 1px solid rgb(68, 0, 255); */
     flex-direction: column;
+    align-items: center;
     
     /* object-fit: contain; */
 }
+.movie-item{
+    display: flex;
+    width: 90%;
+    /* height: 5rem; */
+    flex-direction: column;
+    gap: 2rem;
+    /* border: 1px solid rgb(255, 0, 234); */
+    
+
+    }
 /* .movie_image_coming{
     display: flex;
     width: 100%;
@@ -318,25 +332,35 @@ body{
 } */
 .movie_container {
     display: flex;
-    width: 100%;
-    height: 10rem;
+    /* width: 90%; */
+    height: 6.5rem;
     background-color: #121212;
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     /* border: 1px solid rgb(0, 255, 64); */
+    background-color: #272727;
     align-items: center; 
 }
 
 .movie_image_coming {
-    width: 26%;
+    width: 25%;
+    height: 5.2rem;
     border-radius: 1rem;
     margin-right: 1rem; 
     margin-left: 0.7rem;
+    /* border: 2px solid yellow; */
+    object-fit: cover;
+    
     /* height: auto; */
 }
 
 .movie_texts {
     display: flex;
     flex-direction: column;
+    font-size: 0.9rem;
+    margin-left: 0.1rem;
+    /* border: 2px solid yellow; */
+    margin-bottom: 1.5rem;
+
 }
 
 
