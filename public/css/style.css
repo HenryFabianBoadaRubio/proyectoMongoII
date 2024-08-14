@@ -161,14 +161,11 @@ body{
     /* scroll-behavior: smooth;  */
     /* scroll-snap-type: x mandatory; */
 
-    margin-left: 2rem;
-   margin-right: 2rem;
-
 }
 
 
 /*REVISAR*/
-/* .carrusel__indicators{
+.carrusel__indicators{
     display: flex;
   
     color: #ffffff;
@@ -188,7 +185,7 @@ body{
     background-color: white;
     border-radius: 50%;
     margin:  0 2px;
-    /* margin-top: 12px; 
+    margin-top: 12px; 
     transition: background-color 0.3s ease, trasnform 0.3s ease;
 }
 .indicator.active{
@@ -198,7 +195,7 @@ body{
     border-radius: 30%;
     background-color: red;
     transform: scale(1.1);
-} */
+} 
 
     .movie-item{
         display: flex;
@@ -340,12 +337,12 @@ body{
     color: white;
   }
   
-  /* main {
-    padding-bottom: 10rem; /* Ajusta según la altura de tu menú 
+  main {
+    padding-bottom: 10rem;  
 }
 html, body {
-    overflow-x: hidden; /* Evita el desplazamiento horizontal 
+    overflow-x: hidden;   
     margin: 0;
     padding: 0;
-    height: 100%; /* Asegura que el contenido ocupe toda la altura 
-} */
+    height: 100%;  
+}

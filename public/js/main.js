@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch movies data from the API
     fetch('http://localhost:5001/pelicula/todasPeliculas')
         .then(response => {
             if (!response.ok) {
@@ -23,16 +22,6 @@ function displayMovies(peliculas) {
     const container = document.getElementById('peliculas_contenedor');
 
     container.innerHTML = '';
-
-    // if (peliculas.length === 0) {
-    //     container.style.display = 'none';
-    //     return;
-    // }
-
-    // container.style.display = 'flex';
-    
-    // Create indicators
-    // indicatorsContainer.innerHTML = '';
     peliculas.forEach((pelicula, index) => {
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
@@ -52,15 +41,6 @@ function displayMovies(peliculas) {
         });
 
         container.appendChild(movieItem);
-
-        // const dot = document.createElement('span');
-        // dot.classList.add('indicator');
-        // if (index === 0) dot.classList.add('active');
-        // dot.addEventListener('click', () => {
-        //     container.scrollLeft = container.offsetWidth * index;
-        //     updateActiveIndicator(index);
-        // });
-    
     });
 
     
