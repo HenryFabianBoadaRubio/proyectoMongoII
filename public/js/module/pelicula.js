@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('NO se encontraron proyecciones',peliculaId)
                 }
             displayMovieDetail(data);
-            displayProjectionMovie(projectionMovie);
         })
         .catch(error => console.error('Error al cargar proyecciones de la película:', error));
     })

@@ -45,14 +45,16 @@ body{
       height: 35rem;
       align-items: center;
       flex-direction: column; 
-      border: 1px solid rgb(174, 0, 255);
-    border: 1px solid rgb(4, 0, 255);
+      /* border: 1px solid rgb(174, 0, 255); */
+    /* border: 1px solid rgb(4, 0, 255); */
       position: relative;
       /* overflow: hidden; */
+   /* border: 1px solid rgb(200, 255, 0); */
+      
  }
  .movie_container__detalle img{
    width: 93%;
-   height: 15rem;
+   height: 14rem;
    object-fit: cover;
    border-radius: 1rem;
    /* border: 1px solid rgb(200, 255, 0); */
@@ -129,21 +131,62 @@ body{
   position: absolute;
   left: 0.4rem;
 }
-.container__actores{
-  margin-top: 20rem;
-  width: 10rem;
-  height: 1rem;
-  border: 1px solid rgb(0, 255, 13);
-  overflow: hidden;
-}
+
 .titulo__cast{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: absolute;
   left: 1.7rem;
   margin-top: 21rem;
+  font-size: 0.8rem;
 }
+.actor__detalle{
+  display: flex;
+  flex-direction: row;
+  /* width: 15rem; */
+  width: 50%;
+  padding: 0 0.5rem;
+  align-items: center;
+  left: 1rem;
+  /* border: 1px solid rgb(111, 0, 155); */
+  /* position: absolute; */
+  /* margin-left:1rem; */
+  /* overflow-x: auto; */
 
+}
+.container__actores{
+  display: flex;
+  margin-top: 23rem;
+  width: 90%;
+  height: 3.2rem;
+  /* border: 1px solid rgb(208, 255, 0); */
+  position: absolute;
+  overflow-x: scroll;
+  scrollbar-width: none;
 
+}
+.container__actores img{
+  display: flex;
+  
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 25rem;
+  object-fit:contain;
+
+  border: 1px solid  #888
+}
+.actor__texto{
+    width: 6rem;
+    margin-left: 0.4rem;
+    font-size: 0.69rem;
+    /* border: 1px solid yellow; */
+
+}
+.actor__texto :nth-child(2){
+  font-size: 0.6rem;
+  color: #888;
+  /* border: 1px solid rgb(0, 255, 85); */
+  
+}
 .boton__reservacion{
     display: flex;
     width: 100%;
