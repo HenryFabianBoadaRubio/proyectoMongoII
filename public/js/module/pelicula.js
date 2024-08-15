@@ -32,68 +32,98 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
 });
+/*FUNCIONA*/ 
+// function displayMovieDetail(peliculas) {
+//     const container = document.getElementById('informacion__pelicula');
+//     const pelicula = peliculas[0];
+//     container.innerHTML = `
+//     <div class="movie_container__detalle">
+//     <img src="${pelicula.caratula2}" alt="${pelicula.titulo}" class="detallado__pelicula">
+//         <div class="movie_texts__detalle">
+//             <h2>${pelicula.titulo}</h2>
+//             <p>${pelicula.sinopsis}</p>
+//             <p>${pelicula.genero}</p>
+         
+//             <p><strong>Actores:</strong> ${pelicula.actores}</p>
+            
+//         </div>    
+//      </div>   
+//     `;
+// }
+/*FUNCIONA*/ 
+
 
 function displayMovieDetail(peliculas) {
     const container = document.getElementById('informacion__pelicula');
     const pelicula = peliculas[0];
+
+    // Crear un string HTML para los actores
+    const actoresHTML = pelicula.actores.map(actor => `
+        <div class="actor__detalle">
+            <img src="${actor.foto}" alt="${actor.nombre}" class="actor__foto">
+            <div class="actor__texto">
+                <p>${actor.nombre}</p>
+                <p> ${actor.personaje}</p>
+            </div>
+        </div>
+    `).join('');
+
     container.innerHTML = `
     <div class="movie_container__detalle">
-    <img src="${pelicula.caratula2}" alt="${pelicula.titulo}" class="detallado__pelicula">
+
+
+        <img src="${pelicula.caratula2}" alt="${pelicula.titulo}" class="detallado__pelicula">
         <div class="movie_texts__detalle">
             <h2>${pelicula.titulo}</h2>
-            <p><strong>Sinopsis:</strong> ${pelicula.sinopsis}</p>
-            <p><strong>Género:</strong> ${pelicula.genero}</p>
-            <p><strong>Duración:</strong> ${pelicula.duracion} minutos</p>
-            <p><strong>Actores:</strong> ${pelicula.actores}</p>
-            
+            <p>${pelicula.genero}</p>
+            <h3>${pelicula.sinopsis}</h3>
+            <button>
+                <i class='bx bxs-right-arrow'></i>
+                <h2>Watch Trailer</h2>
+            </button>
         </div>    
-     </div>   
+        <div class="titulo__cast">
+            <h2>Cast</h2>
+        </div> 
+        <div class="container__actores"> 
+            ${actoresHTML}
+        </div>
+    </div>   
     `;
 }
+
+
+
+
+
+
+
+
+
+
+
 // function displayProjectionMovie(peliculas) {
 //     console.log('Objeto pelicula en displayProjectionMovie:', peliculas);
 //     const containers = document.getElementById('carrusel__proyecciones');
-//     console.log('Pelicula:', peliculas);
-//     console.log('Proyecciones:', peliculas.proyecciones);
-
-
+    
 //     if (peliculas && peliculas.proyecciones) {
 //         console.log('Proyecciones:', peliculas.proyecciones);
-
-//     const proyecciones = Array.isArray(peliculas.proyecciones) ? peliculas.proyecciones : [];
-//     const proyeccionesHtml = peliculas.proyecciones.map(proyeccion => {
-//         /
-//         return `<li>Fecha: ${proyeccion.fecha}, Sala: ${proyeccion.sala_id.nombre}</li>`;
-//     }).join('');
-
-//     containers.innerHTML = `
-//     <div class="movie_container__detalle">
-//         <ul>${proyeccionesHtml}</ul>
-//     </div>
-//     `;
-// }}
-function displayProjectionMovie(peliculas) {
-    console.log('Objeto pelicula en displayProjectionMovie:', peliculas);
-    const containers = document.getElementById('carrusel__proyecciones');
-    
-    if (peliculas && peliculas.proyecciones) {
-        console.log('Proyecciones:', peliculas.proyecciones);
         
         
-        const proyeccionesHtml = peliculas.proyecciones.map((proyeccion, index) => {
-            return `<li class="proyeccion-item -${index}">
-                        <span class="proyeccion__fecha">Fecha: ${proyeccion.fecha}</span>,
-                        <span class="proyeccion__precio">Precio: ${proyeccion.precio}</span>,
-                        <span class="proyeccion__formato">Formato: ${proyeccion.formato}</span>
-                    </li>`;
-        }).join('');
+//         const proyeccionesHtml = peliculas.proyecciones.map((proyeccion, index) => {
+//             return `<li class="proyeccion-item -${index}">
+//                         <span class="proyeccion__fecha">Fecha: ${proyeccion.fecha}</span>,
+//                         <span class="proyeccion__precio">Precio: ${proyeccion.precio}</span>,
+//                         <span class="proyeccion__formato">Formato: ${proyeccion.formato}</span>
+//                     </li>`;
+//         }).join('');
 
-        containers.innerHTML = `
-        <div class="movie__container__proyecciones">
-            <ul>${proyeccionesHtml}</ul>
-        </div>
-        `;
-    } else {
-        containers.innerHTML = '<p>No hay proyecciones disponibles</p>';
-    }
-}
+//         containers.innerHTML = `
+//         <div class="movie__container__proyecciones">
+//             <ul>${proyeccionesHtml}</ul>
+//         </div>
+//         `;
+//     } else {
+//         containers.innerHTML = '<p>No hay proyecciones disponibles</p>';
+//     }
+// }

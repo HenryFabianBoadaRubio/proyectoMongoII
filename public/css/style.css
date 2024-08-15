@@ -363,7 +363,11 @@ body{
 
 }
 
+.movie_texts p{
+    font-size: 0.8rem;
 
+    /* color: red; */
+}
 /*MENU INFERIOR*/
 .menu {
     background-color: #000000;
@@ -373,7 +377,8 @@ body{
     left: 0;
     right: 0;
     border-radius: 1rem 1rem 0 0;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
+    border-top:1px solid  #888;
     z-index: 1000; /* Añadido z-index */
   }
   
