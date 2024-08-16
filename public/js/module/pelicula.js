@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('No movieId provided in the URL');
         return; 
     }
-    fetch(`http://localhost:5001/pelicula/unaPelicula/${peliculaId}`)
+    fetch(`/pelicula/unaPelicula/${peliculaId}`)
         .then(response => response.json())
         .then(data => { 
             console.log('Detalle de la pelicula', data);
-            fetch(`http://localhost:5001/pelicula/todasPeliculas`)
+            fetch(`/pelicula/todasPeliculas`)
             .then(response => response.json())
             .then(allData=>{
                 // const projectionMovie = allData.find(movies => movies._id.equals(new ObjectId(peliculaId)));

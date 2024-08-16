@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:5001/pelicula/todasPeliculas')
+    fetch('/pelicula/todasPeliculas')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la red');
@@ -37,7 +37,7 @@ function displayMovies(peliculas) {
         `;
 
         movieItem.addEventListener('click', () => {
-            window.location.href = `./views/pelicula.html?peliculaId=${pelicula._id}`;
+            window.location.href = `/views/pelicula.html?peliculaId=${pelicula._id}`;
         });
 
         container.appendChild(movieItem);
@@ -98,7 +98,7 @@ function displayMoviesComing(peliculas) {
         </div>
          `;
          movieItem.addEventListener('click', () => {
-            window.location.href =`./views/pelicula.html?peliculaId=${pelicula._id}`;
+            window.location.href =`/views/pelicula.html?peliculaId=${pelicula._id}`;
         });
         container.appendChild(movieItem);
     });
