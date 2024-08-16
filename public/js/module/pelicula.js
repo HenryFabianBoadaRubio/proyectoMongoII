@@ -29,27 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error=> console.error('Error al cargar detalles', error))
     
-
 });
-/*FUNCIONA*/ 
-// function displayMovieDetail(peliculas) {
-//     const container = document.getElementById('informacion__pelicula');
-//     const pelicula = peliculas[0];
-//     container.innerHTML = `
-//     <div class="movie_container__detalle">
-//     <img src="${pelicula.caratula2}" alt="${pelicula.titulo}" class="detallado__pelicula">
-//         <div class="movie_texts__detalle">
-//             <h2>${pelicula.titulo}</h2>
-//             <p>${pelicula.sinopsis}</p>
-//             <p>${pelicula.genero}</p>
-         
-//             <p><strong>Actores:</strong> ${pelicula.actores}</p>
-            
-//         </div>    
-//      </div>   
-//     `;
-// }
-/*FUNCIONA*/ 
 
 
 function displayMovieDetail(peliculas) {

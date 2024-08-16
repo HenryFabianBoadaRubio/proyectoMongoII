@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let allMovies = [];
+
     fetch('/pelicula/todasPeliculas')
         .then(response => {
             if (!response.ok) {
@@ -8,12 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(peliculas => {
             console.log('Películas obtenidas:', peliculas);
-            displayMovies(peliculas);
-            displayMoviesComing(peliculas);
+            allMovies = peliculas;
+            displayMovies(allMovies);
+            displayMoviesComing(allMovies);
         })
         .catch(error => {
             console.error('Error al obtener las películas:', error);
             document.getElementById('peliculas_contenedor').innerHTML = '<p>No se pudieron cargar las películas.</p>';
+        });
+        document.getElementById('search-input').addEventListener('input', () => {
+            performSearch(allMovies);
         });
 
 });
@@ -22,11 +28,31 @@ document.addEventListener('DOMContentLoaded', () => {
 /*FIN PARTE FUNCIONAL*/
 /*FIN PARTE FUNCIONAL*/
 
+function performSearch(allMovies) {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const peliculas_contenedor = document.getElementById('peliculas_contenedor');
+    const peliculas_contenedor_coming = document.getElementById('peliculas_contenedor__coming');
+
+    const filteredMovies = allMovies.filter(pelicula => pelicula.titulo.toLowerCase().includes(query));
+
+    displayMovies(filteredMovies);
+    displayMoviesComing(filteredMovies);
+    
+    if (filteredMovies.length > 0) {
+        // Reajustar el índice activo del Swiper al primer resultado
+        document.querySelector('.swiper-container').swiper.slideTo(0);
+        updateCenterInfo(filteredMovies[0]);
+    } else {
+        // Si no hay resultados, limpiar la información
+        updateCenterInfo({ titulo: '', genero: '' });
+    }
+}
+
 function displayMovies(peliculas) {
     const container = document.getElementById('peliculas_contenedor');
 
     container.innerHTML = '';
-    peliculas.forEach((pelicula, index) => {
+    peliculas.forEach(pelicula => {
         const movieItem = document.createElement('div');
         movieItem.classList.add('swiper-slide');
         movieItem.dataset.id = pelicula._id;
@@ -42,12 +68,15 @@ function displayMovies(peliculas) {
 
         container.appendChild(movieItem);
     });
-
-    initSwiper(peliculas);
+    if (document.querySelector('.swiper-container').swiper) {
+        document.querySelector('.swiper-container').swiper.update();
+    } else {
+        initSwiper(peliculas);
+    }
 }
 
 function initSwiper(peliculas) {
-    const swiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
         slidesPerView: 2    ,
         centeredSlides: true,
         spaceBetween: 100,
