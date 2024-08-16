@@ -42,7 +42,7 @@ body{
       display: flex;
       width: 100%;
       /* padding: 0 0.7rem; */
-      height: 35rem;
+      height: 27.5rem;
       align-items: center;
       flex-direction: column; 
       /* border: 1px solid rgb(174, 0, 255); */
@@ -136,7 +136,7 @@ body{
   /* border: 1px solid red; */
   position: absolute;
   left: 1.7rem;
-  margin-top: 21rem;
+  margin-top: 23.8rem;
   font-size: 0.8rem;
 }
 .actor__detalle{
@@ -155,7 +155,7 @@ body{
 }
 .container__actores{
   display: flex;
-  margin-top: 23rem;
+  margin-top: 26rem;
   width: 90%;
   height: 3.2rem;
   /* border: 1px solid rgb(208, 255, 0); */
@@ -171,8 +171,8 @@ body{
   height: 2.7rem;
   border-radius: 25rem;
   object-fit:contain;
-
-  border: 1px solid  #888
+  background-color: #888;
+  /* border: 1px solid  #888 */
 }
 .actor__texto{
     width: 6rem;
@@ -191,14 +191,14 @@ body{
     display: flex;
     width: 100%;
     justify-content: space-around;
-    margin-top: 3.5rem;
+    margin-top:4.5rem;
     /* border: 1px solid red; */
 
 }
 .boton__reservacion button{
     background-color: red;
     color: white;
-    width: 35%;
+    width: 86%;
     font-size: 0.8rem;
     padding: 10px 20px;
     border-radius: 0.6rem;
@@ -211,11 +211,69 @@ body{
   color: red;
   background-color: white;
 }
+/*CONTENER CINEMA INFERIOR*/
+.container__cinema{
+  display: flex;
+  width: 100%;
+  height: 8rem;
+  margin-top: 3rem;
+  flex-direction: column;
+  /* border: 1px solid rgb(0, 26, 255); */
+}
+.container__cinema h3{
+  display: flex;
+  font-size: 1.1rem;
+  margin-left: 1.7rem;
+}
+.container__cinema h4{
+  margin-left: 1rem;
+}
+.container__cinema p{
+  display: flex;
+   margin-left: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.774);
+}
+.cinema__santander{
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.7rem;
+  width: 86%;
+  height: 4rem;
+  margin-left: 1.7rem;
+  border-radius: 0.7rem;
+  align-items: center;
+  /* border: 1px solid yellow; */
+  background-color: #272727;
 
+}
+.cinema__santander:hover{
+  border: 2px solid red;
+}
+.cinema__texto{
+  display: flex;
+  width: 14rem;
+  height: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-left: 1.7rem; */
+    
+  /* border: 1px solid blue; */
+}
 
-
+.cinema__imagen{
+  display: flex;
+  object-fit: contain;
+  /* border: 1px solid red; */
+  width: 3rem;
+  height: 3rem;
+  margin-left: 3rem;
+}
+.cinema__imagen img{
+  border-radius: 10px;
+}
 /*MENU INFERIOR*/
-.menu {
+/*.menu {
     background-color: #000000;
     padding: 10px 0;
     position: fixed;
@@ -224,7 +282,7 @@ body{
     right: 0;
     border-radius: 1rem 1rem 0 0;
     border: 1px solid #888;
-    z-index: 1000; /* Añadido z-index */
+    z-index: 1000; /* Añadido z-index 
   }
   
   .menu ul {
@@ -255,11 +313,9 @@ body{
   
   .menu .active a {
     color: white;
-  }
+  } */
   
-  main {
-    padding-bottom: 10rem; /* Ajusta según la altura de tu menú */
-}
+
 html, body {
     overflow-x: hidden; /* Evita el desplazamiento horizontal */
     margin: 0;
