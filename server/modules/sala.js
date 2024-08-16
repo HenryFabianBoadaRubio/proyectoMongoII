@@ -22,7 +22,7 @@ export class sala extends connect {
     async getAllTest() {
         await this.conexion.connect();
         const res = await this.collection.find({}).toArray(); 
-        await this.conexion.close();
+        
         return res;
     }
 }
