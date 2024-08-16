@@ -50,7 +50,7 @@ function initSwiper(peliculas) {
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 2    ,
         centeredSlides: true,
-        spaceBetween: 60,
+        spaceBetween: 100,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

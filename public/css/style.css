@@ -126,6 +126,8 @@ body{
     /* margin-left: 1rem; */
     /* border: 1px solid red; */
     align-items: center;
+
+    /* gap: 10rem; */
     justify-content: space-around;
 }
 .estrenos__text2,
@@ -191,9 +193,9 @@ body{
 .swiper-container {
     display: flex;
     width: 100%;
-    height: 20rem;
-    
-    /* border: 1px solid rgb(0, 81, 255); */
+    height: 23.3rem;
+    margin-top: 1rem;
+    /* border: 1px solid rgb(200, 255, 0); */
     position: relative;
   }
   .swiper-pagination{
@@ -243,8 +245,9 @@ body{
   }
   
   .pelicula__imagen {
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: 21rem;
+    /* height: 100%; */
     object-fit: cover;
     border-radius: 1rem;
      /* border: 1px solid red;  */
@@ -256,7 +259,7 @@ body{
   }
   .contenedor__pelicula__imagen {
     margin-top: 0.8rem;
-    margin-left: -1.15rem;
+    margin-left: -2.38rem;
     width: 14rem;  
     height: 18.5rem;  
    /* border: 1px solid red; */
@@ -297,11 +300,11 @@ body{
 
 
 .carrusel__coming{
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
     display: flex;
     width: 100%;
     overflow-y: scroll;
-    height: 15rem;
+    height: 12rem;
     /* align-items: center; */
     padding: 0 0.8rem;
     gap: 1rem;
@@ -418,7 +421,7 @@ body{
   }
   
   main {
-    padding-bottom: 10rem;  
+    padding-bottom: 7rem;  
 }
 html, body {
     overflow-x: hidden;   
