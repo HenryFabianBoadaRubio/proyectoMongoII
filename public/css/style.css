@@ -81,27 +81,30 @@ body{
 }
 
 .header__buscador{
-    /* border: 1px solid rgb(187, 255, 0); */
     width: 85%; 
     display: flex;
-    height: 3rem;
+    height: 3.1rem;
     align-items: center;
     justify-content: center;
     position: relative;
     margin: 0 auto; 
+    border-radius: 0.5rem; 
+    
+    /* border: 1px solid #d4cece;  */
+    /* border: 1px solid rgb(187, 255, 0); */
 } 
 
 
 .header__buscador input {
     width: 100%;
-    height: 3rem;
+    height: 2.9rem;
     padding: 10px 2.8rem; 
     font-size: 14px;
-    border: 1px solid #d4cece; 
     border-radius: 0.5rem; 
     outline: none;
     background-color: #1d1d1d; 
     color: #ccc; 
+    border-style: none;
 
     /* border: 1px solid red; */
     
@@ -117,6 +120,18 @@ body{
     font-size: 1.35rem;
     color:rgba(255, 255, 255, 0.555);
 }
+
+/*ACTIVACION BUSCADOR INFERIOR*/
+
+.focused-container {
+    border: 2px solid #f50000 ;
+    transition: background-color 0.3s ease;
+    
+}
+.focused-lupita {
+    color: red;
+}
+
 .estrenos2,
 .estrenos{
     display: flex;
@@ -336,7 +351,7 @@ body{
 .movie_container {
     display: flex;
     /* width: 90%; */
-    height: 6.5rem;
+    height: 6.1rem;
     background-color: #121212;
     border-radius: 1.2rem;
     /* border: 1px solid rgb(0, 255, 64); */

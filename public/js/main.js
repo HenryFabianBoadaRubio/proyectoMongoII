@@ -1,5 +1,28 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
     let allMovies = [];
+    
+    document.getElementById('search-icon').addEventListener('click', (e) => {
+        e.preventDefault(); 
+    
+        const searchInput = document.getElementById('search-input');
+        const container = document.querySelector('.header__buscador');
+    
+    
+        container.classList.add('focused-container');
+        searchInput.focus();
+
+    
+        setTimeout(() => {
+            container.classList.remove('focused-container');
+        }, 3000); 
+    });
+    
+    
+
 
     fetch('/pelicula/todasPeliculas')
         .then(response => {
@@ -33,7 +56,10 @@ function performSearch(allMovies) {
     const peliculas_contenedor = document.getElementById('peliculas_contenedor');
     const peliculas_contenedor_coming = document.getElementById('peliculas_contenedor__coming');
 
-    const filteredMovies = allMovies.filter(pelicula => pelicula.titulo.toLowerCase().includes(query));
+    const filteredMovies = allMovies.filter(pelicula => 
+        pelicula.titulo.toLowerCase().includes(query) ||
+        pelicula.genero.toLowerCase().includes(query)
+    );
 
     displayMovies(filteredMovies);
     displayMoviesComing(filteredMovies);
