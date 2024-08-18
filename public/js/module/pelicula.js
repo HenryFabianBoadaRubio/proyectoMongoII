@@ -73,7 +73,18 @@ function displayMovieDetail(peliculas) {
 
 
 
+//boton compra
+ const miCine =  document.getElementById("miCine");
+ const miBoton = document.getElementById("miBoton");
 
+ miCine.addEventListener('click', function(){
+    miBoton.style.display='block';
+
+    setTimeout(function(){
+        miBoton.style.display='none';
+
+    },5000);
+ })
 
 
 
