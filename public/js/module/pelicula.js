@@ -93,8 +93,10 @@ function mostrarTrailer(trailerUrl) {
  })
 
 
-
-
+//salto de pagina
+ document.getElementById('miBoton').addEventListener('click', function() {
+    window.location.href = '/views/asiento.html'; 
+});
 
 
 

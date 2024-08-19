@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cineCampus</title>
+    <link rel="stylesheet" href="../css/asiento.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a onclick="history.go(-2)"><i class='bx bx-left-arrow-alt'></i></a>
+        <h2 class="cinema-selection">Choose Seat</h2>
+        <i class='bx bx-dots-vertical-rounded'></i>
+    </header>
+    <main>
+        <div class="image-text">
+            <img src="../storage/linea.png" alt="" class="imagen-ovalada">
+            <p>Screen This Way</p>
+        </div>
+    </main>
+    <section class="asientos">
+        <article class="asientos__normal">
+            <div fila="1">
+                <small>A</small>
+                <div class="asientos__lista">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+
+                </div>
+            </div>
+            <div fila="2">
+                <small>B</small>
+                <div class="asientos__lista">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+
+                </div>
+            </div>
+        </article>
+        <article class="asientos__preferenciales">
+            <div colum="3">
+                <small>C</small>
+                <div>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+
+                </div>
+            </div>
+            <div colum="4">
+                <small>D</small>
+                <div>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+            </div>
+            <div colum="5">
+                <small>E</small>
+                <div>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+
+                </div>
+            </div>
+            <div colum="6">
+                <small>F</small>
+                <div>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="status">
+            <i class='bx bxs-circle'></i>
+            <p>Available</p>
+            <i class='bx bxs-circle'></i>
+            <p>Reserved</p>
+            <i class='bx bxs-circle'></i>
+            <p>Selected</p>
+    </section>
+    <section class="schedule">
+        <div class="days">
+            <div class="day" onclick="selectDay(this)">
+                <p>Fri</p>
+                <h2>17</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Sat</p>
+                <h2>18</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Sun</p>
+                <h2>19</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Mon</p>
+                <h2>20</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Tue</p>
+                <h2>21</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Wed</p>
+                <h2>22</h2>
+            </div>
+            <div class="day" onclick="selectDay(this)">
+                <p>Thu</p>
+                <h2>23</h2>
+            </div>
+        </div>
+        <div class="hour-price">
+            <div class="hour" onclick="selectHour(this)">
+                <h2>13:00</h2>
+                <p>$ 5.25 ·3D</p>
+            </div>
+            <div class="hour" onclick="selectHour(this)">
+                <h2>15:45</h2>
+                <p>$ 5.99 ·3D</p>
+            </div>
+            <div class="hour" onclick="selectHour(this)">
+                <h2>18:50</h2>
+                <p>$ 4.50 ·3D</p>
+            </div>
+            <div class="hour" onclick="selectHour(this)">
+                <h2>20:30</h2>
+                <p>$ 6.50 ·3D</p>
+            </div>
+        </div>        
+    </section>    
+    <div class="container__footer">
+        <div class="precio">
+            <h3>Price</h3>
+            <h2>$0</h2>
+        </div>
+        
+            <button class="book-now">Buy ticket</button>
+    
+        
+    </div>
+
+       
+       
+
+<script src="../js/module/asiento.js"></script>
+</body>
+</html>
