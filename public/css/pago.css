@@ -29,3 +29,59 @@ body{
 .detalles__pelicula__iconos a{
     color: white;
 }
+
+
+.contenedor__info{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border: 1px solid red;
+}
+
+.contenedor__img{
+    display: flex;
+    height: 11rem;
+    margin-left: 1rem;
+    border: 1px solid rgb(4, 0, 221);
+
+    object-fit: contain;
+}
+.info__General{
+    display: flex;
+    width: 55%;
+    border: 1px solid red;
+    margin-left: 1rem;
+    flex-direction: column;
+
+}
+.info__General p{
+    color: rgba(255, 255, 255, 0.719);
+}
+.general__superior{
+    display:flex;
+    width: 90%;
+    height: 5rem;
+    line-height: 1.5rem;
+
+    flex-direction: column;
+
+    border: 1px solid yellow;
+}
+.general__inferior{
+    display: flex;
+    width: 90%;
+    height: 5rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    border: 1px solid yellow;
+    flex-direction: column;
+
+}
+.contenedor__pago{
+    border: 1px solid red;
+}
+.pago_datos{
+    display: flex;
+    
+    border: 1px solid yellow;
+}
