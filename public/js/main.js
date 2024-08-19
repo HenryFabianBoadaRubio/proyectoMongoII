@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(peliculas => {
-            console.log('Películas obtenidas:', peliculas);
             allMovies = peliculas;
             displayMovies(allMovies);
             displayMoviesComing(allMovies);

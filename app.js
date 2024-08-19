@@ -10,6 +10,7 @@ const appBoleto = require("./server/routes/boleto.routes");
 const appUsuario = require("./server/routes/usuario.routes");
 app.use(express.json());
 
+app.use(express.static(__dirname));// // Sirve archivos estáticos desde la raíz del proyecto esto lo puse para el error del favicon nada mas.
 
 
 // const config={

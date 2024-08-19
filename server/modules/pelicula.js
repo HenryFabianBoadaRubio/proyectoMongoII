@@ -125,7 +125,8 @@ module.exports= class pelicula extends connect {
                         actores:1,
                         sinopsis:1,
                         caratula:1,
-                        caratula2:1
+                        caratula2:1,
+                        trailer:1
                       }
                     }
                   ]
