@@ -3,6 +3,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "init": "^0.1.2",
+    "jsbarcode": "^3.11.6",
     "mongodb": "^6.8.0"
   },
   "name": "proyectomongo2",
