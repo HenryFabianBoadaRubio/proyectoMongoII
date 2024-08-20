@@ -33,9 +33,12 @@ body{
 
 .contenedor__info{
     display: flex;
+    width: 100%;
+    height: 13.5rem;
     justify-content: center;
     /* align-items: center; */
     border: 1px solid red;
+    background-color: rgba(23,23,23,255);
 }
 
 .contenedor__img{
@@ -78,10 +81,157 @@ body{
 
 }
 .contenedor__pago{
+    display: flex;
+    width: 100%;
+    height: 12rem;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.541);
     border: 1px solid red;
 }
-.pago_datos{
+.pago__datos__1,
+.pago__datos{
     display: flex;
+    width: 85%;
+    height: 2.9rem;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid yellow; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.719);
+}
+
+.pago__datos h3{
     
-    border: 1px solid yellow;
+    font-weight:600;
+}
+.pago__datos p{
+    
+    font-weight:600;
+}
+.pago__datos__1{
+    display: flex;
+    justify-content: left;
+    gap: 0.3rem;
+    height: 2.9rem;
+    border-bottom:none ;
+}
+.pago__datos__1 p{
+    font-weight:600;
+
+    color: white;
+}
+.pago__datos__1 h4{
+    font-size: 0.9rem;
+    font-weight:600;
+
+}
+
+.container__tarjeta{
+    display: flex;
+    width: 100%;
+    height: 12rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    border: 1px solid rgb(0, 161, 22);
+}
+
+.tarjeta__datos{
+    display: flex;
+    width: 85%;
+    height: 5rem;
+    margin-top: 0.5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #272727;
+}
+
+.estado__pago{
+    display: flex;
+    width: 85%;
+    height: 2.6rem;
+    justify-content: space-between;
+    border: 1px solid blue;
+    background-color: #381818;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 1rem;
+}
+.estado__pago h5{
+    font-weight: lighter;
+    margin-left: 1.2rem;
+
+}
+.estado__pago p{
+    color: red;
+    margin-right: 1.2rem;
+}
+
+.nombre__metodo{
+    display: flex;
+    width: 85%;
+    height: 2rem;
+    
+    border: 1px solid blue;
+
+}
+.nombre__metodo h3{
+    font-weight: 500;
+}
+.tarjeta__mastercard{
+    display: flex;
+    width: 20%;
+    height: 5rem;
+    object-fit: contain;
+    margin-left: 1.2rem;
+
+}
+.mastercard__credenciales{
+    display: flex;
+    width: 60%;
+    height: 4rem;
+    flex-direction: column;
+    margin-top: 0.3rem;
+    margin-left: 2rem;
+    border: 1px solid rgb(168, 214, 0);
+    line-height: 1.5rem;
+
+}
+.mastercard__credenciales h5{
+    font-size: 1rem;
+}
+.mastercard__credenciales p{
+    font-size:0.8rem;
+}
+.icono__mastercard{
+    display: flex;
+    width: 15%;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(168, 214, 0);
+
+}
+.icono__mastercard i{
+    font-size: 2.2rem;
+    color: red;
+}
+
+.boton__reservacion{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top:3.5rem;
+    /* border: 1px solid red; */
+
+}
+.boton__reservacion button{
+    background-color: red;
+    color: white;
+    width: 86%;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    border-radius: 0.6rem;
+    border-style: none;
+    /* border: 1px solid yellow; */
 }
