@@ -74,6 +74,14 @@ html, body{
     /* margin: 2px; */
     /* margin-bottom: 4px; */
 }
+.container__footer a{
+    display: flex;
+    width: 13rem;
+    height: 3.8rem;
+    text-decoration: none;
+    /* border: 1px solid yellow; */
+  
+}
 .book-now {
     background-color: red;
     color: #fff;

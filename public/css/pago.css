@@ -17,6 +17,8 @@ body{
     height: 10vh;
     align-items: center;
     justify-content: space-around;
+    background-color: rgba(23,23,23,255);
+
     /* border: 1px solid rgb(0, 38, 255); */
 }
 .detalles__pelicula__iconos{
@@ -203,7 +205,7 @@ body{
 .mastercard__credenciales p{
     font-size:0.8rem;
 }
-.icono__mastercard{
+/* .icono__mastercard{
     display: flex;
     width: 15%;
     height: 5rem;
@@ -215,6 +217,48 @@ body{
 .icono__mastercard i{
     font-size: 2.2rem;
     color: red;
+} */
+.radio-button {
+    /* position: absolute; */
+    /* right: 20px; */
+    cursor: pointer;
+    display: flex;
+    /* width: 20%;
+    height: 5rem; */
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.radio-button input {
+    /* position: absolute; */
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.radio-button .checkmark {
+    position: relative;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    border: 1.8px solid red; 
+    display: inline-block;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+
+.radio-button input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 0.6629rem;
+    top: 0.662rem;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: red; 
+    border-radius: 50%;
 }
 
 .boton__reservacion{
