@@ -15,7 +15,7 @@
         <header>
             <section class="detalles__pelicula">
                 <div class="detalles__pelicula__iconos">
-                    <a href="../views/pelicula.html"><i class="bi bi-skip-start"></i></a>
+                    <a onclick="history.go(-2)"><i class="bi bi-skip-start"></i></a>
                 </div>
                 <div >
                     <h1>Cinema Selection</h1>
@@ -87,8 +87,9 @@
                 </div>
             </section>
             <div class="boton__reservacion">
-                    
-                <button><h2>Buy ticket</h2></button>
+                    <a href="../views/ticket.html">
+                        <button><h2>Buy ticket</h2></button>
+                    </a>
             </div>
         </main>
     </body>
