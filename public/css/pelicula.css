@@ -247,9 +247,12 @@ body{
   background-color: #272727;
 
 }
-.cinema__santander:hover{
+#miCine:hover{
   border: 2px solid red;
+
 }
+
+
 .cinema__texto{
   display: flex;
   width: 14rem;

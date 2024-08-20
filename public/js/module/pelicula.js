@@ -84,11 +84,11 @@ function mostrarTrailer(trailerUrl) {
  const miBoton = document.getElementById("miBoton");
 
  miCine.addEventListener('click', function(){
-    miBoton.style.display='block';
-
-    setTimeout(function(){
-        miBoton.style.display='none';
-
+     miBoton.style.display='block';
+     miCine.style.border = '';
+     setTimeout(function(){
+         miBoton.style.display='none';
+         miCine.style.border = 'none';
     },5000);
  })
 
