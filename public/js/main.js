@@ -52,25 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function performSearch(allMovies) {
     const query = document.getElementById('search-input').value.toLowerCase();
-    const peliculas_contenedor = document.getElementById('peliculas_contenedor');
-    const peliculas_contenedor_coming = document.getElementById('peliculas_contenedor__coming');
+    const mainContent = document.querySelector('.contenedor__global');
+    const noResultsMessage = document.querySelector('.no-results-message');
+    
 
     const filteredMovies = allMovies.filter(pelicula => 
         pelicula.titulo.toLowerCase().includes(query) ||
         pelicula.genero.toLowerCase().includes(query)
     );
 
-    displayMovies(filteredMovies);
-    displayMoviesComing(filteredMovies);
-    
-    if (filteredMovies.length > 0) {
-        // Reajustar el índice activo del Swiper al primer resultado
-        document.querySelector('.swiper-container').swiper.slideTo(0);
-        updateCenterInfo(filteredMovies[0]);
-    } else {
-        // Si no hay resultados, limpiar la información
-        updateCenterInfo({ titulo: '', genero: '' });
-    }
+    const toggleSections = (displayAllMovies, displayAllMoviesComing) => {
+        if (displayAllMovies.length === 0 && displayAllMoviesComing.length === 0) {
+            mainContent.style.display = 'none';
+            noResultsMessage.style.display = 'flex';
+            
+        } else {
+            mainContent.style.display = 'block';
+            noResultsMessage.style.display = 'none';
+            displayMovies(displayAllMovies);
+            displayMoviesComing(displayAllMoviesComing);
+            
+            updateCenterInfo(filteredMovies[0]);
+        }
+    };
+
+    toggleSections(filteredMovies, filteredMovies);
 }
 
 function displayMovies(peliculas) {
