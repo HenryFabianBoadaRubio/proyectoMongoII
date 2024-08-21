@@ -35,7 +35,7 @@ body{
 .contenedor__ticket{
     display: flex;
     width: 85%;
-    height: 75vh;
+    height: 93svh;
     inset: 0;
     margin: auto;
     flex-direction: column;
