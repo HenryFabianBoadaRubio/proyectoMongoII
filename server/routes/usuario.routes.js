@@ -52,4 +52,8 @@ const appUsuario = express.Router();
     })
   
 
+    appUsuario.get('/get_username', (req, res) => {
+        const userName = process.env.MONGO_USER; 
+        res.json({ userName });
+    });
 module.exports= appUsuario

@@ -3,6 +3,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    fetch('/usuario/get_username')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector('.header__texto__bienvenida h4').textContent = `Hi, ${data.userName}!`;
+        })
+        .catch(error => console.error('Error al cargar el nombre de usuario:', error));
+
+
     let allMovies = [];
     
     document.getElementById('search-icon').addEventListener('click', (e) => {
