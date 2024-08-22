@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         history.back();
     });
-
+    console.log(localStorage.getItem('selectedMovieID'));
+    
     const daysContainer = document.getElementById('days-container');
     const today = new Date();
 

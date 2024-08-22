@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => { 
 
             displayMovieDetail(data);
+            setupBookNowButton(data[0]._id);
         })
         .catch(error => console.error('Error al cargar detalles', error));
 });
@@ -92,11 +93,16 @@ function mostrarTrailer(trailerUrl) {
     },5000);
  })
 
+ function setupBookNowButton(peliculaId) {
+    document.getElementById('miBoton').addEventListener('click', function() {
+        console.log('Setting movieId in localStorage:', peliculaId); 
+        localStorage.setItem('selectedMovieID', peliculaId);
+        window.location.href = './asiento.html';
 
+    });
+}
 //salto de pagina
- document.getElementById('miBoton').addEventListener('click', function() {
-    window.location.href = '/views/asiento.html'; 
-});
+
 
 
 
