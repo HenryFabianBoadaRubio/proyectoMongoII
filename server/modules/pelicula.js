@@ -82,6 +82,65 @@ module.exports= class pelicula extends connect {
               return res;
               
     }
+      /*METODO NUEVO PARA FUNCIONAMIENTO DE LA WEB DE MOVIES */
+      /**
+ * Obtiene las proyecciones de una película específica por su ID.
+ *
+ * @param {Object} params - El objeto con los parámetros de búsqueda.
+ * @param {string} params.id - El ID de la película.
+ * @returns {Promise<Object>} Una promesa que se resuelve a un objeto con la información de la película y sus proyecciones.
+ *
+ * @throws {Error} Lanza un error si hay algún problema durante la conexión a la base de datos o durante la ejecución
+ * de la operación de agregación.
+ */
+async getMovieProjectionsById({ id }) {
+  await this.conexion.connect();
+
+  let res = await this.collection.aggregate([
+      {
+        $match: {
+          _id:new ObjectId(id) 
+        }
+      },
+      {
+          $lookup: {
+              from: "proyeccion",
+              localField: "_id",
+              foreignField: "pelicula_id",
+              as: "proyecciones"
+          }
+      },
+      {
+          $unwind: "$proyecciones"
+      },
+      {
+          $lookup: {
+              from: "sala",
+              localField: "proyecciones.sala_id",
+              foreignField: "_id",
+              as: "proyecciones.sala"
+          }
+      },
+      {
+          $unwind: "$proyecciones.sala"
+      },
+      {
+          $group: {
+              _id: "$_id",
+              titulo: { $first: "$titulo" },
+              genero: { $first: "$genero" },
+              duracion: { $first: "$duracion" },
+              caratula: { $first: "$caratula" }, 
+              proyecciones: { $push: "$proyecciones" },
+          }
+      }
+  ]).toArray();
+
+  return res[0];
+}
+
+
+
 
         /**
      * Obtiene la información detallada de una película específica.

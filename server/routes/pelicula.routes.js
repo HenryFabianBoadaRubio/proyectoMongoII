@@ -1,5 +1,5 @@
 const express = require("express");
-const pelicula = require("../modules/pelicula");;
+const pelicula = require("../modules/pelicula");
 const appPelicula = express.Router();
 
 
@@ -22,6 +22,19 @@ appPelicula.get("/unaPelicula/:id", async(req, res, next)=>{
         let obj = new pelicula();
         const peliculas= await obj.getAllMovieInformation({id:req.params.id})
         res.status(200).send(peliculas)
+    } catch (error) {
+        next(error);
+    }
+});
+
+
+
+// Obtener la información detallada de una película con sus proyecciones
+appPelicula.get("/proyeccion/:id", async(req, res, next) => {
+    try {
+        let obj = new pelicula();
+        const peliculas = await obj.getMovieProjectionsById({ id: req.params.id });
+        res.status(200).send(peliculas);
     } catch (error) {
         next(error);
     }
