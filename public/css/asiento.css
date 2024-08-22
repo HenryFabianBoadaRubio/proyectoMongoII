@@ -413,3 +413,16 @@ body, html {
 
 
 
+.day.selected, .hour.selected {
+    background-color: red;
+   
+}
+.hour.selected h2,
+.day.selected h2{
+    color: white;
+}
+.hour.selected p,
+.day.selected p{
+    color: white;
+}
+
