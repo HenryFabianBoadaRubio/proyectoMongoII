@@ -1,57 +1,91 @@
-document.addEventListener('DOMContentLoaded', function(){
+// document.addEventListener('DOMContentLoaded', function(){
     
-    const chooseseat = document.getElementById("back")
-    chooseseat.addEventListener("click", function(event) {
-        event.preventDefault();
-        history.back()
-    })
+//     const chooseseat = document.getElementById("back")
+//     chooseseat.addEventListener("click", function(event) {
+//         event.preventDefault();
+//         history.back()
+//     })
     
-    const asientos = document.querySelectorAll('.asientos__lista button, .asientos__preferenciales button');
-    asientos.forEach(asiento => {
-        asiento.addEventListener('click', () => {
-            asiento.classList.toggle('active');
-        });
-    });
+//     const asientos = document.querySelectorAll('.asientos__lista button, .asientos__preferenciales button');
+//     asientos.forEach(asiento => {
+//         asiento.addEventListener('click', () => {
+//             asiento.classList.toggle('active');
+//         });
+//     });
    
 
 
-})
-function selectDay(element) {
-    const isActive = element.classList.contains('active');
-    document.querySelectorAll('.days .day').forEach(function(day) {
-        day.classList.remove('active', 'active-state');
-    });
-    if (!isActive) {
-        element.classList.add('active', 'active-state');
-    }
-}
+// })
+// function selectDay(element) {
+//     const isActive = element.classList.contains('active');
+//     document.querySelectorAll('.days .day').forEach(function(day) {
+//         day.classList.remove('active', 'active-state');
+//     });
+//     if (!isActive) {
+//         element.classList.add('active', 'active-state');
+//     }
+// }
 
-function selectHour(element) {
+// function selectHour(element) {
 
-    const isActive = element.classList.contains('active');
+//     const isActive = element.classList.contains('active');
 
-    document.querySelectorAll('.hour-price .hour').forEach(function(hour) {
-        hour.classList.remove('active', 'active-state');
-    });
+//     document.querySelectorAll('.hour-price .hour').forEach(function(hour) {
+//         hour.classList.remove('active', 'active-state');
+//     });
     
-    if (!isActive) {
-        element.classList.add('active', 'active-state');
+//     if (!isActive) {
+//         element.classList.add('active', 'active-state');
 
-        const precioTexto = element.querySelector('p').textContent.trim();
-        const precio = parseFloat(precioTexto.replace('$', '').replace(' ·3D', '')); 
+//         const precioTexto = element.querySelector('p').textContent.trim();
+//         const precio = parseFloat(precioTexto.replace('$', '').replace(' ·3D', '')); 
         
-        if (isNaN(precio)) {
-            console.error('Error al extraer el precio:', precioTexto);
-            return;
-        }
-        precioTotal = precio;
-        precioElemento.textContent = `$${precioTotal.toFixed(2)}`;
-    } else {
-        precioTotal = 0; 
-        precioElemento.textContent = `$${precioTotal.toFixed(2)}`;
-    }
-}
+//         if (isNaN(precio)) {
+//             console.error('Error al extraer el precio:', precioTexto);
+//             return;
+//         }
+//         precioTotal = precio;
+//         precioElemento.textContent = `$${precioTotal.toFixed(2)}`;
+//     } else {
+//         precioTotal = 0; 
+//         precioElemento.textContent = `$${precioTotal.toFixed(2)}`;
+//     }
+// }
  
-const precioElemento = document.querySelector('.precio h2');
-let precioTotal = 0;
+// const precioElemento = document.querySelector('.precio h2');
+// let precioTotal = 0;
 
+document.addEventListener('DOMContentLoaded', function() {
+    const chooseseat = document.getElementById("back");
+    chooseseat.addEventListener("click", function(event) {
+        event.preventDefault();
+        history.back();
+    });
+
+    const daysContainer = document.getElementById('days-container');
+    const today = new Date();
+
+    const getDayName = (date) => {
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        return days[date.getDay()];
+    };
+
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() + i);
+
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        dayDiv.dataset.date = date.toISOString().split('T')[0];
+
+        const dayName = document.createElement('p');
+        dayName.textContent = getDayName(date);
+        const dayNumber = document.createElement('h2');
+        dayNumber.textContent = date.getDate();
+
+        dayDiv.appendChild(dayName);
+        dayDiv.appendChild(dayNumber);
+
+        daysContainer.appendChild(dayDiv);
+    }
+});

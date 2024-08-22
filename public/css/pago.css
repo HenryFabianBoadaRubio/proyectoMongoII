@@ -36,7 +36,7 @@ body{
 .contenedor__info{
     display: flex;
     width: 100%;
-   height: auto;
+   height: 100%;
     justify-content: center;
     /* align-items: center; */
     /* border: 1px solid red; */
@@ -45,26 +45,27 @@ body{
 
 .contenedor__img{
     display: flex;
-    width: 90%;
-    height: 15rem;
+    width: 75%;
+    height: 13rem;
     margin-left: 2rem;
     /* border: 1px solid rgb(4, 0, 221); */
 
     object-fit: contain;
 }
 .contenedor__img img {
-    width: 95%; /* Hace que la imagen ocupe todo el ancho disponible */
-    height: 13rem; 
+    width: 90%; 
+    height: 11rem; 
     border-radius: 10px;
+    
     /* border: 1px solid rgb(4, 0, 221); */
-    /* Ajusta la altura automáticamente para mantener la proporción */
+    
 }
 .info__General{
     display: flex;
     width: 100%;
     height: 100%;
     /* border: 1px solid red; */
-    margin-left: 1rem;
+    /* margin-left: 0.2rem; */
     flex-direction: column;
 
 }
