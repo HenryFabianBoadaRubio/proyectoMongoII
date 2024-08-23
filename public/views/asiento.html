@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
@@ -18,7 +20,7 @@
             <div class="detalles__pelicula__iconos">
                 <a id="back" href=""><i class="bi bi-skip-start"></i></a>
             </div>
-            <div >
+            <div>
                 <h1>Choose Seat</h1>
             </div>
             <div class="detalles__pelicula__iconos">
@@ -32,33 +34,63 @@
             <p>Screen This Way</p>
         </div>
     </main>
-    <section class="asientos" id="seats-container-f"></section>
+    <section class="asientos  eskeleton__asientos__total" id="seats-container-f">
+        <div class="fila"><small class="fila-label">A</small>
+            <div class="asientos__lista">
+                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button></div>
+        </div>
+        <div class="fila fila--separada"><small class="fila-label">B</small>
+            <div class="asientos__lista"><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button>
+            </div>
+        </div>
+        <div class="fila"><small class="fila-label">C</small>
+            <div class="asientos__lista">
+                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button>
+            </div>
+        </div>
+        <div class="fila"><small class="fila-label">D</small>
+            <div class="asientos__lista">
+                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button>
+            </div>
+        </div>
+        <div class="fila"><small class="fila-label">E</small>
+            <div class="asientos__lista">
+                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button>
+            </div>
+        </div>
+        <div class="fila"><small class="fila-label">F</small>
+            <div class="asientos__lista">
+                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button>
+            </div>
+        </div>
+    </section>
 
     <section class="status">
-            <i class='bx bxs-circle'></i>
-            <p>Available</p>
-            <i class='bx bxs-circle'></i>
-            <p>Reserved</p>
-            <i class='bx bxs-circle'></i>
-            <p>Selected</p>
+        <i class='bx bxs-circle'></i>
+        <p>Available</p>
+        <i class='bx bxs-circle'></i>
+        <p>Reserved</p>
+        <i class='bx bxs-circle'></i>
+        <p>Selected</p>
     </section>
     <section class="schedule">
         <div class="days" id="days-container"> </div>
         <div class="hour-price" id="hour__proyection">
-            
-        </div>        
-    </section>    
+
+        </div>
+    </section>
     <div class="container__footer">
         <div class="precio">
             <h3>Price</h3>
             <h2>$0</h2>
         </div>
-            <a href="../views/pago.html"> <button class="book-now">Buy ticket</button> </a>
+        <a href="../views/pago.html"> <button class="book-now">Buy ticket</button> </a>
     </div>
 
-       
-       
+
+
 
 
 </body>
+
 </html>

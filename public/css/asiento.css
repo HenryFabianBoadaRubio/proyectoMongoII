@@ -162,9 +162,9 @@ body, html {
     justify-content: center;
     /* border: 1px solid red; */
 }
-.asientos__normal{
+/* .asientos__normal{
     margin-bottom: 52px !important;
-}
+} */
 .asientos__normal, 
 .asientos__preferenciales{
     display: flex;
@@ -471,6 +471,7 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    /* margin-top: 1rem; */
 }
 
 .seat {
@@ -482,11 +483,25 @@ body, html {
     cursor: pointer;
 }
 
-.seat.ocupado {
-    background-color: #808080;
-    pointer-events: none;
-}
+/* .seat.ocupado {
+    background-color: #f80000;
+    /* pointer-events: none; 
+} */
 
 .front__seat {
+    background-color: red;
+    color: red;
     /* Estilos específicos para los asientos delanteros */
 }
+
+button.ocupado {
+    background-color: white !important; /* Utiliza !important para asegurar que se aplique el estilo */
+    color: red !important;
+    cursor: not-allowed;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    opacity: 1;
+}
+
+
