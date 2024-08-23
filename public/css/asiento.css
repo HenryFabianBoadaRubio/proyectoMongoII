@@ -132,10 +132,35 @@ body, html {
 
 
 
-.asientos{
-    padding: 0 15px;
+.asientos__lista{
+    display: flex;
     /* border: 1px solid red; */
-    margin-top: 10px;
+    width: 80%;
+    justify-content: center;
+}
+/* .asientos{
+    /* padding: 0 15px; */
+    /* border: 1px solid red; 
+ 
+} */
+.fila{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid rgb(238, 255, 0); */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.fila-label{
+    /* border: 1px solid red; */
+    margin-right: 0.3rem;
+}
+.asientos{
+    display: flex;
+ 
+    justify-content: center;
+    /* border: 1px solid red; */
 }
 .asientos__normal{
     margin-bottom: 52px !important;
@@ -155,6 +180,7 @@ body, html {
     align-items: center;
     justify-content: center;
 }
+
 .asientos__lista button,
 .asientos__preferenciales button{
     font-family: "Inter_18pt-Regular";
@@ -166,9 +192,17 @@ body, html {
     background: #323232;
     border-radius: 5px;
     /* border: 1px solid #CECECE; */
+    
     color: transparent;
     transition: color 0.3s, background-color 0.3s;
 }
+
+.fila--separada{
+    /* border: 1px solid yellow; */
+    margin-bottom: 2.5rem;
+}
+
+
 
 .asientos__lista button.active, 
 .asientos__preferenciales button.active {
@@ -211,6 +245,13 @@ body, html {
     color: white;
     text-align: center;
 }
+
+.asientos small {
+    margin-left: 15px;
+    color: #fff;
+}
+
+
 
 
 .image-text{
@@ -426,3 +467,26 @@ body, html {
     color: white;
 }
 
+#seats-container, #seats-container-f {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: #323232;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.seat.ocupado {
+    background-color: #808080;
+    pointer-events: none;
+}
+
+.front__seat {
+    /* Estilos específicos para los asientos delanteros */
+}
