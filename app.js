@@ -8,6 +8,7 @@ const pelicula = require("./server/modules/pelicula");
 const appPelicula= require("./server/routes/pelicula.routes");
 const appBoleto = require("./server/routes/boleto.routes");
 const appUsuario = require("./server/routes/usuario.routes");
+const appAsiento = require("./server/routes/asiento.routes");
 app.use(express.json());
 
 app.use(express.static(__dirname));// // Sirve archivos estáticos desde la raíz del proyecto esto lo puse para el error del favicon nada mas.
@@ -34,6 +35,14 @@ app.get("/boleto", async(req, res) => {
     res.sendFile(`${process.env.EXPRESS_STATIC}/views/boleto.html`, {root: __dirname})
 })
 app.use("/boleto", appBoleto)
+
+
+// // asiento
+app.get("/asiento", async(req, res) => {
+    res.sendFile(`${process.env.EXPRESS_STATIC}/views/asiento.html`, {root: __dirname})
+})
+app.use("/asiento", appAsiento)
+
 
 
 // //usuarios
