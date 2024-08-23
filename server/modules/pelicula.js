@@ -20,7 +20,7 @@ module.exports= class pelicula extends connect {
         connect.instanceConnect = undefined;
     }
     async getAllTest() {
-        await this.conexion.connect();
+       
         const res = await this.collection.find({}).toArray(); 
         
         return res;
@@ -36,7 +36,7 @@ module.exports= class pelicula extends connect {
  * de la operación de agregación.
  */
     async getAllMoviesProjection(){
-            await this.conexion.connect();
+         
             let res = await this.collection.aggregate([
                 {
                   $lookup: {
@@ -94,7 +94,7 @@ module.exports= class pelicula extends connect {
  * de la operación de agregación.
  */
 async getMovieProjectionsById({ id }) {
-  await this.conexion.connect();
+ 
 
   let res = await this.collection.aggregate([
       {
@@ -156,7 +156,7 @@ async getMovieProjectionsById({ id }) {
 
     async getAllMovieInformation({id}){
         
-            await this.conexion.connect();
+            
 
             //verificar laexistencia de la pelicula
             let peliExist=await this.db.collection('pelicula').findOne({_id: new ObjectId(id)})

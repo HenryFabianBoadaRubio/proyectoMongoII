@@ -48,7 +48,7 @@ module.exports= class connect {
         await this.#open();
     }
     async #open() {
-        console.log("Conexion exitosa");
+
         if (this.user == "root") {
             this.#url = `${this.#host}${this.user}:${this.#pass}@${this.cluster}:${this.port}`;
         } else {
@@ -56,6 +56,6 @@ module.exports= class connect {
         }
         this.conexion = new MongoClient(this.#url);
         await this.conexion.connect();
-        console.log("Conexion realizada correctamente");
+        // console.log("Conexion realizada correctamente");
     }
 }

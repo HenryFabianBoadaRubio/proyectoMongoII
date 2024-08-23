@@ -20,7 +20,7 @@ module.exports=class usuario extends connect {
         connect.instanceConnect = undefined;
     }
     async getAllTest() {
-        await this.conexion.connect();
+       
         const res = await this.collection.find({}).toArray(); 
         
         return res;
@@ -128,7 +128,7 @@ module.exports=class usuario extends connect {
      */
     async getDetailsUser({_id}){
         try {
-            await this.conexion.connect();
+            
 
             //Verificar la existencia del usuario por id
             let userExist=await this.db.collection('usuario').findOne({_id:new ObjectId(_id)})

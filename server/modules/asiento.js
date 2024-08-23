@@ -21,7 +21,7 @@ module.exports=class asiento extends connect {
         connect.instanceConnect = undefined;
     }
     async getAllTest() {
-        await this.conexion.connect();
+       
         const res = await this.collection.find({}).toArray(); 
         
         return res;
