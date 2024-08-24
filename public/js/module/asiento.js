@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
         time: null,
         proyeccionId: null
     };
-    
+    const precioElement = document.querySelector('.precio h2');
+    const buyTicketButton = document.querySelector('.book-now');
+
     const getDayName = (date) => {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return days[date.getDay()];
@@ -44,7 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const selectedDate = new Date(dayDiv.dataset.date).toISOString().split('T')[0];
         selectedProjection.date = selectedDate;
+        selectedProjection.time = null;
+        selectedProjection.proyeccionId = null;
+        selectedProjection.basePrice = null;
+        selectedSeat = null;
         updateProjectionsForSelectedDate(selectedDate);
+        updatePrice(); // Limpiar el precio al cambiar de día
+        updateBuyButtonState();
     };
 
     
@@ -90,18 +98,20 @@ document.addEventListener('DOMContentLoaded', function() {
             return new Date(proyeccion.fecha).toISOString().split('T')[0] === selectedDate;
         });
 
+
         if (dayHasProjections) {
             projectionsData.forEach(proyeccion => {
                 const proyeccionDate = new Date(proyeccion.fecha).toISOString().split('T')[0];
                 if (proyeccionDate === selectedDate) {
                     const fecha = new Date(proyeccion.fecha);
                     const hora = fecha.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-                    const precio = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(proyeccion.precio);
+                    const precio = proyeccion.precio;
                     const formato = proyeccion.formato.toUpperCase();
 
                     const hourDiv = document.createElement('div');
                     hourDiv.className = 'hour time';
                     hourDiv.dataset.proyeccionId = proyeccion._id;
+                    hourDiv.dataset.precio = precio;
                     hourDiv.onclick = () => selectHour(hourDiv);
 
                     const horaElement = document.createElement('h2');
@@ -109,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     hourDiv.appendChild(horaElement);
 
                     const precioFormatoElement = document.createElement('p');
-                    precioFormatoElement.textContent = `${precio} · ${formato}`;
+                    precioFormatoElement.textContent = `${new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(precio)} · ${formato}`;
                     hourDiv.appendChild(precioFormatoElement);
 
                     hourPriceContainer.appendChild(hourDiv);
@@ -128,8 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const proyeccionId = this.dataset.proyeccionId;
                 selectedProjection.time = this.querySelector('h2').textContent;
                 selectedProjection.proyeccionId = proyeccionId;
+                selectedProjection.basePrice = parseFloat(this.dataset.precio);
+                selectedSeat = null; // Limpiar la selección de asiento al cambiar de hora
                 await fetchSeatsForProjection(proyeccionId);
                 console.log('Proyección seleccionada:', selectedProjection);
+                updatePrice();
+                updateBuyButtonState();
             });
         });
     };
@@ -195,22 +209,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const selectSeat = (seatButton) => {
         if (seatButton === selectedSeat) {
-            // Si el asiento clickeado es el mismo que ya estaba seleccionado, deseleccionarlo
             seatButton.classList.remove('selected');
             selectedSeat = null;
             console.log('Asiento deseleccionado');
         } else {
-            // Si hay un asiento seleccionado previamente, deseleccionarlo
             if (selectedSeat) {
                 selectedSeat.classList.remove('selected');
             }
-            // Seleccionar el nuevo asiento
             seatButton.classList.add('selected');
             selectedSeat = seatButton;
             console.log('Asiento seleccionado:', selectedSeat.dataset.seatId);
         }
+        updatePrice();
+        updateBuyButtonState();
     };
 
+    const updatePrice = () => {
+        if (selectedSeat && selectedProjection.basePrice) {
+            const fila = selectedSeat.dataset.seatId[0];
+            let precio = selectedProjection.basePrice;
+            
+            if (fila === 'E' || fila === 'F') {
+                precio *= 1.3; // Aumenta el precio en un 30% para filas VIP
+            }
+            
+            precioElement.textContent = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(precio);
+        } else {
+            precioElement.textContent = '$0';
+        }
+    };
+
+    const updateBuyButtonState = () => {
+        if (selectedProjection.date && selectedProjection.time && selectedSeat) {
+            buyTicketButton.disabled = false;
+            buyTicketButton.style.opacity = '1';
+            buyTicketButton.style.cursor = 'pointer';
+        } else {
+            buyTicketButton.disabled = true;
+            buyTicketButton.style.opacity = '0.5';
+            buyTicketButton.style.cursor = 'not-allowed';
+        }
+    };
+
+    buyTicketButton.addEventListener('click', function(event) {
+        if (this.disabled) {
+            event.preventDefault();
+        }
+    });
+
+    // Inicializar el estado del botón
+    updateBuyButtonState();
     for (let i = 0; i < 7; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i);
