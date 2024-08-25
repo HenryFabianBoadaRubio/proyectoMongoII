@@ -71,7 +71,7 @@ module.exports= class pelicula extends connect {
                     titulo:{$first:"$titulo"},
                     genero:{$first:"$genero"},
                     duracion:{$first:"$duracion"},
-                    caratula: { $first: "$caratula" }, 
+                    caratula: { $first: "$caratula" },  
                     proyecciones:{$push:"$proyecciones"},
                     
                   }
@@ -131,6 +131,7 @@ async getMovieProjectionsById({ id }) {
               genero: { $first: "$genero" },
               duracion: { $first: "$duracion" },
               caratula: { $first: "$caratula" }, 
+              caratula2: { $first: "$caratula2" }, 
               proyecciones: { $push: "$proyecciones" },
           }
       }
