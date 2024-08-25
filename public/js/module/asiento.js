@@ -32,11 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const precioElement = document.querySelector('.precio h2');
     const buyTicketButton = document.querySelector('.book-now');
 
+
+   
     const getDayName = (date) => {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return days[date.getDay()];
     };
-
+   
     const selectDay = (dayDiv) => {
         document.querySelectorAll('.days .day').forEach(day => {
             day.classList.remove('selected');
@@ -45,12 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
         dayDiv.classList.add('selected');
         
         const selectedDate = new Date(dayDiv.dataset.date).toISOString().split('T')[0];
+        const dayName = getDayName(new Date(dayDiv.dataset.date));
         selectedProjection.date = selectedDate;
         selectedProjection.time = null;
         selectedProjection.proyeccionId = null;
+        selectedProjection.dayName = dayName;
         selectedProjection.basePrice = null;
         selectedSeat = null;
         updateProjectionsForSelectedDate(selectedDate);
+        saveSelectionToLocalStorage();
         updatePrice(); // Limpiar el precio al cambiar de día
         updateBuyButtonState();
     };
@@ -144,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Proyección seleccionada:', selectedProjection);
                 updatePrice();
                 updateBuyButtonState();
+                saveSelectionToLocalStorage();
             });
         });
     };
@@ -222,8 +228,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         updatePrice();
         updateBuyButtonState();
+        saveSelectionToLocalStorage();
     };
-
+   const saveSelectionToLocalStorage = () => {
+    if (selectedProjection.date && selectedProjection.time && selectedSeat) {
+        const selectionData = {
+            date: selectedProjection.date,
+            dayName: selectedProjection.dayName,
+            time: selectedProjection.time,
+            proyeccionId: selectedProjection.proyeccionId,
+            seatId: selectedSeat ? selectedSeat.dataset.seatId : null,
+            price: precioElement.textContent
+        };
+        localStorage.setItem('ticketSelection', JSON.stringify(selectionData));
+    } else {
+        localStorage.removeItem('ticketSelection');
+    }
+};
     const updatePrice = () => {
         if (selectedSeat && selectedProjection.basePrice) {
             const fila = selectedSeat.dataset.seatId[0];
@@ -287,6 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hour.classList.remove('selected');
         });
         hourDiv.classList.add('selected');
+        
     };
 });
 
