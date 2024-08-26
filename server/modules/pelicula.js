@@ -73,7 +73,7 @@ module.exports= class pelicula extends connect {
                     duracion:{$first:"$duracion"},
                     caratula: { $first: "$caratula" },  
                     proyecciones:{$push:"$proyecciones"},
-                    
+                    fecha_estreno:{ $first:"$fecha_estreno"}
                   }
                 }
               
@@ -132,7 +132,9 @@ async getMovieProjectionsById({ id }) {
               duracion: { $first: "$duracion" },
               caratula: { $first: "$caratula" }, 
               caratula2: { $first: "$caratula2" }, 
-              proyecciones: { $push: "$proyecciones" },
+              fecha_estreno:{ $first:"$fecha_estreno"},
+              proyecciones: { $push: "$proyecciones" }
+              
           }
       }
   ]).toArray();
@@ -186,7 +188,8 @@ async getMovieProjectionsById({ id }) {
                         sinopsis:1,
                         caratula:1,
                         caratula2:1,
-                        trailer:1
+                        trailer:1,
+                        fecha_estreno:1
                       }
                     }
                   ]

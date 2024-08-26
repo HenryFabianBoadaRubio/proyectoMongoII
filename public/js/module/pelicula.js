@@ -1,37 +1,85 @@
-// const {ObjectId} =require('mongodb');
-
-
+// Definimos claves y tiempo de expiración para el caché
+const cacheKeyPelicula = 'peliculaDetalle';
+const cacheKeyProyecciones = 'proyeccionesDetalle';
+const cacheExpiration = 3600000; // 1 hora en milisegundos
 
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const peliculaId = urlParams.get('peliculaId');
     if (!peliculaId) {
         console.error('No movieId provided in the URL');
-        return; 
+        return;
     }
-    fetch(`/pelicula/unaPelicula/${peliculaId}`)
-        .then(response => response.json())
-        .then(data => { 
 
+    const currentTime = Date.now();
+
+    // Verificamos si los detalles de la película están en el caché
+    const cachedPelicula = localStorage.getItem(`${cacheKeyPelicula}_${peliculaId}`);
+    if (cachedPelicula) {
+        const { timestamp, data } = JSON.parse(cachedPelicula);
+        if (currentTime - timestamp < cacheExpiration) {
+            console.log('Datos de película obtenidos del caché');
             displayMovieDetail(data);
-            setupBookNowButton(data[0]._id);
-        })
-        .catch(error => console.error('Error al cargar detalles', error));
+            setupBookNowButton(data._id);
+        } else {
+            fetchMovieDetails(peliculaId);
+        }
+    } else {
+        fetchMovieDetails(peliculaId);
+    }
+
+    
 });
 
-function displayMovieDetail(peliculas) {
+function fetchMovieDetails(peliculaId) {
+    fetch(`/pelicula/unaPelicula/${peliculaId}`)
+        .then(response => response.json())
+        .then(data => {
+            // Asumiendo que data es un array con un solo elemento
+            const pelicula = Array.isArray(data) ? data[0] : data;
+            
+            // Guardar en caché
+            localStorage.setItem(`${cacheKeyPelicula}_${peliculaId}`, JSON.stringify({
+                timestamp: Date.now(),
+                data: pelicula
+            }));
+            
+            displayMovieDetail(pelicula);
+            setupBookNowButton(pelicula._id);
+        })
+        .catch(error => {
+            console.error('Error al cargar detalles', error);
+            document.getElementById('informacion__pelicula').innerHTML = '<p>Error al cargar los detalles de la película.</p>';
+        });
+}
+
+
+
+function displayMovieDetail(pelicula) {
     const container = document.getElementById('informacion__pelicula');
-    const pelicula = peliculas[0];
+    
+    // Verificar si pelicula es un array y tomar el primer elemento si lo es
+    if (Array.isArray(pelicula)) {
+        pelicula = pelicula[0];
+    }
+
+    // Verificar si pelicula y pelicula.actores existen
+    if (!pelicula || !pelicula.actores) {
+        console.error('Datos de película inválidos:', pelicula);
+        container.innerHTML = '<p>Error al cargar los detalles de la película.</p>';
+        return;
+    }
+
     // Crear un string HTML para los actores
-    const actoresHTML = pelicula.actores.map(actor => `
+    const actoresHTML = Array.isArray(pelicula.actores) ? pelicula.actores.map(actor => `
         <div class="actor__detalle">
             <img src="${actor.foto}" alt="${actor.nombre}" class="actor__foto">
             <div class="actor__texto">
                 <p>${actor.nombre}</p>
-                <p> ${actor.personaje}</p>
+                <p>${actor.personaje}</p>
             </div>
         </div>
-    `).join('');
+    `).join('') : '';
 
     container.innerHTML = `
     <div class="movie_container__detalle">
@@ -59,8 +107,8 @@ function displayMovieDetail(peliculas) {
     document.getElementById('watch-trailer').addEventListener('click', function() {
         mostrarTrailer(pelicula.trailer);
     });
-}
-//mostrar trailer en videos.
+}   
+
 function mostrarTrailer(trailerUrl) {
     const caratulaContainer = document.getElementById('caratula-container');
     if (trailerUrl) {
@@ -80,54 +128,24 @@ function mostrarTrailer(trailerUrl) {
     }
 }
 
-//boton compra
- const miCine =  document.getElementById("miCine");
- const miBoton = document.getElementById("miBoton");
+const miCine =  document.getElementById("miCine");
+const miBoton = document.getElementById("miBoton");
 
- miCine.addEventListener('click', function(){
-     miBoton.style.display='block';
-     miCine.style.border = '';
-     setTimeout(function(){
-         miBoton.style.display='none';
-         miCine.style.border = 'none';
+miCine.addEventListener('click', function(){
+    miBoton.style.display='block';
+    miCine.style.border = '';
+    setTimeout(function(){
+        miBoton.style.display='none';
+        miCine.style.border = 'none';
     },5000);
- })
+});
 
- function setupBookNowButton(peliculaId) {
+function setupBookNowButton(peliculaId) {
     document.getElementById('miBoton').addEventListener('click', function() {
         console.log('Setting movieId in localStorage:', peliculaId); 
         localStorage.setItem('selectedMovieID', peliculaId);
         window.location.href = './asiento.html';
-
     });
 }
-//salto de pagina
 
 
-
-
-// function displayProjectionMovie(peliculas) {
-//     console.log('Objeto pelicula en displayProjectionMovie:', peliculas);
-//     const containers = document.getElementById('carrusel__proyecciones');
-    
-//     if (peliculas && peliculas.proyecciones) {
-//         console.log('Proyecciones:', peliculas.proyecciones);
-        
-        
-//         const proyeccionesHtml = peliculas.proyecciones.map((proyeccion, index) => {
-//             return `<li class="proyeccion-item -${index}">
-//                         <span class="proyeccion__fecha">Fecha: ${proyeccion.fecha}</span>,
-//                         <span class="proyeccion__precio">Precio: ${proyeccion.precio}</span>,
-//                         <span class="proyeccion__formato">Formato: ${proyeccion.formato}</span>
-//                     </li>`;
-//         }).join('');
-
-//         containers.innerHTML = `
-//         <div class="movie__container__proyecciones">
-//             <ul>${proyeccionesHtml}</ul>
-//         </div>
-//         `;
-//     } else {
-//         containers.innerHTML = '<p>No hay proyecciones disponibles</p>';
-//     }
-// }
