@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const selectedMovieID = localStorage.getItem('selectedMovieID');
-
+    let total__payment; 
     function generateRandomOrderNumber() {
         return Math.floor(100000 + Math.random() * 900000);
     }
@@ -71,6 +71,12 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('seatType', seatType);
         localStorage.setItem('serviceFee', serviceFee);
 
+        //conversion del valor total del pago
+        const prices = parseFloat(price.replace(/[^0-9.-]+/g, "")) *1000; // Multiplicar por 1000 si es necesario
+        const serviceFeeValue = parseFloat(serviceFee);
+        total__payment=(serviceFeeValue+prices)
+        
+
     } else {
         console.log('No se encontró información de selección de ticket');
     }
@@ -100,55 +106,63 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
 
     // Función para manejar la compra del ticket
-    // async function handleBuyTicket() {
-    //     const ticketSelection = JSON.parse(localStorage.getItem('ticketSelection'));
-    //     const selectedMovieID = localStorage.getItem('selectedMovieID');
-    //     const usuarioID = localStorage.getItem('usuarioID'); // Asegúrate de que el ID del usuario esté disponible
+    async function handleBuyTicket() {
+        const ticketSelection = JSON.parse(localStorage.getItem('ticketSelection'));
+        const selectedMovieID = localStorage.getItem('selectedMovieID');
+
+        // const usuarioID = localStorage.getItem('usuarioID'); // Asegúrate de que el ID del usuario esté disponible
         
          
-    //     if (ticketSelection && selectedMovieID && usuarioID) {
-    //         const { seatId, price } = ticketSelection;
+        if (ticketSelection && selectedMovieID ) {
+            // const { seatId, price } = ticketSelection;
 
-    //         // Preparar datos para la compra
-    //         const asientos = [{ fila: seatId.charAt(0), numero: parseInt(seatId.slice(1)) }];
-    //         // const metodo_pago = 'tarjeta_credito'; // Ajusta según el método de pago que elijas
+            // // Preparar datos para la compra
+            // const asientos = [{ fila: seatId.charAt(0), numero: parseInt(seatId.slice(1)) }];
+            // console.log(asientos)
+            // // const metodo_pago = 'tarjeta_credito'; // Ajusta según el método de pago que elijas
 
-    //         // Llamar al método para registrar la compra del ticket
-    //         const response = await fetch('/api/registerBuyTicket', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({
-    //                 pelicula_id: selectedMovieID,
-    //                 proyeccion_id: ticketSelection.proyeccion_id, // Asegúrate de que este ID esté disponible
-    //                 usuario_id: usuarioID,
-    //                 asientos: asientos,
-    //                 // metodo_pago: metodo_pago
-    //             })
-    //         });
+            // Extraer fila y número del seatId
+            const [fila, numero] = ticketSelection.seatId.match(/([A-Z])(\d+)/).slice(1);
 
-    //         const result = await response.json();
+            const response = await fetch('/boleto/nuevoBoleto', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    pelicula_id: selectedMovieID,
+                    proyeccion_id: ticketSelection.proyeccionId,
+                    usuario_id:'66a12e9b1219e115c8e79e9a',
+                    asientos: [
+                        {fila: fila, numero: parseInt(numero)}
+                    ],
 
-    //         if (result.error) {
-    //             console.error('Error al registrar la compra:', result.error);
-    //             alert(`Error: ${result.error.message}`);
-    //         } else {
-    //             console.log('Compra registrada exitosamente:', result);
-    //             alert('Compra registrada exitosamente. ¡Disfruta la película!');
-    //             // Redirigir al usuario o actualizar la UI según sea necesario
-    //         }
-    //     } else {
-    //         console.error('Información de ticket o usuario no disponible.');
-    //         alert('No se puede realizar la compra. Información de ticket o usuario no disponible.');
-    //     }
-    // }
+                    total_pago: total__payment
+                })
+            });
+            // console.log(asientos)
+            const result = await response.json();
+            console.log(result)
+
+            if (result.error) {
+                console.error('Error al registrar la compra:', result.error);
+                alert(`Error: EL asiento ya fue ocupado previamente`);
+            } else {
+                console.log('Compra registrada exitosamente:', result);
+                alert('Compra registrada exitosamente. ¡Disfruta la película!');
+                window.location.href = '../views/boleto.html';
+            }
+        } else {
+            console.error('Información de ticket o usuario no disponible.');
+            alert('No se puede realizar la compra. Información de ticket o usuario no disponible.');
+        }
+    }
 
     // Evento para el botón de compra de tickets
-    // document.querySelector('.boton__reservacion button').addEventListener('click', function(event) {
-    //     event.preventDefault();
-    //     handleBuyTicket();
-    // });
+    document.querySelector('.boton__reservacion button').addEventListener('click', function(event) {
+        event.preventDefault();
+        handleBuyTicket();
+    });
         // Nuevo código para manejar el estado del botón de compra
         const checkboxTarjeta = document.querySelector('.radio-button input[type="checkbox"]');
         const botonCompra = document.querySelector('.boton__reservacion button');

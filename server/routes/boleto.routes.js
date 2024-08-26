@@ -1,12 +1,14 @@
 const express = require("express");
-const boleto= require("../modules/boleto");
+const boleto= require("../modules/boleto")
 const appBoleto = express.Router();
 
 
 
 appBoleto.post("/nuevoBoleto", async(req, res,next)=>{
+    console.log("Recibida solicitud para nuevoBoleto:", req.body);
     let obj= new boleto();
     try {
+        req.loc
         const boletos= await obj.registerBuyTicket(req.body)
         res.status(200).send(boletos)
     } catch (error) {

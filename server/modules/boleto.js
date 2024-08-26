@@ -44,10 +44,12 @@ module.exports=class boleto extends connect {
      * @returns {string} result.error.message - El mensaje de error.
      * @returns {Object} result.error.details - Los detalles adicionales del error.
      */
-    async registerBuyTicket({pelicula_id,proyeccion_id,usuario_id,asientos,metodo_pago}) {
+    async registerBuyTicket({pelicula_id, proyeccion_id,usuario_id,asientos,total_pago}) {
+        console.log("Iniciando registerBuyTicket con:", { pelicula_id, proyeccion_id, usuario_id, asientos,total_pago});
         let res;    
+        // const +=localStorage.getItem('precio__pagar')
         //validar los parámetros
-        if(!pelicula_id || !proyeccion_id || !usuario_id || !asientos || !metodo_pago) {
+        if( !pelicula_id ||  !proyeccion_id || !usuario_id || !asientos || !total_pago ) {
             return {
                 error: "Faltan parámetros requeridos",
                 missingParams: [
@@ -55,7 +57,8 @@ module.exports=class boleto extends connect {
                     !proyeccion_id ? "proyeccion_id" : null,
                     !usuario_id ? "usuario_id" : null,
                     !asientos ? "asientos" : null,
-                    !metodo_pago ? "metodo_pago" : null
+                    !total_pago ? "total_pago" : null
+                    // !metodo_pago ? "metodo_pago" : null
                 ].filter(Boolean)
             }
         }
@@ -103,28 +106,49 @@ module.exports=class boleto extends connect {
                     message: "La sala no existe."
                 };
             }
-            //verificar la disponibilidad de los asientos de la sala 
-            for (let asiento of asientos){
-                let asientoExist=await this.db.collection('asiento').findOne({fila:asiento.fila,numero:asiento.numero, sala_id: salaExist._id, estado: "disponible"})
-                if(!asientoExist){
-                    return {
-                        error: "Not found",
-                        message: "el asiento no está disponible: ",
-                        asiento:asiento
+            // //verificar la disponibilidad de los asientos de la sala 
+            // for (let asiento of asientos){
+            //     let asientoExist=await this.db.collection('boleto').findOne({fila:asiento.fila,numero:asiento.numero, sala_id: salaExist._id})
+            //     if(!asientoExist){
+            //         return {
+            //             error: "Not found",
+            //             message: "el asiento no está disponible: ",
+            //             asiento:asiento
+            //         }
+            //     }
+            // }
+                    // Verificar la disponibilidad de los asientos en la colección de boletos
+            for (let asiento of asientos) {
+                // Buscar si algún boleto ya tiene reservado el asiento para la misma proyección
+                let asientoOcupado = await this.db.collection('boleto').findOne({
+                    proyeccion_id: proExist._id, // Suponiendo que tienes acceso a la proyección actual
+                    asientos: {
+                        $elemMatch: {
+                            fila: asiento.fila,
+                            numero: asiento.numero
+                        }
                     }
+                });
+
+                if (asientoOcupado) {
+                    return {
+                        error: "Not available",
+                        message: "El asiento ya está ocupado: ",
+                        asiento: asiento
+                    };
                 }
             }
-        
+
             //verificamos si el user tiene tarjeta vip y que descuento aplica sino tiene pasa como user estandar
-            let precio_total = proExist.precio * asientos.length;
+            // let precio_total = proExist.precio * asientos.length;
             let descuentoUser = 0;
             let cardVip = await this.db.collection('tarjetaVIP').findOne({usuario_id: userExist._id})
             if (cardVip) {
                 // Verificar que la tarjeta VIP esté activa
                 if (cardVip.estado === "activa") {
                     // Aplicar descuento
-                     descuentoUser = cardVip.descuento * asientos.length;
-                     precio_total = (proExist.precio - cardVip.descuento) * asientos.length;
+                     descuentoUser = cardVip.descuento ;
+                     precio_total = (total_pago - cardVip.descuento);
                     
                     
                 }
@@ -141,15 +165,14 @@ module.exports=class boleto extends connect {
 
               res= await this.collection.insertOne(nuevoBoleto);
             
-              //cambiar el estado del asiento disponible a ocupado por la compra.
-              for (let asiento of asientos){
-                await this.db.collection('asiento').updateOne({fila:asiento.fila,numero:asiento.numero,},{$set:{estado: "ocupado"}});
-              }
+            //   //cambiar el estado del asiento disponible a ocupado por la compra.
+            //   for (let asiento of asientos){
+            //     await this.db.collection('asiento').updateOne({fila:asiento.fila,numero:asiento.numero,},{$set:{estado: "ocupado"}});
+            //   }
 
               //registrar un nuevo pago teniendo en cuenta el nuevo boleto
               let nuevoPago={
                 boleto_id: res.insertedId,
-                metodo_pago:metodo_pago,
                 fecha_pago:new Date(),
                 estado: "completado",
                 monto: precio_total,

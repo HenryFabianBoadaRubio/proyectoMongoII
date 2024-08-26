@@ -99,11 +99,7 @@ html, body{
 }
 
 
-.book-now:hover{
-    background-color: #111;
-    color: red;
-    /* border: 1px solid red; */
-}
+
 
 body, html {
     margin: 0;
@@ -497,8 +493,8 @@ body, html {
 }
 
 button.ocupado {
-    background-color: white !important; /* Utiliza !important para asegurar que se aplique el estilo */
-    color: red !important;
+    background-color: #cecece !important; /* Utiliza !important para asegurar que se aplique el estilo */
+    color: transparent;
     cursor: not-allowed;
     border: none;
     font-size: 1.2rem;
