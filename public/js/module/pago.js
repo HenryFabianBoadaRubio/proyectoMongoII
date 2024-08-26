@@ -149,4 +149,39 @@ document.addEventListener('DOMContentLoaded', function() {
     //     event.preventDefault();
     //     handleBuyTicket();
     // });
+        // Nuevo código para manejar el estado del botón de compra
+        const checkboxTarjeta = document.querySelector('.radio-button input[type="checkbox"]');
+        const botonCompra = document.querySelector('.boton__reservacion button');
+
+         // Inicialmente, deshabilitamos el botón
+        botonCompra.disabled = true;
+        botonCompra.style.opacity = '0.5';
+        botonCompra.style.cursor = 'not-allowed';
+
+      // Función para actualizar el estado del botón
+      function actualizarEstadoBoton() {
+        if (checkboxTarjeta.checked) {
+            botonCompra.disabled = false;
+            botonCompra.style.opacity = '1';
+            botonCompra.style.cursor = 'pointer';
+        } else {
+            botonCompra.disabled = true;
+            botonCompra.style.opacity = '0.5';
+            botonCompra.style.cursor = 'not-allowed';
+        }
+    }
+
+       // Escuchar cambios en el checkbox
+       checkboxTarjeta.addEventListener('change', actualizarEstadoBoton);
+       document.querySelector('.boton__reservacion button').addEventListener('click', function(event) {
+        if (!checkboxTarjeta.checked) {
+            event.preventDefault();
+            alert('Por favor, seleccione un método de pago antes de comprar el boleto.');
+        } else {
+            // Aquí puedes agregar la lógica de compra
+            // Por ahora, solo permitimos la navegación al siguiente paso
+            console.log('Compra iniciada');
+        }
+    });
+
 });

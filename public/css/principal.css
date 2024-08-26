@@ -6,8 +6,9 @@
 }
 
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Inter", sans-serif;
+    /* font-weight: normal; */
     background-color: #888;
     background-color: #121212;
     color: white;

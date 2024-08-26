@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    font-family: "Inter", sans-serif;
+
     background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.90) 30%, rgba(0, 0, 0, 0.80) 70%), 
                 url('../storage/fondoLogin.jpg') center center / cover no-repeat;
     /* background-attachment: fixed; */
