@@ -508,4 +508,6 @@ button.ocupado {
 .asientos__lista button.selected {
     background-color: #FE0000;
     color: white;
+    font-size: 1.2rem;
+
 }
