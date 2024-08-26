@@ -1,5 +1,8 @@
 const express = require("express");
 const cors= require("cors");
+const dotenv = require('dotenv');
+dotenv.config();
+const mongoose = require('mongoose');
 // const path= require("path")
 const app = express();
 app.use(express.static(process.env.EXPRESS_STATIC))
@@ -61,7 +64,22 @@ app.use((err, req, res, next) => {
 // app.listen(config.port, config.host, () => {
 //     console.log(`Server listening at http://${config.host}:${config.port}`)
 // })
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    process.env.MONGO_USER = username;
+    process.env.MONGO_PWD = password;
+    const mongoUrl = `mongodb://${username}:${password}@${process.env.MONGO_CLUSTER}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}`;
 
+    try {
+        // Intentar conectar a la base de datos
+        await mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+        mongoose.disconnect(); // Desconectar después de verificar la conexión
+
+        res.status(200).json({ message: 'Login exitoso' });
+    } catch (error) {
+        res.status(401).json({ message: 'Credenciales inválidas o error de conexión a la base de datos' });
+    }
+});
 
 
 app.listen({host: process.env.EXPRESS_HOST, port: process.env.EXPRESS_PORT}, () => {

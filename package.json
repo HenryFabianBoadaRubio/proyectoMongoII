@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "init": "^0.1.2",
     "jsbarcode": "^3.11.6",
-    "mongodb": "^6.8.0"
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.4"
   },
   "name": "proyectomongo2",
   "version": "1.0.0",

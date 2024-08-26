@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="./css/index.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5058/5058132.png" type="image/x-icon">
+
         <script src="./js/main.js" defer></script>
         <title>Cine Campus</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,30 +21,28 @@
 <body>
     <main>
         <section class="display__login">
-           
-            <divc class="cinema__img">
+            <div class="cinema__img">
                 <img src="../storage/cine1.webp" alt="">
-            </divc>
+            </div>
 
             <div class="titulo__cinema">
                 <h1>Cinema Campuslands</h1>
             </div>
-            <div class="datos__ingreso">
-                <div class="input__container">
-                    <input type="email" placeholder="User" class="input-field">
+            <form id="loginForm">
+                <div class="datos__ingreso">
+                    <div class="input__container">
+                        <input id="username" type="text" placeholder="User" class="input-field" required autocomplete="username">
+                    </div>
+                    <div class="input__container">
+                        <input id="password" type="password" placeholder="Password" class="input-field" required autocomplete="current-password">
+                    </div>
                 </div>
-                <div class="input__container">
-                    <input type="password" placeholder="Password" class="input-field">
+                <div class="boton__ingreso">
+                    <button id="loginButton" type="submit">Sign In</button>    
                 </div>
-            </div>
-            <div class="boton__ingreso">
-                <a href="./views/principal.html">
-                    <button>Sign In</button>    
-                </a>
-                
-            </div>
-            <div></div>
+            </form>
         </section>
     </main>
+  
 </body>
 </html>
