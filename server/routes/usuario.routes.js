@@ -62,7 +62,25 @@ const appUsuario = express.Router();
             obj.destructor();
         }
     })
-  
+    
+    appUsuario.get("/userenv", async (req, res, next) => {
+        let obj = new Usuario();
+        try {
+            let userId = await obj.getUserIdFromEnv();
+            
+            if (userId.error) {
+                // Si hay un error, enviar una respuesta de error
+                return res.status(400).json(userId);
+            }
+    
+            // Si la operación fue exitosa, enviar el ID del usuario
+            res.status(200).json({ userId: userId.toString() });
+        } catch (error) {
+            next(error);
+        } finally {
+            obj.destructor();
+        }
+    });
 
     appUsuario.get('/get_username', (req, res) => {
         const userName = process.env.MONGO_USER; 

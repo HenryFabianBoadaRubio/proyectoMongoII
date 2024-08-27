@@ -283,5 +283,33 @@ module.exports=class usuario extends connect {
             
         }
     }
-  
+        /**
+     * Obtiene el ObjectId del usuario basado en una variable de entorno.
+     *
+     * @returns {Promise} - Una promesa que se resuelve a un ObjectId del usuario o un objeto de error.
+     * @throws {Error} - Si no se encuentra el usuario o si hay un error en la búsqueda.
+     */
+    async getUserIdFromEnv() {
+        try {
+            // Obtener el valor de la variable de entorno
+            const userIdentifier = process.env.MONGO_USER;
+
+            if (!userIdentifier) {
+                throw new Error('La variable de entorno MONGO_USER no está definida');
+            }
+
+            // Buscar el usuario en la colección
+            const user = await this.db.collection('usuario').findOne({ nick: userIdentifier });
+
+            if (!user) {
+                throw new Error(`No se encontró un usuario con el identificador: ${userIdentifier}`);
+            }
+
+            // Devolver el ObjectId del usuario
+            return user._id;
+
+        } catch (error) {
+            return { error: "Error", message: error.message, details: error.errInfo };
+        }
+    }
 }

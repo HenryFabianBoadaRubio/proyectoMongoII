@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let displayedMovieIds = [];
-
+  
+    
     fetch('/usuario/get_username')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
