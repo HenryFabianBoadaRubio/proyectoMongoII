@@ -140,7 +140,7 @@ module.exports=class boleto extends connect {
             }
 
             //verificamos si el user tiene tarjeta vip y que descuento aplica sino tiene pasa como user estandar
-            // let precio_total = proExist.precio * asientos.length;
+            let precio_total =total_pago;
             let descuentoUser = 0;
             let cardVip = await this.db.collection('tarjetaVIP').findOne({usuario_id: userExist._id})
             if (cardVip) {
