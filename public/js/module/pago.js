@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     const selectedMovieID = localStorage.getItem('selectedMovieID');
     let total__payment; 
     function generateRandomOrderNumber() {
@@ -123,7 +124,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Extraer fila y número del seatId
             const [fila, numero] = ticketSelection.seatId.match(/([A-Z])(\d+)/).slice(1);
-
+            const username = localStorage.getItem('username');
+            const userId = localStorage.getItem('userId');
+            const userIdFromEnv = localStorage.getItem('userIdFromEnv');
+            const orderNumber = generateRandomOrderNumber();
+            
+            console.log('Usuario logueado:', username);
+            console.log('ID del usuario:', userId);
+            console.log('ID del usuario desde env:', userIdFromEnv);
             const response = await fetch('/boleto/nuevoBoleto', {
                 method: 'POST',
                 headers: {
@@ -132,12 +140,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({
                     pelicula_id: selectedMovieID,
                     proyeccion_id: ticketSelection.proyeccionId,
-                    usuario_id:'66a12e9b1219e115c8e79e9a',
+                    usuario_id:userId,
                     asientos: [
                         {fila: fila, numero: parseInt(numero)}
                     ],
 
-                    total_pago: total__payment
+                    total_pago: total__payment,
+                    numero_orden:orderNumber
                 })
             });
             // console.log(asientos)

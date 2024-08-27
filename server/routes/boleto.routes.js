@@ -63,6 +63,21 @@ appBoleto.put("/cancelarAsientos/:boleto_id", async(req, res, next)=>{
     }
 })
 
+appBoleto.get('/boletos/:id_usuario', async (req, res, next) => {
+    let obj = new boleto();
+    try {
+        const id_usuario = req.params.id_usuario;  // No encapsules en un objeto, solo pasa el valor del ID
+        const boletos = await obj.obtenerBoletosConDetalles(id_usuario);
+        
+        res.json(boletos);
+    } catch (error) {
+        res.status(500).json({ error: `Error al obtener boletos: ${error.message}` });
+    } finally {
+        obj.destructor();
+    }
+});
+
+
 
 
 module.exports= appBoleto

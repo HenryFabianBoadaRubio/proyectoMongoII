@@ -27,10 +27,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             localStorage.setItem('userId', data.userId);
             localStorage.setItem('userIdFromEnv', data.userIdFromEnv);
 
-            console.log('Datos guardados en localStorage:');
-            console.log('username:', username);
-            console.log('userId:', data.userId);
-            console.log('userIdFromEnv:', data.userIdFromEnv);
+            
 
             // Redirigir al usuario a la página principal
             window.location.href = './views/principal.html';
@@ -48,15 +45,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
 
 
-// const username = localStorage.getItem('username');
-// const userId = localStorage.getItem('userId');
-// const userIdFromEnv = localStorage.getItem('userIdFromEnv');
-
-// console.log('Usuario logueado:', username);
-// console.log('ID del usuario:', userId);
-// console.log('ID del usuario desde env:', userIdFromEnv);
-
-
 
 
 
@@ -64,3 +52,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 // console.log('username:', localStorage.getItem('username'));
 // console.log('userId:', localStorage.getItem('userId'));
 // console.log('userIdFromEnv:', localStorage.getItem('userIdFromEnv'));
+// console.log('Datos guardados en localStorage:');
+//             console.log('username:', username);
+//             console.log('userId:', data.userId);
+//             console.log('userIdFromEnv:', data.userIdFromEnv);

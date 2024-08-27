@@ -44,12 +44,12 @@ module.exports=class boleto extends connect {
      * @returns {string} result.error.message - El mensaje de error.
      * @returns {Object} result.error.details - Los detalles adicionales del error.
      */
-    async registerBuyTicket({pelicula_id, proyeccion_id,usuario_id,asientos,total_pago}) {
+    async registerBuyTicket({pelicula_id, proyeccion_id,usuario_id,asientos,total_pago,numero_orden}) {
         console.log("Iniciando registerBuyTicket con:", { pelicula_id, proyeccion_id, usuario_id, asientos,total_pago});
         let res;    
         // const +=localStorage.getItem('precio__pagar')
         //validar los parámetros
-        if( !pelicula_id ||  !proyeccion_id || !usuario_id || !asientos || !total_pago ) {
+        if( !pelicula_id ||  !proyeccion_id || !usuario_id || !asientos || !total_pago || !numero_orden) {
             return {
                 error: "Faltan parámetros requeridos",
                 missingParams: [
@@ -57,7 +57,8 @@ module.exports=class boleto extends connect {
                     !proyeccion_id ? "proyeccion_id" : null,
                     !usuario_id ? "usuario_id" : null,
                     !asientos ? "asientos" : null,
-                    !total_pago ? "total_pago" : null
+                    !total_pago ? "total_pago" : null,
+                    !numero_orden ? "numero_orden": null,
                     // !metodo_pago ? "metodo_pago" : null
                 ].filter(Boolean)
             }
@@ -159,7 +160,8 @@ module.exports=class boleto extends connect {
                 usuario_id: new ObjectId(usuario_id),
                 asientos:asientos,
                 precio_total:precio_total,
-                descuento_aplicado:descuentoUser
+                descuento_aplicado:descuentoUser,
+                numero_orden:numero_orden
             }
 
 
@@ -369,6 +371,46 @@ module.exports=class boleto extends connect {
                 };
             }
         
+    }
+    async obtenerBoletosConDetalles(id_usuario) {
+        try {
+            await this.conexion.connect();
+    
+            // Buscar todos los boletos asociados al id_usuario
+            
+
+            // Dentro del método obtenerBoletosConDetalles
+            const boletos = await this.collection.find({ usuario_id: new ObjectId(id_usuario) }).toArray();
+            
+    
+            // Verificar si se encontraron boletos
+            if (boletos.length === 0) {
+                return { mensaje: `No se encontraron boletos para el usuario con ID ${id_usuario}.` };
+            }
+    
+            // Obtener las colecciones de proyeccion y asiento
+            const proyeccionCollection = this.db.collection('proyeccion');
+            // const asientoCollection = this.db.collection('asiento');
+    
+            // Iterar sobre los boletos para buscar detalles de proyeccion y asiento
+            const boletosConDetalles = await Promise.all(boletos.map(async (boleto) => {
+                // Buscar la proyección asociada al id_proyeccion del boleto
+                const proyeccion = await proyeccionCollection.findOne({ _id: boleto.proyeccion_id });
+                
+           
+                return {
+                    ...boleto,
+                    fecha: proyeccion ? proyeccion.fecha : null,
+                    // hora: proyeccion ? proyeccion.hora : null,
+                    id_pelicula: proyeccion ? proyeccion.pelicula_id : null, // Añadir id_pelicula
+                   
+                };
+            }));
+    
+            return boletosConDetalles;
+        } catch (error) {
+            return { error: `Error al obtener los boletos, proyecciones y asientos para el usuario con ID ${id_usuario}: ${error.message}` };
+        }
     }
     
 
