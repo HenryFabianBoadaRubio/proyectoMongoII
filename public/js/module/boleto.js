@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     JsBarcode("#barcode", barcode, {
         format: "CODE128", 
         width: 3.75,
-        height: 70,
+        height: 60,
         displayValue: false 
     });
 });

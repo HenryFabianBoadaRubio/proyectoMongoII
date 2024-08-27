@@ -41,9 +41,10 @@ body, html {
 
 
 .contenedor__ticket{
+
     display: flex;
     width: 85%;
-    height: 90svh;
+    height: 97svh;
     inset: 0;
     margin: auto;
     flex-direction: column;
