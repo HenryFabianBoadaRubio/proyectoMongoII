@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`/pelicula/proyeccion/${selectedMovieID}`)
             .then(response => response.json())
             .then(pelicula => {
-                console.log('Datos completos recibidos:', pelicula);
+            
 
                 const contenedorImg = document.querySelector('.contenedor__img img');
                 if (pelicula.caratula) {
@@ -22,10 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector('.general__superior h3').textContent = pelicula.titulo || 'Título no disponible';
                 document.querySelector('.general__superior p').textContent = pelicula.genero || 'Género no disponible';
 
-                // La información de proyección se ha comentado, si la necesitas, descomenta estas líneas
-                // const proyeccion = pelicula.proyecciones[0];
-                // document.querySelector('.general__inferior h3').textContent = proyeccion.cinema || 'Cine no disponible';
-                // document.querySelector('.general__inferior p').textContent = `${proyeccion.fecha || 'Fecha no disponible'}, ${proyeccion.hora || 'Hora no disponible'}`;
             })
             .catch(error => console.error('Error al obtener proyecciones:', error));
     } else {
@@ -73,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('serviceFee', serviceFee);
 
         //conversion del valor total del pago
-        const prices = parseFloat(price.replace(/[^0-9.-]+/g, "")) *1000; // Multiplicar por 1000 si es necesario
+        const prices = parseFloat(price.replace(/[^0-9.-]+/g, "")) *1000; 
         const serviceFeeValue = parseFloat(serviceFee);
         total__payment=(serviceFeeValue+prices)
         
@@ -111,27 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const ticketSelection = JSON.parse(localStorage.getItem('ticketSelection'));
         const selectedMovieID = localStorage.getItem('selectedMovieID');
 
-        // const usuarioID = localStorage.getItem('usuarioID'); // Asegúrate de que el ID del usuario esté disponible
         
          
         if (ticketSelection && selectedMovieID ) {
-            // const { seatId, price } = ticketSelection;
-
-            // // Preparar datos para la compra
-            // const asientos = [{ fila: seatId.charAt(0), numero: parseInt(seatId.slice(1)) }];
-            // console.log(asientos)
-            // // const metodo_pago = 'tarjeta_credito'; // Ajusta según el método de pago que elijas
-
-            // Extraer fila y número del seatId
             const [fila, numero] = ticketSelection.seatId.match(/([A-Z])(\d+)/).slice(1);
             const username = localStorage.getItem('username');
             const userId = localStorage.getItem('userId');
             const userIdFromEnv = localStorage.getItem('userIdFromEnv');
             const orderNumber = generateRandomOrderNumber();
-            
-            console.log('Usuario logueado:', username);
-            console.log('ID del usuario:', userId);
-            console.log('ID del usuario desde env:', userIdFromEnv);
+       
             const response = await fetch('/boleto/nuevoBoleto', {
                 method: 'POST',
                 headers: {
@@ -149,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     numero_orden:orderNumber
                 })
             });
-            // console.log(asientos)
+           
             const result = await response.json();
-            console.log(result)
+          
 
             if (result.error) {
                 console.error('Error al registrar la compra:', result.error);
@@ -201,8 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             alert('Por favor, seleccione un método de pago antes de comprar el boleto.');
         } else {
-            // Aquí puedes agregar la lógica de compra
-            // Por ahora, solo permitimos la navegación al siguiente paso
+
             console.log('Compra iniciada');
         }
     });

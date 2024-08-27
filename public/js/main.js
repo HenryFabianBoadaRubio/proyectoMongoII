@@ -44,15 +44,3 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 });
 
 
-
-
-
-
-
-// console.log('username:', localStorage.getItem('username'));
-// console.log('userId:', localStorage.getItem('userId'));
-// console.log('userIdFromEnv:', localStorage.getItem('userIdFromEnv'));
-// console.log('Datos guardados en localStorage:');
-//             console.log('username:', username);
-//             console.log('userId:', data.userId);
-//             console.log('userIdFromEnv:', data.userIdFromEnv);

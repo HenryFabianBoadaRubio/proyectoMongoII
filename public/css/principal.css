@@ -6,16 +6,13 @@
 }
 
 body{
-    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: "Inter", sans-serif;
-    /* font-weight: normal; */
     background-color: #888;
     background-color: #121212;
     color: white;
 
 }
 .header__perfil{
-    /* border: 1px solid rgb(157, 255, 0); */
     display: flex;
     height: 10vh;
     box-sizing: border-box;
@@ -24,7 +21,6 @@ body{
 }
 .header__perfil__foto{
     display: flex;
-    /* border: 1px solid red; */
     width: 3.1rem;
     height: 3.1rem;
     margin-left: 1rem;
@@ -37,7 +33,6 @@ body{
     display: flex;
    width: 4.5rem;
     height: 6.5rem;
-    /* border: 1px solid rgb(180, 218, 43); */
    
 }
 
@@ -47,7 +42,6 @@ body{
     height: 4rem;
     margin-top: 1rem;
     justify-content: center;
-    /* border: 1px solid rgb(0, 255, 55); */
     
 }
 .header__texto__bienvenida h3{
@@ -91,8 +85,6 @@ body{
     margin: 0 auto; 
     border-radius: 0.5rem; 
     
-    /* border: 1px solid #d4cece;  */
-    /* border: 1px solid rgb(187, 255, 0); */
 } 
 
 
@@ -107,7 +99,6 @@ body{
     color: #ccc; 
     border-style: none;
 
-    /* border: 1px solid red; */
     
 } 
 
@@ -122,7 +113,7 @@ body{
     color:rgba(255, 255, 255, 0.555);
 }
 
-/*ACTIVACION BUSCADOR INFERIOR*/
+
 
 .focused-container {
     border: 2px solid #f50000 ;
@@ -139,8 +130,6 @@ body{
     width: 100%;
     height: 1.7rem;
     margin-top: 1rem;
-    /* margin-left: 1rem; */
-    /* border: 1px solid red; */
     align-items: center;
 
     /* gap: 10rem; */
@@ -150,7 +139,6 @@ body{
 .estrenos__text{
     display: flex;
     margin-right: 1.1rem;
-    /* border: 1px solid rgb(200, 255, 0); */
 }
 .estrenos__texto2,
 .estrenos__texto{
@@ -162,67 +150,47 @@ body{
 }
 .estrenos2{
     margin-top: 2rem;
-    /* border: 1px solid rgb(200, 255, 0); */
 
 }
 /*carrusel*/
 
 .main__carrusel {
-     /* margin-top: 0.7rem; */
+   
     display: flex;
     width: 100%;
     height: 30rem;
     overflow-x: auto;
-    /* align-items: center; */
+   
     padding: 0.5rem;
     gap: 2rem;
     scrollbar-width: none; 
     border: 1px solid rgb(255, 0, 234);
     flex-direction: row;
     object-fit: contain;
-    /* margin-left: 0.1rem; */
-    /* scroll-behavior: smooth;  */
-    /* scroll-snap-type: x mandatory; */
-
 }
-
-
-/*REVISAR*/
 
 
 
 .nombre__genero__principal{
     display: flex;
     width:100%;
-    /* margin-top: 20rem; */
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid rgb(0, 204, 255); */
 }
 
-/*PARTE FUNCIONAL*/
-/*PARTE FUNCIONAL*/
-/*PARTE FUNCIONAL*/
 
-/*PARTE FUNCIONAL*/
 
 .swiper-container {
     display: flex;
     width: 100%;
     height: 23.3rem;
     margin-top: 1rem;
-    /* border: 1px solid rgb(200, 255, 0); */
     position: relative;
   }
   .swiper-pagination{
-    /* display: flex; */
     color: white;
-   /* border: 1px solid red; */
-    /* margin-bottom: 16.8rem; */
-   /* border: 1px solid rgb(0, 255, 21); */
    height: 1rem;
    margin-bottom: -5rem;
-   /* margin-top: 20rem; */
    
 
  }
@@ -230,10 +198,7 @@ body{
   .swiper-slide {
     display: flex;
     width: 15rem;
-    /* justify-content: center; */
-    /* align-items: center; */
     transition: all 0.3s ease;
-    /* border: 1px solid rgb(30, 255, 0); */
     
 
   }
@@ -244,8 +209,6 @@ body{
     z-index: 1;
     color: white;
    
-    /* border: 1px solid rgb(225, 0, 255); */
-
   }
   
   .movie-info-center {
@@ -256,17 +219,14 @@ body{
     text-align: center;
     
     line-height: 1.7rem;
-    /* border: 1px solid rgb(251, 255, 0); */
 
   }
   
   .pelicula__imagen {
     width: 100%;
     height: 21rem;
-    /* height: 100%; */
     object-fit: cover;
     border-radius: 1rem;
-     /* border: 1px solid red;  */
   }
   
   .nombre__genero__principal {
@@ -278,7 +238,6 @@ body{
     margin-left: -2.38rem;
     width: 14rem;  
     height: 18.5rem;  
-   /* border: 1px solid red; */
   } 
  
 
@@ -297,7 +256,7 @@ body{
 .swiper-container .swiper-pagination-bullet-active {
     width: 10px;
     height: 10px;
-    background-color:red; /* Color rojo para el punto activo */
+    background-color:red; 
    
 }
 
@@ -308,7 +267,6 @@ body{
     border-radius: 10px;
     
 }
-/*FIN PARTE FUNCIONAL*/
 
 
 
@@ -326,11 +284,8 @@ body{
     gap: 1rem;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; 
-    /* border: 1px solid rgb(68, 0, 255); */
     flex-direction: column;
     align-items: center;
-    
-    /* object-fit: contain; */
 }
 .movie-item{
     display: flex;
@@ -338,24 +293,15 @@ body{
     /* height: 5rem; */
     flex-direction: column;
     gap: 2rem;
-    /* border: 1px solid rgb(255, 0, 234); */
     
 
     }
-/* .movie_image_coming{
-    display: flex;
-    width: 100%;
-    height: 10rem;
-    box-sizing: border-box;
-    flex-direction: row;
-} */
+
 .movie_container {
     display: flex;
-    /* width: 90%; */
     height: 6.1rem;
     background-color: #121212;
     border-radius: 1.2rem;
-    /* border: 1px solid rgb(0, 255, 64); */
     background-color: #272727;
     align-items: center; 
 }
@@ -366,10 +312,7 @@ body{
     border-radius: 1rem;
     margin-right: 1rem; 
     margin-left: 0.7rem;
-    /* border: 2px solid yellow; */
     object-fit: cover;
-    
-    /* height: auto; */
 }
 
 .movie_texts {
@@ -377,7 +320,6 @@ body{
     flex-direction: column;
     font-size: 0.9rem;
     margin-left: 0.1rem;
-    /* border: 2px solid yellow; */
     margin-bottom: 1.5rem;
 
 }
@@ -385,9 +327,9 @@ body{
 .movie_texts p{
     font-size: 0.8rem;
 
-    /* color: red; */
+   
 }
-/*MENU INFERIOR*/
+
 .menu {
     background-color: #000000;
     padding: 10px 0;
@@ -396,9 +338,8 @@ body{
     left: 0;
     right: 0;
     border-radius: 1rem 1rem 0 0;
-    /* border: 1px solid #888; */
     border-top:1px solid  #888;
-    z-index: 1000; /* Añadido z-index */
+    z-index: 1000; 
   }
   
   .menu ul {
@@ -443,7 +384,7 @@ html, body {
     overflow-x: hidden;   
     margin: 0;
     padding: 0;
-    /* height: 100%;   */
+   
 }
 
 .no-results-message {

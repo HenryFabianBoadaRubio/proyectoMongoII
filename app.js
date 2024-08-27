@@ -16,14 +16,8 @@ const appUsuario = require("./server/routes/usuario.routes");
 const appAsiento = require("./server/routes/asiento.routes");
 app.use(express.json());
 
-app.use(express.static(__dirname));// // Sirve archivos estáticos desde la raíz del proyecto esto lo puse para el error del favicon nada mas.
+app.use(express.static(__dirname));
 
-
-// const config={
-//     port:process.env.EXPRESS_PORT,
-//     host:process.env.EXPRESS_HOST,
-//     static: process.env.EXPRESS_STATIC
-// }
 app.get("/", async(req, res) => {
     res.sendFile(`${process.env.EXPRESS_STATIC}/index.html`, {root: __dirname})
 })
@@ -63,13 +57,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-// app.listen(config.port, config.host, () => {
-//     console.log(`Server listening at http://${config.host}:${config.port}`)
-// })
- // Asegúrate de tener esta importación
- // Asegúrate de tener esta importación
 
- // Función para obtener el ObjectId del usuario desde la variable de entorno
  async function getUserIdFromEnv(userCollection) {
      try {
          const userIdentifier = process.env.MONGO_USER;
@@ -78,7 +66,7 @@ app.use((err, req, res, next) => {
              throw new Error('La variable de entorno MONGO_USER no está definida');
          }
  
-         console.log(`Buscando usuario con nick: ${userIdentifier}`);
+       
  
          const user = await userCollection.findOne({ nick: userIdentifier });
  
@@ -97,7 +85,7 @@ app.use((err, req, res, next) => {
  // Ruta de login
  app.post('/login', async (req, res) => {
      const { username, password } = req.body;
-     console.log(`Intento de login para usuario: ${username}`);
+   
      const mongoUrl = `mongodb://${username}:${encodeURIComponent(password)}@${process.env.MONGO_CLUSTER}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}`;
      console.log(`Intentando conectar a: ${mongoUrl.replace(/:([^:@]{1,})@/, ':****@')}`);
      let client;
@@ -106,7 +94,7 @@ app.use((err, req, res, next) => {
          // Conectar a la base de datos
          client = new MongoClient(mongoUrl);
          await client.connect();
-         console.log('Conexión a MongoDB exitosa');
+     
  
          // Obtener la base de datos y la colección
          const db = client.db(process.env.MONGO_DB);
@@ -116,7 +104,7 @@ app.use((err, req, res, next) => {
          const user = await userCollection.findOne({ nick: username });
  
          if (user) {
-             console.log('Usuario encontrado, iniciando sesión...');
+           
  
              // Actualizar las variables de entorno con las nuevas credenciales
              process.env.MONGO_USER = username;

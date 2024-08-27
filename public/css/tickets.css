@@ -2,8 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
-
+html{
+    display: flex;
+    overflow-x:hidden
+}
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     background-color: #222;
@@ -26,6 +30,7 @@ main {
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+    
 }
 
 .detalles__pelicula {
@@ -34,8 +39,9 @@ main {
     height: 10vh;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid rgb(0, 38, 255);
     margin-bottom: 1rem;
+    overflow-x: hidden;
+
 }
 
 .detalles__pelicula__iconos {
@@ -57,7 +63,7 @@ swiper-container {
 swiper-slide {
     display: flex;
     width: 100%;
-    height: 720px;
+    height: 600px;
     justify-content: center;
     align-items: flex-start;
     background-color: #222;
@@ -68,15 +74,15 @@ swiper-slide {
 
 .ticket {
     width: 100%;
-    max-width: 20rem;
+    max-width: 19.5rem;
     height: auto;
-    min-height: 40rem;
+    min-height: 30rem;
     background-color: white;
     border-radius: 15px;
     padding: 20px;
     color: #222;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 0 auto;
+    overflow: hidden;
 }
 
 .ticket-header {
@@ -87,29 +93,35 @@ swiper-slide {
 .movie-image {
     width: 100%;
     max-width: 17rem;
-    height: auto;
+    height: 6.8rem;
     border-radius: 15px;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+
 }
 
 .movie-title {
-    margin-top: 0.8rem;
-    height: 4.7rem;
+    margin-top: 0.6rem;
+    height: 4rem;
     border-bottom: 1px solid #ccc; 
-    padding-bottom: 10px; 
+    padding-bottom: 7px; 
     margin-bottom: 1rem;
+
 }
 
 .movie-title h1 {
     font-size: 1.18rem;
     margin-bottom: 0.5rem;
+
 }
 
 .movie-title p {
     color: rgb(110, 110, 110);
     font-size: 0.9rem;
 }
+.ticket-info{
+    height: 21rem;
 
+}
 .info-cinema {
     height: 3.5rem;
     display: flex;
@@ -134,6 +146,7 @@ swiper-slide {
     color: #686868;
     font-weight: bold;
     margin-bottom: 0.2rem;
+
 }
 
 .text-cinema .value {
@@ -147,7 +160,7 @@ swiper-slide {
 
 .first-box, .second-box, .third-box {
     display: flex;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .first-box {
@@ -166,7 +179,8 @@ swiper-slide {
     font-weight: bold;
     color: #686868;
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+
 }
 
 .first-box .value, .second-box .value, .third-box .value {
@@ -175,28 +189,23 @@ swiper-slide {
 }
 
 .info-ticket {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 
 .barcode {
     width: 18.1rem;
-    /* margin-top: 0.5rem; */
     display: flex;
     flex-direction: column;
     height: 5rem;
     margin-left: 1rem;
     position: relative;
+    
 }
-
-/* #barcode {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 1.7rem;
-} */
 
 .custom-dashed-line {
     width: 120%;
     height: 1px; 
+
     background-image: repeating-linear-gradient(
         to right, 
         #272626,
@@ -211,7 +220,6 @@ swiper-slide {
     display: flex;
     width: 45rem;
     height: 20rem;
-    border: 1px solid red;
 }
 
 .swiper-wrapper {

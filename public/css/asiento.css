@@ -5,11 +5,10 @@
 }
 
 body{
-    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+   
     font-family: "Inter", sans-serif;
     height: 110vh;
     background-color: #000000;
-    /* background-color: #121212; */
     color: white;
 
 }
@@ -19,14 +18,11 @@ body{
     height: 10vh;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid rgb(0, 38, 255); */
 }
 .detalles__pelicula__iconos{
     display: flex;
     width: 10%;
-    /* border: 1px solid red; */
     font-size: 2rem;
-
 }
 .detalles__pelicula__iconos a{
     color: white;
@@ -36,7 +32,6 @@ html, body{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    /* height: 100%; */
 }
 
 .container__footer{
@@ -46,25 +41,18 @@ html, body{
     align-items: center;
     justify-content: center;
     margin-top: 1.5rem;
-    /* flex-direction: row; */
-    /* border: 1px solid green; */
 }
 .precio{
-    /* margin-top: 50px; */
     display: flex;
     flex-direction: column;
     width: 6rem;
     height: 4rem;
-    /* border: 1px solid white;  */
    line-height: 2rem;
-    
     color: #fff;
-    /* margin-left: 2.28rem; */
+
 }
 
 .precio h2{
-    /* border: 1px solid yellow; */
-
     font-weight: 550;
     margin: 0px
 }
@@ -74,42 +62,25 @@ html, body{
     font-weight: normal;
     margin: 0px
 
-    /* margin: 2px; */
-    /* margin-bottom: 4px; */
 }
-/* .container__footer button{
-    display: flex;
-    width: 100%;
-    border: 1px solid rgb(174, 0, 255);
-
-} */
 
 .container__footer a{
     display: flex;
     width: 47%;
-
-    /* width: 13rem; */
     height: 3.8rem;
     margin-left: 2.7rem;
     text-decoration: none;
-    /* border: 1px solid yellow; */
-  
+
 }
 .book-now {
     background-color: red;
     color: #fff;
     border: none;
     width: 100%;
-    /* width: 15rem; */
     height: 58px;
-    /* margin-left: 4rem;container__footer */
-    /* right: 1.7rem; */
-    /* cursor: pointer; */
     border-radius: 12px;
     font-weight: bold;
     font-size: 18px;
-    /* position: fixed; */
-    /* border: 2px solid yellow; */
 }
 
 
@@ -127,57 +98,32 @@ body, html {
     padding: 10px;
     margin: 0 10px;
     margin-top: 27px;
-    /* border: 1px solid red; */
     font-weight: normal;
     font-size: 21px
 }
 
-/* .container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-
-} */
-
-
-
 .asientos__lista{
     display: flex;
-    /* border: 1px solid red; */
     width: 80%;
     justify-content: center;
     gap: 0.3rem;
 }
-/* .asientos{
-    /* padding: 0 15px; */
-    /* border: 1px solid red; 
- 
-} */
+
 .fila{
     display: flex;
     align-items: center;
-    /* border: 1px solid rgb(238, 255, 0); */
     width: 100%;
     align-items: center;
     justify-content: center;
 
 }
 .fila-label{
-    /* border: 1px solid red; */
     margin-right: 0.3rem;
 }
 .asientos{
     display: flex;
- 
     justify-content: center;
-    /* border: 1px solid red; */
 }
-/* .asientos__normal{
-    margin-bottom: 52px !important;
-} */
 
 .asientos__lista.button1{
     border: 1px solid red;
@@ -208,37 +154,26 @@ body, html {
     margin: 0 1px;
     background: #323232;
     border-radius: 5px;
-    /* border: 1px solid #CECECE; */
-    
     color: transparent;
     transition: color 0.3s, background-color 0.3s;
 }
 
 .fila--separada{
-    /* border: 1px solid yellow; */
-    /* gap: 0 10px; */
     width: 100%;
-    /* justify-content: space-between; */
     margin-bottom: 2.5rem;
-    /* margin-left: 1rem; */
 }
 
 .fila--separada2 button,
 .fila--separada button{             
     width: 28.41px;
-    
-    /* border: 1px solid yellow; */
-
 }
 
 
 
-.asientos__lista button.active,  /*dsadasndkjsabdfbsdfnsalkdfnlsadknasd*/
+.asientos__lista button.active,  
 .asientos__preferenciales button.active {
     background-color: #FE0000; 
     color: white; 
-   
-    /* font-weight: bold; */
     font-size: 1.5rem; 
 }
 
@@ -281,20 +216,15 @@ body, html {
     color: #fff;
 }
 
-
-
-
 .image-text{
     display: flex;
     width: 26rem;
     height: 4rem;
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid red; */
     position: relative;
     top: 0px;
 }
-
 
 .image-text p{
     font-size: 13px;
@@ -310,16 +240,12 @@ body, html {
     width: 72%;
 }
 
-
 .status{
     display: flex;
     justify-content: center;
-    /* gap: 1.4rem; */
     align-items: center;
     width: 90%;
     height: 30px;
-    /* border: 1px solid red; */
-    /* color: white; */
     margin-top: 12.8px;
     margin-bottom: 8px;
     margin-left: 13px;
@@ -350,9 +276,7 @@ body, html {
 
 .schedule{
     margin-left: 30px;
-    /* border: 1px solid red; */
     color: #fff;
-    /* padding-bottom: 100px; */
 }
 .days {
     display: flex;
@@ -363,7 +287,6 @@ body, html {
     scrollbar-width: none; 
     margin-bottom: 10px;
     margin-left: 6px;
-    /* border: 2px solid yellow; */
 }
 
 .days div {
@@ -372,7 +295,6 @@ body, html {
     flex: 0 0 auto; 
     width: 3.5rem; 
     text-align: center;
-    /* border: 1px solid white; */
     border-radius: 15px;
     height: 5.4rem;
     background-color: white;
@@ -386,7 +308,6 @@ body, html {
     color: #111;
     font-size: 1.5rem;
     top: 2.8rem;
-    /* border: 1px solid yellow */
 
 }
 
@@ -394,9 +315,7 @@ body, html {
     position: absolute;
     color: #8a8a8a;
     font-size: 0.9rem;
-    /* bottom: 2.5rem; */
     margin-top: 1rem;
-    /* border: 1px solid rgb(0, 255, 21) */
 
 }
 .day.active {
@@ -423,9 +342,6 @@ body, html {
     padding: 0 6px;
     padding-top: 0px;
     scrollbar-width: none; 
-    /* border: 1px solid red; */
-    /* margin-left: 6px; */
-
 }
 
 .hour-price div {
@@ -434,13 +350,10 @@ body, html {
     flex: 0 0 auto; 
     width: 5.9rem;
     height: 4.2rem; 
-    /* text-align: center; */
     flex-direction: column;
-    /* border: 1px solid red; */
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
     position: relative;
     background-color: white;
     transition: transform 0.3s ease, border-radius 0.3s ease;
@@ -448,18 +361,13 @@ body, html {
 
 
 .hour-price div h2{
-    /* border: 1px solid red; */
-    /* bottom: 2rem; */
     position: absolute;
-    /* bottom: 0.8rem; */
     margin-bottom: 1.2rem;
     font-size: 1.3rem;
     color: #111;
 }
 .hour-price div p{
     display: flex;
-    /* border: 1px solid red; */
-    /* top: 1.7rem; */
     position: absolute;
     font-size: 0.8rem;
     color: #8a8a8a;
@@ -507,7 +415,6 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    /* margin-top: 1rem; */
 }
 
 .seat {
@@ -518,24 +425,17 @@ body, html {
     cursor: pointer;
 }
 
-/* .seat.ocupado {
-    background-color: #f80000;
-    /* pointer-events: none; 
-} */
-
 .front__seat {
     background-color: red;
     color: red;
-    /* Estilos específicos para los asientos delanteros */
 }
 
 button.ocupado {
-    background-color: #cecece !important; /* Utiliza !important para asegurar que se aplique el estilo */
+    background-color: #cecece !important; 
     color: transparent;
     cursor: not-allowed;
     border: none;
     font-size: 1rem;
-    /* font-weight: 900; */
     opacity: 1;
 }
 

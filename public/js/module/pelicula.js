@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cachedPelicula) {
         const { timestamp, data } = JSON.parse(cachedPelicula);
         if (currentTime - timestamp < cacheExpiration) {
-            console.log('Datos de película obtenidos del caché');
+           
             displayMovieDetail(data);
             setupBookNowButton(data._id);
         } else {
@@ -112,9 +112,9 @@ function displayMovieDetail(pelicula) {
 function mostrarTrailer(trailerUrl) {
     const caratulaContainer = document.getElementById('caratula-container');
     if (trailerUrl) {
-        // Verifica si la URL del tráiler es de YouTube y ajusta el formato si es necesario
+       
         if (trailerUrl.includes('youtube.com/watch?v=')) {
-            // Convierte la URL de YouTube al formato de embed y usa youtube-nocookie.com
+            
             trailerUrl = trailerUrl.replace('youtube.com/watch?v=', 'youtube-nocookie.com/embed/');
         }
         caratulaContainer.innerHTML = `
@@ -142,7 +142,7 @@ miCine.addEventListener('click', function(){
 
 function setupBookNowButton(peliculaId) {
     document.getElementById('miBoton').addEventListener('click', function() {
-        console.log('Setting movieId in localStorage:', peliculaId); 
+       
         localStorage.setItem('selectedMovieID', peliculaId);
         window.location.href = './asiento.html';
     });

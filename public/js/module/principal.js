@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let allMovies = [];
-    const cacheKey = 'peliculas';  // Nombre corregido
-    const cacheExpiration = 3600000; // Nombre corregido
+    const cacheKey = 'peliculas';  
+    const cacheExpiration = 3600000; 
     document.getElementById('search-icon').addEventListener('click', (e) => {
         e.preventDefault(); 
     
@@ -87,10 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/*FIN PARTE FUNCIONAL*/
-/*FIN PARTE FUNCIONAL*/
-/*FIN PARTE FUNCIONAL*/
-
 function performSearch(allMovies) {
     const query = document.getElementById('search-input').value.toLowerCase();
     const mainContent = document.querySelector('.contenedor__global');
@@ -126,7 +122,6 @@ function displayMovies(peliculas) {
     const container = document.getElementById('peliculas_contenedor');
     container.innerHTML = '';
     const fechaActual = new Date();
-    console.log(peliculas);
     displayedMovieIds = []; // Reiniciar la lista de IDs mostrados
 
     peliculas.forEach(pelicula => {
@@ -185,25 +180,22 @@ function updateCenterInfo(pelicula) {
     titleElement.textContent = pelicula.titulo;
     genreElement.textContent = pelicula.genero;
 }
-/*FIN PARTE FUNCIONAL*/
-/*FIN PARTE FUNCIONAL*/
-/*FIN PARTE FUNCIONAL*/
 
 function displayMoviesComing(peliculas) {
     const container = document.getElementById('peliculas_contenedor__coming');
     container.innerHTML = ''; 
     const fechaActual = new Date();
 
-    console.log('Fecha actual:', fechaActual);
+   
 
     // Filtrar primero las películas con fecha de estreno futura
     const peliculasFuturas = peliculas.filter(pelicula => {
         const fechaEstreno = new Date(pelicula.fecha_estreno);
-        console.log(`Película: ${pelicula.titulo}, Fecha de estreno: ${fechaEstreno}, Es futura: ${fechaEstreno > fechaActual}`);
+    
         return fechaEstreno > fechaActual;
     });
 
-    console.log('Películas futuras:', peliculasFuturas);
+  
 
     peliculasFuturas.forEach(pelicula => {
         const movieItem = document.createElement('div');

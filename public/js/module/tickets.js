@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = localStorage.getItem('userId');
     const userIdFromEnv = localStorage.getItem('userIdFromEnv');
 
-    console.log('Usuario logueado:', username);
-    console.log('ID del usuario:', userId);
-    console.log('ID del usuario desde env:', userIdFromEnv);
+
     fetch(`/boleto/boletos/${userId}`)
         .then(response => response.json())
         .then(tickets => {

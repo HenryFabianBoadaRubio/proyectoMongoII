@@ -1,24 +1,24 @@
 body {
     background-image: url('https://png.pngtree.com/png-clipart/20220825/ourmid/pngtree-film-tape-gold-edge-film-black-png-image_6123885.png');
     margin: 0;
-    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     font-family: "Inter", sans-serif;
     background-color: #121212; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative; /* Necesario para la imagen de fondo */
-    overflow: hidden; /* Evita el desbordamiento */
+    position: relative; 
+    overflow: hidden;
 }
 
 .login-container {
     display: flex;
     width: 65%;
-    max-width: 800px; /* Limita el ancho máximo */
-    height: auto; /* Ajusta la altura automáticamente */
+    max-width: 800px; 
+    height: auto;
     flex-direction: column;
     background-color: #1e1e1e;
     padding: 40px;
@@ -26,14 +26,13 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     text-align: center;
     position: relative;
-    overflow: auto; /* Maneja el desbordamiento del contenido */
+    overflow: auto; 
 }
 
 .tittle{
     display: flex;
     width: 100%;
     height: 3rem;
-    /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
 
@@ -43,7 +42,6 @@ body {
     width: 100%;
     height: 15rem;
     margin-top: 2.5rem;
-    /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
 
@@ -55,11 +53,8 @@ body {
 .login-container h1 {
     
     color: #e50914;
-    /* margin-top: 20rem; */
     font-family: "Press Start 2P", system-ui;
-    /* margin-bottom: 30px; */
     font-size: 1.5rem;
-    /* border: 1px solid red; */
 
 }
 
@@ -67,7 +62,6 @@ body {
     display: flex;
     width: 100%;
     margin-top: 2rem;
-    /* border: 1px solid rgb(115, 255, 0); */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -75,7 +69,6 @@ body {
 }
 .input-group {
     width: 80%;
-    /* border: 1px solid red; */
     margin-bottom: 20px;
     text-align: left;
 }
@@ -96,18 +89,18 @@ body {
     border: 1px solid #444;
     border-radius: 5px;
     box-sizing: border-box;
-    /* Añade un `box-sizing` para asegurarte de que el padding y el border estén incluidos en el ancho total del elemento */
+  
 }
 
 
 
 
 .ov-btn-grow-skew-reverse {
-    background:#b80e0e; /* color de fondo */
-    color:white; /* color de fuente */
+    background:#b80e0e; 
+    color:white; 
     margin-top: 1rem;
     padding: 16px 20px;
-    border-radius: 10px; /* redondear bordes */
+    border-radius: 10px; 
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -124,11 +117,11 @@ body {
     font-size: 1rem;
   }
   .ov-btn-grow-skew-reverse:hover {
-    color: red;/* color de fuente hover */
+    color: red;
   }
   .ov-btn-grow-skew-reverse::after {
     content: "";
-    background:white; /* color de fondo hover */
+    background:white;
     position: absolute;
     color: red;
     z-index: -1;
@@ -152,13 +145,13 @@ body {
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    background-color: #111; /* Fondo oscuro para el contenedor */
-    color: #fff; /* Texto blanco */
+    background-color: #111; 
+    color: #fff; 
     text-align: center;
-    border: 3px solid transparent; /* Borde transparente inicialmente */
-    overflow: hidden; /* Evita que el efecto se desborde */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Sombra general para el contenedor */
-    animation: neonEffect 3s infinite; /* Animación del efecto neón */
+    border: 3px solid transparent; 
+    overflow: hidden; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    animation: neonEffect 3s infinite; 
 }
 
 @keyframes neonEffect {
