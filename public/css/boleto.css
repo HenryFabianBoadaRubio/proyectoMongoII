@@ -8,11 +8,17 @@
 body{
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: "Inter", sans-serif;
-
+    height: 110vh;
     background-color: #000000;
     /* background-color: #121212; */
     color: white;
 
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    
+    background-color: #111;
 }
 .detalles__pelicula{
     display: flex;
@@ -37,7 +43,7 @@ body{
 .contenedor__ticket{
     display: flex;
     width: 85%;
-    height: 93svh;
+    height: 90svh;
     inset: 0;
     margin: auto;
     flex-direction: column;

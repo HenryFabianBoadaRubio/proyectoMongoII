@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    box-sizing: border-box;
+
     font-family: "Inter", sans-serif;
 
     background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.90) 30%, rgba(0, 0, 0, 0.80) 70%), 
@@ -69,7 +71,7 @@ body {
 .titulo__cinema{
     display: flex;
     width: 98%;
-    margin-top: 20rem;
+    margin-top: 16rem;
     font-size: 1.5rem;
     justify-content: center;
     text-align: center;
@@ -84,11 +86,11 @@ body {
 .cinema__img img{
     /* display: flex; */
     object-fit: contain;
-    height: 18.5rem;
+    height: 19rem;
     position: absolute;
     inset: 0;
     margin: auto;
-    bottom: 13rem;
+    bottom: 17rem;
 }
 .cinema__img img {
     display: block;
@@ -112,3 +114,9 @@ body {
 }
 
 
+html, body {
+    overflow-x: hidden;   
+    margin: 0;
+    padding: 0;
+    /* height: 100%;   */
+}

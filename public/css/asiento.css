@@ -1,12 +1,13 @@
 * {
- 
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body{
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: "Inter", sans-serif;
-
+    height: 110vh;
     background-color: #000000;
     /* background-color: #121212; */
     color: white;
@@ -32,10 +33,10 @@ body{
 }
 
 html, body{
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .container__footer{
@@ -43,21 +44,22 @@ html, body{
     width: 100%;
     height: 4rem;
     align-items: center;
+    justify-content: center;
     margin-top: 1.5rem;
-    flex-direction: row;
+    /* flex-direction: row; */
     /* border: 1px solid green; */
 }
 .precio{
     /* margin-top: 50px; */
     display: flex;
     flex-direction: column;
-    width: 5.2rem;
+    width: 6rem;
     height: 4rem;
-    /* border: 1px solid white; */
+    /* border: 1px solid white;  */
    line-height: 2rem;
     
     color: #fff;
-    margin-left: 2.28rem;
+    /* margin-left: 2.28rem; */
 }
 
 .precio h2{
@@ -75,10 +77,20 @@ html, body{
     /* margin: 2px; */
     /* margin-bottom: 4px; */
 }
+/* .container__footer button{
+    display: flex;
+    width: 100%;
+    border: 1px solid rgb(174, 0, 255);
+
+} */
+
 .container__footer a{
     display: flex;
-    width: 13rem;
+    width: 47%;
+
+    /* width: 13rem; */
     height: 3.8rem;
+    margin-left: 2.7rem;
     text-decoration: none;
     /* border: 1px solid yellow; */
   
@@ -87,14 +99,16 @@ html, body{
     background-color: red;
     color: #fff;
     border: none;
-    width: 14rem;
+    width: 100%;
+    /* width: 15rem; */
     height: 58px;
-    right: 1.7rem;
+    /* margin-left: 4rem;container__footer */
+    /* right: 1.7rem; */
     /* cursor: pointer; */
     border-radius: 12px;
     font-weight: bold;
     font-size: 18px;
-    position: fixed;
+    /* position: fixed; */
     /* border: 2px solid yellow; */
 }
 
@@ -135,6 +149,7 @@ body, html {
     /* border: 1px solid red; */
     width: 80%;
     justify-content: center;
+    gap: 0.3rem;
 }
 /* .asientos{
     /* padding: 0 15px; */
@@ -163,6 +178,10 @@ body, html {
 /* .asientos__normal{
     margin-bottom: 52px !important;
 } */
+
+.asientos__lista.button1{
+    border: 1px solid red;
+}
 .asientos__normal, 
 .asientos__preferenciales{
     display: flex;
@@ -184,9 +203,9 @@ body, html {
     font-family: "Inter_18pt-Regular";
     outline: none;
     border: none;
-    width: 30px;
-    height: 30px;
-    margin: 0 3.2px;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: 0 1px;
     background: #323232;
     border-radius: 5px;
     /* border: 1px solid #CECECE; */
@@ -197,15 +216,28 @@ body, html {
 
 .fila--separada{
     /* border: 1px solid yellow; */
+    /* gap: 0 10px; */
+    width: 100%;
+    /* justify-content: space-between; */
     margin-bottom: 2.5rem;
+    /* margin-left: 1rem; */
+}
+
+.fila--separada2 button,
+.fila--separada button{             
+    width: 28.41px;
+    
+    /* border: 1px solid yellow; */
+
 }
 
 
 
-.asientos__lista button.active, 
+.asientos__lista button.active,  /*dsadasndkjsabdfbsdfnsalkdfnlsadknasd*/
 .asientos__preferenciales button.active {
     background-color: #FE0000; 
     color: white; 
+   
     /* font-weight: bold; */
     font-size: 1.5rem; 
 }
@@ -353,7 +385,8 @@ body, html {
     position: absolute;
     color: #111;
     font-size: 1.5rem;
-    top: 1.7rem;
+    top: 2.8rem;
+    /* border: 1px solid yellow */
 
 }
 
@@ -361,7 +394,10 @@ body, html {
     position: absolute;
     color: #8a8a8a;
     font-size: 0.9rem;
-    bottom: 2.5rem;
+    /* bottom: 2.5rem; */
+    margin-top: 1rem;
+    /* border: 1px solid rgb(0, 255, 21) */
+
 }
 .day.active {
     background-color: #FE0000; 
@@ -415,18 +451,20 @@ body, html {
     /* border: 1px solid red; */
     /* bottom: 2rem; */
     position: absolute;
-    bottom: 0.8rem;
+    /* bottom: 0.8rem; */
+    margin-bottom: 1.2rem;
     font-size: 1.3rem;
     color: #111;
 }
 .hour-price div p{
     display: flex;
     /* border: 1px solid red; */
-    top: 1.7rem;
+    /* top: 1.7rem; */
     position: absolute;
     font-size: 0.8rem;
     color: #8a8a8a;
     left: 7px;
+    margin-top: 1.5rem;
 
 
 }
@@ -473,8 +511,7 @@ body, html {
 }
 
 .seat {
-    width: 30px;
-    height: 30px;
+    
     background-color: #323232;
     border: 1px solid #000;
     border-radius: 5px;
@@ -497,8 +534,8 @@ button.ocupado {
     color: transparent;
     cursor: not-allowed;
     border: none;
-    font-size: 1.2rem;
-    font-weight: 900;
+    font-size: 1rem;
+    /* font-weight: 900; */
     opacity: 1;
 }
 
@@ -506,6 +543,6 @@ button.ocupado {
 .asientos__lista button.selected {
     background-color: #FE0000;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
 }

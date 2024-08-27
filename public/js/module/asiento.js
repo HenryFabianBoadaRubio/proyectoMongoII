@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const restoreOriginalSeatsStructure = () => {
         seatsContainerF.innerHTML = `
-            <div class="fila"><small class="fila-label">A</small>
+            <div class="fila fila--separada2"><small class="fila-label">A</small>
                 <div class="asientos__lista">
                     <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button></div>
             </div>
@@ -173,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (const fila in filas) {
                     const filaDiv = document.createElement('div');
                     filaDiv.className = 'fila';
-    
+                    if (fila === 'A') {
+                        filaDiv.classList.add('fila--separada2');
+                    }
                     if (fila === 'B') {
                         filaDiv.classList.add('fila--separada');
                     }
