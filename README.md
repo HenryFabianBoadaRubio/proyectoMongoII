@@ -4,6 +4,56 @@
 
 CineCampus es una empresa de entretenimiento que se especializa en ofrecer una experiencia de cine completa y personalizada. La empresa desea desarrollar una aplicación web que permita a los usuarios seleccionar películas, comprar boletos y asignar asientos de manera eficiente y cómoda. La aplicación también ofrecerá opciones de descuento para usuarios con tarjeta VIP y permitirá realizar compras en línea.
 
+
+
+#### Funcionamiento pagina web:
+
+- Copie y pegue el siguiente comando para realizar la instalación de las dependencias:
+
+```javascript
+npm i
+```
+
+- Para correr el servidor y que entre en funcionamiento, copie y pegue el siguiente comando:
+
+  ```javascript
+  npm run dev
+  ```
+
+- Para ingresar en el Login utilice los siguientes usuarios y contraseñas:
+
+  ```javascript
+  user: karenìnto
+  password: karen
+  user: estandar
+  
+  
+  user: henryvip
+  password: henry
+  user: vip
+  
+  
+  user: miguelvip
+  password: miguel
+  user: vip
+  ```
+
+  
+
+- Conexión a la base de datos:
+
+  ```javascript
+  mongodb://mongo:BJQjUiqdGFHyQZQdQpHUooykjgMOrzcd@autorack.proxy.rlwy.net:20722
+  ```
+
+- Conexión con Administrador:
+
+  ```javascript
+  mongodb://adminCineCampus:Cine2024@autorack.proxy.rlwy.net:20722/cineCampus 
+  ```
+
+  
+
 ## Selección de Películas:  
 
 ## 1) Listar Películas:
