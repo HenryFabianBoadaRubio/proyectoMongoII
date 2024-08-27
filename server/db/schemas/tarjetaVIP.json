@@ -1,0 +1,34 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": [
+        "numero_tarjeta",
+        "usuario_id",
+        "estado",
+        "descuento",
+        "fecha_expiracion"
+      ],
+      "properties": {
+        "numero_tarjeta": {
+          "bsonType": "string"
+        },
+        "usuario_id": {
+          "bsonType": "objectId"
+        },
+        "estado": {
+          "enum": [
+            "activa",
+            "inactiva",
+            "expirada"
+          ]
+        },
+        "descuento": {
+          "bsonType": "int"
+        },
+        "fecha_expiracion": {
+          "bsonType": "date"
+        }
+      }
+    }
+  }
+  

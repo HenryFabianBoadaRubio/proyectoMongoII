@@ -1,0 +1,173 @@
+[{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e89"
+  },
+  "titulo": "Dune: Part Two",
+  "genero": "Ciencia Ficción",
+  "duracion": 166,
+  "actores": [
+    {
+      "nombre": "Timothée Chalamet",
+      "personaje": "Paul Atreides",
+      "foto": "https://fr.web.img2.acsta.net/r_1920_1080/pictures/23/12/12/10/42/2152936.jpg"
+    },
+    {
+      "nombre": "Zendaya",
+      "personaje": "Chani",
+      "foto": "https://media.revistavanityfair.es/photos/60e8383daf2c957f3eff066b/master/w_1600,c_limit/198455.jpg"
+    },
+    {
+      "nombre": "Rebecca Ferguson",
+      "personaje": "Lady Jessica",
+      "foto": "https://cdn.britannica.com/39/247539-050-B8127C0B/Rebecca-Ferguson-actress-BAFTA-Awards-2023.jpg"
+    }
+  ],
+  "sinopsis": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra los conspiradores que destruyeron a su familia. Paul se enfrenta a una elección entre el amor de su vida y el destino del universo, y debe evitar un futuro terrible.",
+  "caratula": "https://i.postimg.cc/6qyJvTVP/Dune-Part-Two.jpg",
+  "caratula2": "https://cdn.theplaylist.net/wp-content/uploads/2023/05/03103744/Dune-part-Two--750x400.jpg",
+  "trailer": "https://www.youtube.com/watch?v=YdhPAyApRQ4"
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8a"
+  },
+  "titulo": "Furiosa: A Mad Max Saga",
+  "genero": "Acción",
+  "duracion": 150,
+  "actores": [
+    {
+      "nombre": "Anya Taylor-Joy",
+      "personaje": "Furiosa",
+      "foto": "https://cdn-3.expansion.mx/dims4/default/2fefa43/2147483647/strip/true/crop/1200x1800+0+0/resize/1200x1800!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F11%2Ff3%2Ff90ab9c9403fb01102047fd275e5%2Fdior-anyataylorjoy-sami-darsin.jpg"
+    },
+    {
+      "nombre": "Chris Hemsworth",
+      "personaje": "Comandante",
+      "foto": "https://cdn.britannica.com/92/215392-050-96A4BC1D/Australian-actor-Chris-Hemsworth-2019.jpg"
+    }
+  ],
+  "sinopsis": "La joven Furiosa es arrebatada del Paraje Verde de las Muchas Madres por una horda de motociclistas. El señor de la guerra que dirige su grupo se enfrenta a otro tirano y, mientras tanto, Furiosa aprovecha la batalla para intentar volver a casa.",
+  "caratula": "https://i.postimg.cc/2yMpFm2S/Furiosa-A-Mad-Max-Saga.jpg",
+  "caratula2": "https://i.blogs.es/6e85de/furiosaportada/1200_800.jpeg",
+  "trailer": "https://www.youtube.com/watch?v=BUvtEhcuavU"
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8b"
+  },
+  "titulo": "Deadpool 3",
+  "genero": "Acción/Comedia",
+  "duracion": 140,
+  "actores": [
+    {
+      "nombre": "Ryan Reynolds",
+      "personaje": "Deadpool",
+      "foto": "https://upload.wikimedia.org/wikipedia/commons/1/14/Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg"
+    },
+    {
+      "nombre": "Hugh Jackman",
+      "personaje": "Wolverine",
+      "foto": "https://cdn.britannica.com/47/201647-050-C547C128/Hugh-Jackman-2013.jpg"
+    }
+  ],
+  "sinopsis": "Lobezno se recupera de sus heridas cuando se cruza con el bocazas, Deadpool, que ha viajado en el tiempo para curarlo con la esperanza de hacerse amigos y formar un equipo para acabar con un enemigo común.",
+  "caratula": "https://i.postimg.cc/xCsV8LmH/Deadpool-3.png",
+  "caratula2": "https://img.asmedia.epimg.net/resizer/v2/FBKI24HMARG3FMUSATKEXGQAH4.jpg?auth=b881306a2013f8d522d1d453e2e5ce4cfe2d8f03d6f1b7f0872a6b793070fb5a&width=644&height=362&smart=true",
+  "trailer": "https://www.youtube.com/watch?v=uDzfa0w86Vw"
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8c"
+  },
+  "titulo": "Inside Out 2",
+  "genero": "Animación",
+  "duracion": 105,
+  "actores": [
+    {
+      "nombre": "Amy Poehler",
+      "personaje": "Alegría",
+      "foto": "https://upload.wikimedia.org/wikipedia/commons/9/99/Amy_Poehler_2012.jpg"
+    },
+    {
+      "nombre": "Phyllis Smith",
+      "personaje": "Tristeza",
+      "foto": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS3d3PPwZpXf3qJ-NQW225a_XbFVzmIbFVhIvBVjjE52v7C9r7H"
+    }
+  ],
+  "sinopsis": "Ahora que es adolescente, Riley experimenta nuevos sentimientos como Ansiedad y Envidia, que se imponen a los viejos mientras ella duda sobre si abandonar a sus antiguas amigas por otras de la escuela secundaria.",
+  "caratula": "https://i.postimg.cc/zBD1qxy8/Inside-Out-2.jpg",
+  "caratula2": "https://www.bizcochito.es/Films/Gallery01/tt22022452.webp",
+  "trailer": "https://www.youtube.com/watch?v=L4DrolmDxmw"
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e8d"
+  },
+  "titulo": "Joker: Folie à Deux",
+  "genero": "Drama/Crimen",
+  "duracion": 150,
+  "actores": [
+    {
+      "nombre": "Joaquin Phoenix",
+      "personaje": "Joker",
+      "foto": "https://cdn.britannica.com/63/215263-050-6C78005B/American-actor-Joaquin-Phoenix-2020.jpg"
+    },
+    {
+      "nombre": "Lady Gaga",
+      "personaje": "Harley Quinn",
+      "foto": "https://www.instyle.com/thmb/Id9pUvSHxz_G3WNRlMd36T3njLg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1389380484-6cd7ce14538d416c81835afb4ce0a080.jpg"
+    }
+  ],
+  "sinopsis": "La historia transcurre en la ciudad de Gotham en 1981. Arthur Fleck trabaja como payaso de fiesta para una empresa llamada Ha-Ha's. Lucha con una depresión severa, pero encuentra cierto optimismo al actuar para otros y tratar de hacer reír a la gente.",
+  "caratula": "https://i.postimg.cc/5tMRWJgD/joker-folie-a-deux.jpg",
+  "caratula2": "https://sm.ign.com/t/ign_latam/photo/default/joker11-1712712385006_9dy6.1280.jpg",
+  "trailer": "https://www.youtube.com/watch?v=oXTO2a9sNpg"
+},
+{
+  "_id": {
+    "$oid": "64e12f9a1219e115c8e79e8d"
+  },
+  "titulo": "Avatar: The Way of Water",
+  "genero": "Ciencia Ficción",
+  "duracion": 192,
+  "actores": [
+    {
+      "nombre": "Sam Worthington",
+      "personaje": "Jake Sully",
+      "foto": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Sam_Worthington_2013.jpg"
+    },
+    {
+      "nombre": "Zoe Saldana",
+      "personaje": "Neytiri",
+      "foto": "https://es.web.img2.acsta.net/c_310_420/pictures/18/05/04/11/38/3895826.jpg"
+    }
+  ],
+  "sinopsis": "Jake Sully y Ney'tiri han formado una familia y hacen todo lo posible por permanecer juntos. Sin embargo, deben abandonar su hogar y explorar las regiones de Pandora cuando una antigua amenaza reaparece",
+  "caratula": "https://i.postimg.cc/wxPFdHTF/avatar.jpg",
+  "caratula2": "https://phantom-marca-us.unidadeditorial.es/a5feda1459031728172d32ecb969dc1a/resize/660/f/webp/assets/multimedia/imagenes/2022/10/28/16669809325193.jpg",
+  "trailer": "https://www.youtube.com/watch?v=a8Gx8wiNbs8"
+},
+{
+  "_id": {
+    "$oid": "64e12f9a1219e115c8e79e8e"
+  },
+  "titulo": "Guardians of the Galaxy",
+  "genero": "Acción",
+  "duracion": 150,
+  "actores": [
+    {
+      "nombre": "Chris Pratt",
+      "personaje": "Star-Lord",
+      "foto": "https://upload.wikimedia.org/wikipedia/commons/9/99/Chris_Pratt_2018.jpg"
+    },
+    {
+      "nombre": "Zoe Saldana",
+      "personaje": "Gamora",
+      "foto": "https://static.wikia.nocookie.net/sonypicturesanimation/images/8/87/Zoe_Saldana.jpg/revision/latest?cb=20210723202512"
+    }
+  ],
+  "sinopsis": "El temerario aventurero Peter Quill, tras robar una misteriosa esfera codiciada por Ronan, un poderoso villano cuyas ambiciones amenazan a todo el universo, se convierte en la presa más codiciada por todos los cazarrecompensas de la galaxia.",
+  "caratula": "https://i.postimg.cc/tJ15VvDh/guardinaes.jpg",
+  "caratula2": "https://mayorparaleercomics.wordpress.com/wp-content/uploads/2014/08/guardians_poster_via_marvel.jpg",
+  "trailer": "https://www.youtube.com/watch?v=d96cjJhvlMA"
+}]

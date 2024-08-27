@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+html{
+    display: flex;
+    overflow-x:hidden
+}
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: #222;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    
+}
+
+.detalles__pelicula {
+    display: flex;
+    width: 20rem;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+
+}
+
+.detalles__pelicula__iconos {
+    display: flex;
+    width: 10%;
+    font-size: 2rem;
+}
+
+.detalles__pelicula__iconos a {
+    color: white;
+}
+
+swiper-container {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+}
+
+swiper-slide {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #222;
+    border-radius: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ticket {
+    width: 100%;
+    max-width: 19.5rem;
+    height: auto;
+    min-height: 30rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    color: #222;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-image {
+    width: 100%;
+    max-width: 17rem;
+    height: 6.8rem;
+    border-radius: 15px;
+    margin-top: 0.4rem;
+
+}
+
+.movie-title {
+    margin-top: 0.6rem;
+    height: 4rem;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 7px; 
+    margin-bottom: 1rem;
+
+}
+
+.movie-title h1 {
+    font-size: 1.18rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.movie-title p {
+    color: rgb(110, 110, 110);
+    font-size: 0.9rem;
+}
+.ticket-info{
+    height: 21rem;
+
+}
+.info-cinema {
+    height: 3.5rem;
+    display: flex;
+    position: relative;
+}
+
+.image-cinema img {
+    display: flex;
+    width: 3.5rem;
+    position: absolute;
+    right: 0;
+}
+
+.text-cinema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-cinema .label {
+    font-size: 0.9rem;
+    color: #686868;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+
+}
+
+.text-cinema .value {
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.info {
+    display: grid;
+}
+
+.first-box, .second-box, .third-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.first-box {
+    gap: 3rem;
+}
+
+.second-box {
+    gap: 6rem;
+}
+
+.third-box {
+    gap: 8.8rem;
+}
+
+.first-box .label, .second-box .label, .third-box .label {
+    font-weight: bold;
+    color: #686868;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+
+}
+
+.first-box .value, .second-box .value, .third-box .value {
+    font-size: 0.98rem;
+    font-weight: bold;
+}
+
+.info-ticket {
+    margin-top: 2rem;
+}
+
+.barcode {
+    width: 18.1rem;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    margin-left: 1rem;
+    position: relative;
+    
+}
+
+.custom-dashed-line {
+    width: 120%;
+    height: 1px; 
+
+    background-image: repeating-linear-gradient(
+        to right, 
+        #272626,
+        #272626 10px, 
+        transparent 10px, 
+        transparent 20px 
+    );
+    margin: 1.2rem 0 0 -1rem; 
+}
+
+.mySwiper {
+    display: flex;
+    width: 45rem;
+    height: 20rem;
+}
+
+.swiper-wrapper {
+    background-color: #222;
+    display: flex;
+}
+
+
+  

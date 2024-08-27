@@ -1,0 +1,242 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    height: 110vh;
+    background-color: #000000;
+    color: white;
+
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    
+    background-color: #111;
+}
+.detalles__pelicula{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.detalles__pelicula__iconos{
+    display: flex;
+    width: 10%;
+    font-size: 2rem;
+
+}
+.detalles__pelicula__iconos a{
+    color: white;
+}
+
+
+.contenedor__ticket{
+
+    display: flex;
+    width: 85%;
+    height: 97svh;
+    inset: 0;
+    margin: auto;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+}
+
+.contenedor__img{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.6rem;
+}
+.img__header{
+    display: flex;
+    width: 100%;
+    height: 8.3rem;
+    justify-content: center;
+
+}
+.img__header img{
+    object-fit: contain;
+    width: 87%;
+    height: 7.5rem;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+.img__info{
+    display: flex;
+    width: 87%;
+    height: 4.5rem;
+    line-height: 1.5rem;
+    flex-direction: column;
+    border-bottom:1px solid rgba(163, 144, 144, 0.603);
+
+}
+.img__info h2{
+    font-size: 1.2rem;
+
+
+}
+.img__info p{ 
+    font-size: 0.9rem;
+    color:#666565;
+
+}
+.contenedor__cinema{
+    display: flex;
+    width: 100%;
+    height: 6rem;
+    justify-content: center;
+
+}
+.cinema__info{
+    display: flex;
+    width: 67%;
+    height: 3.5rem;
+    margin-top: 0.5rem;
+    flex-direction: column;
+}
+.cinema__info p{
+    font-weight: 900;
+    color: #666565;
+}
+.cinema__info h3{
+    font-size: 1.3rem;
+}
+.cinema__img{
+    display: flex;
+    width: 21%;
+    height: 4rem;
+}
+.cinema__img img{
+    display: flex;
+    object-fit: contain;
+    height: 3.5rem;
+    border-radius: 10px;
+    margin-left: 0.8rem;
+    border: 1px solid #787878;
+
+}
+.contenedor__info__compra{
+    display: flex;
+    width: 100%;
+    height: 12rem;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contenedor__fecha{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    justify-content: center;
+
+}
+.fecha__info{
+    display: flex;
+    width: 57%;
+    gap: 0.5rem;
+    flex-direction: column;
+
+}
+.numero__orden p,
+.pago__info p,
+.asiento__info p,
+.sala__info p,
+.hora__info p,
+.fecha__info p{
+    font-size: 0.9rem;
+    font-weight: bolder;
+    color:#666565;
+
+}
+
+.hora__info{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+.numero__orden h4,
+.numero__orden p,
+.asiento__info p,
+.asiento__info h4,
+.hora__info h4,
+.hora__info p{
+    margin-left: 0.9rem;
+}
+.contenedor__sala{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    justify-content: center;
+
+}
+.sala__info{
+    display: flex;
+    width: 57%;
+    gap: 0.5rem;
+    flex-direction: column;
+
+}
+.asiento__info{
+    display: flex;
+    width: 30%;
+    gap: 0.5rem;
+    flex-direction: column;
+
+}
+.contenedor__pagar{
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    justify-content: center;
+
+}
+.pago__info{
+    display: flex;
+    width: 57%;
+    gap: 0.5rem;
+    flex-direction: column;
+
+}
+.numero__orden{
+    display: flex;
+    width: 30%;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+.custom-dashed-line {
+    width: 100%;
+    height: 1px; /* Grosor de la línea */
+    background-image: repeating-linear-gradient(
+        to right, 
+        #272626, /* Color de la línea */
+        #272626 10px, /* Largo de cada segmento */
+        transparent 10px, /* Inicio del espacio */
+        transparent 20px /* Largo del espacio */
+    );
+   
+}
+
+
+.codigo__barras{
+    display: flex;
+    width: 100%;
+    height: 4.2rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+
+}

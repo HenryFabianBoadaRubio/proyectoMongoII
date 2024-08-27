@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea2"
+  },
+  "proyeccion_id": {
+    "$oid": "66a12e9b1219e115c8e79e96"
+  },
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9b"
+  },
+  "asientos": [
+    {
+      "fila": "B",
+      "numero": 2
+    }
+  ],
+  "precio_total": 1125,
+  "descuento_aplicado": 125
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea3"
+  },
+  "proyeccion_id": {
+    "$oid": "66a12e9b1219e115c8e79e97"
+  },
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9c"
+  },
+  "asientos": [
+    {
+      "fila": "A",
+      "numero": 3
+    }
+  ],
+  "precio_total": 1050,
+  "descuento_aplicado": 0
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea4"
+  },
+  "proyeccion_id": {
+    "$oid": "66a12e9b1219e115c8e79e98"
+  },
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9d"
+  },
+  "asientos": [
+    {
+      "fila": "B",
+      "numero": 1
+    }
+  ],
+  "precio_total": 1250,
+  "descuento_aplicado": 0
+},
+{
+  "_id": {
+    "$oid": "66a12e9b1219e115c8e79ea5"
+  },
+  "proyeccion_id": {
+    "$oid": "66a12e9b1219e115c8e79e99"
+  },
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9e"
+  },
+  "asientos": [
+    {
+      "fila": "A",
+      "numero": 2
+    }
+  ],
+  "precio_total": 945,
+  "descuento_aplicado": 105
+},
+{
+  "_id": {
+    "$oid": "66a6c561140d99ba364fbf2a"
+  },
+  "proyeccion_id": {
+    "$oid": "66a12e9b1219e115c8e79e99"
+  },
+  "usuario_id": {
+    "$oid": "66a12e9b1219e115c8e79e9e"
+  },
+  "asientos": [
+    {
+      "fila": "C",
+      "numero": 2
+    },
+    {
+      "fila": "C",
+      "numero": 1
+    }
+  ],
+  "precio_total": 2070,
+  "descuento_aplicado": 30
+}]

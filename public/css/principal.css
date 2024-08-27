@@ -1,0 +1,406 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    background-color: #888;
+    background-color: #121212;
+    color: white;
+
+}
+.header__perfil{
+    display: flex;
+    height: 10vh;
+    box-sizing: border-box;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.header__perfil__foto{
+    display: flex;
+    width: 3.1rem;
+    height: 3.1rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 5rem;
+}
+
+.header__perfil__foto img{
+    display: flex;
+   width: 4.5rem;
+    height: 6.5rem;
+   
+}
+
+.header__texto__bienvenida{
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    margin-top: 1rem;
+    justify-content: center;
+    
+}
+.header__texto__bienvenida h3{
+    
+    font-size:0.999rem;
+    line-height:1.9rem
+}
+.header__texto__bienvenida h4{
+    color: rgba(255, 255, 255, 0.74);
+    font-weight: 100;
+}
+
+.header__icono__notificacion{
+    display: flex;
+    width: 2.3rem;
+    height: 2.3rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.39);
+    margin-right: 1rem;
+    margin-top: 0.8rem;
+
+    border-radius: 0.5rem;
+    
+}
+.header__icono__notificacion i{
+    font-weight: lighter;
+    color: red;
+    margin-top: 0.3rem;
+
+}
+
+.header__buscador{
+    width: 85%; 
+    display: flex;
+    height: 3.1rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto; 
+    border-radius: 0.5rem; 
+    
+} 
+
+
+.header__buscador input {
+    width: 100%;
+    height: 2.9rem;
+    padding: 10px 2.8rem; 
+    font-size: 14px;
+    border-radius: 0.5rem; 
+    outline: none;
+    background-color: #1d1d1d; 
+    color: #ccc; 
+    border-style: none;
+
+    
+} 
+
+.header__buscador input::placeholder {
+    color: #aaa;
+}
+.header__buscador i{
+    display: flex;
+    position: absolute;
+    left: 1rem;
+    font-size: 1.35rem;
+    color:rgba(255, 255, 255, 0.555);
+}
+
+
+
+.focused-container {
+    border: 2px solid #f50000 ;
+    transition: background-color 0.3s ease;
+    
+}
+.focused-lupita {
+    color: red;
+}
+
+.estrenos2,
+.estrenos{
+    display: flex;
+    width: 100%;
+    height: 1.7rem;
+    margin-top: 1rem;
+    align-items: center;
+
+    /* gap: 10rem; */
+    justify-content: space-around;
+}
+.estrenos__text2,
+.estrenos__text{
+    display: flex;
+    margin-right: 1.1rem;
+}
+.estrenos__texto2,
+.estrenos__texto{
+    display: flex;
+    margin-left: 4rem;
+    color: red;
+    margin-top:0.4em ;
+    
+}
+.estrenos2{
+    margin-top: 2rem;
+
+}
+/*carrusel*/
+
+.main__carrusel {
+   
+    display: flex;
+    width: 100%;
+    height: 30rem;
+    overflow-x: auto;
+   
+    padding: 0.5rem;
+    gap: 2rem;
+    scrollbar-width: none; 
+    border: 1px solid rgb(255, 0, 234);
+    flex-direction: row;
+    object-fit: contain;
+}
+
+
+
+.nombre__genero__principal{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.swiper-container {
+    display: flex;
+    width: 100%;
+    height: 23.3rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+  .swiper-pagination{
+    color: white;
+   height: 1rem;
+   margin-bottom: -5rem;
+   
+
+ }
+
+  .swiper-slide {
+    display: flex;
+    width: 15rem;
+    transition: all 0.3s ease;
+    
+
+  }
+  
+  .swiper-slide-active {
+    
+    transform: scale(1.2);
+    z-index: 1;
+    color: white;
+   
+  }
+  
+  .movie-info-center {
+   
+    
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+    line-height: 1.7rem;
+
+  }
+  
+  .pelicula__imagen {
+    width: 100%;
+    height: 21rem;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  
+  .nombre__genero__principal {
+    display: none;
+
+  }
+  .contenedor__pelicula__imagen {
+    margin-top: 0.8rem;
+    margin-left: -2.38rem;
+    width: 14rem;  
+    height: 18.5rem;  
+  } 
+ 
+
+
+
+.swiper-container .swiper-pagination-bullet  {
+    width: 7px;
+    height: 7px;
+    background-color: white; 
+    opacity: 1;
+    margin: 0 2px !important;
+    
+   
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+    width: 10px;
+    height: 10px;
+    background-color:red; 
+   
+}
+
+
+.swiper-container .swiper-pagination-bullet-active {
+    width: 25px;
+    height: 7px;
+    border-radius: 10px;
+    
+}
+
+
+
+/*CARRUSEL COMING*/
+
+
+.carrusel__coming{
+    margin-top: 0.6rem;
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    height: 12rem;
+    /* align-items: center; */
+    padding: 0 0.8rem;
+    gap: 1rem;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; 
+    flex-direction: column;
+    align-items: center;
+}
+.movie-item{
+    display: flex;
+    width: 90%;
+    /* height: 5rem; */
+    flex-direction: column;
+    gap: 2rem;
+    
+
+    }
+
+.movie_container {
+    display: flex;
+    height: 6.1rem;
+    background-color: #121212;
+    border-radius: 1.2rem;
+    background-color: #272727;
+    align-items: center; 
+}
+
+.movie_image_coming {
+    width: 25%;
+    height: 5.2rem;
+    border-radius: 1rem;
+    margin-right: 1rem; 
+    margin-left: 0.7rem;
+    object-fit: cover;
+}
+
+.movie_texts {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    margin-left: 0.1rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.movie_texts p{
+    font-size: 0.8rem;
+
+   
+}
+
+.menu {
+    background-color: #000000;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 1rem 1rem 0 0;
+    border-top:1px solid  #888;
+    z-index: 1000; 
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    text-align: center;
+  }
+  
+  .menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu a:hover{
+    scale: 1.1;
+    color: red;
+    cursor: pointer;
+
+  }
+  .menu i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .menu .active a {
+    color: white;
+  }
+  
+  main {
+    padding-bottom: 7rem;  
+}
+html, body {
+    overflow-x: hidden;   
+    margin: 0;
+    padding: 0;
+   
+}
+
+.no-results-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+
+    color: #333;
+    display: none;
+}
+.no-results-message h1{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+}

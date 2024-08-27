@@ -1,0 +1,448 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+   
+    font-family: "Inter", sans-serif;
+    height: 110vh;
+    background-color: #000000;
+    color: white;
+
+}
+.detalles__pelicula{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.detalles__pelicula__iconos{
+    display: flex;
+    width: 10%;
+    font-size: 2rem;
+}
+.detalles__pelicula__iconos a{
+    color: white;
+}
+
+html, body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container__footer{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.precio{
+    display: flex;
+    flex-direction: column;
+    width: 6rem;
+    height: 4rem;
+   line-height: 2rem;
+    color: #fff;
+
+}
+
+.precio h2{
+    font-weight: 550;
+    margin: 0px
+}
+
+.precio h3{
+    font-size: 1.15rem;
+    font-weight: normal;
+    margin: 0px
+
+}
+
+.container__footer a{
+    display: flex;
+    width: 47%;
+    height: 3.8rem;
+    margin-left: 2.7rem;
+    text-decoration: none;
+
+}
+.book-now {
+    background-color: red;
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 58px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+}
+.cinema-selection {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    margin: 0 10px;
+    margin-top: 27px;
+    font-weight: normal;
+    font-size: 21px
+}
+
+.asientos__lista{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.fila{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.fila-label{
+    margin-right: 0.3rem;
+}
+.asientos{
+    display: flex;
+    justify-content: center;
+}
+
+.asientos__lista.button1{
+    border: 1px solid red;
+}
+.asientos__normal, 
+.asientos__preferenciales{
+    display: flex;
+    gap: 11px;
+    margin: 15px 0;
+    flex-direction: column;
+    align-items: center;
+}
+.asientos__normal div,
+.asientos__preferenciales div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.asientos__lista button,
+.asientos__preferenciales button{
+    font-family: "Inter_18pt-Regular";
+    outline: none;
+    border: none;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: 0 1px;
+    background: #323232;
+    border-radius: 5px;
+    color: transparent;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.fila--separada{
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.fila--separada2 button,
+.fila--separada button{             
+    width: 28.41px;
+}
+
+
+
+.asientos__lista button.active,  
+.asientos__preferenciales button.active {
+    background-color: #FE0000; 
+    color: white; 
+    font-size: 1.5rem; 
+}
+
+.asientos__lista button.active::before, 
+.asientos__preferenciales button.active::before {
+    content: attr(data-numero); 
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+
+.asientos__preferenciales div[colum="4"] button,
+.asientos__preferenciales div[colum="5"] button,
+.asientos__preferenciales div[colum="6"] button {
+    background-color: white; 
+    color: transparent;
+}
+
+.asientos small{
+    margin-left: 15px;
+    color: #fff;
+}
+
+.asiento-seleccionado {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.asiento-seleccionado::after {
+    content: attr(data-numero);
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.asientos small {
+    margin-left: 15px;
+    color: #fff;
+}
+
+.image-text{
+    display: flex;
+    width: 26rem;
+    height: 4rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0px;
+}
+
+.image-text p{
+    font-size: 13px;
+    margin-top: 0px;
+    color: white;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 10rem;
+}
+
+.image-text img{
+    margin-left: 4px;
+    width: 72%;
+}
+
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 30px;
+    margin-top: 12.8px;
+    margin-bottom: 8px;
+    margin-left: 13px;
+}
+.status p{
+    font-size: 12.5px;
+    color: white;
+}
+
+
+.status i{
+    margin-right: 12px;
+    margin-left: 35px;
+    font-size: 15px;
+}
+
+.status :nth-child(1){
+    color: #323232;
+}
+
+.status :nth-child(3){
+    color: #CECECE;
+}
+
+.status :nth-child(5){
+    color: #FE0000;
+}
+
+.schedule{
+    margin-left: 30px;
+    color: #fff;
+}
+.days {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px; 
+    padding: 10px 15px;
+    scrollbar-width: none; 
+    margin-bottom: 10px;
+    margin-left: 6px;
+}
+
+.days div {
+    display: flex;
+    scroll-snap-align: start;
+    flex: 0 0 auto; 
+    width: 3.5rem; 
+    text-align: center;
+    border-radius: 15px;
+    height: 5.4rem;
+    background-color: white;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.days div h2{
+    position: absolute;
+    color: #111;
+    font-size: 1.5rem;
+    top: 2.8rem;
+
+}
+
+.days div p{
+    position: absolute;
+    color: #8a8a8a;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+
+}
+.day.active {
+    background-color: #FE0000; 
+}
+
+.day.active h2,
+.day.active p {
+    color: white; 
+}
+
+.days div.active-state {
+    transform: scale(1.07);
+    border-radius: 10px; 
+}
+
+
+
+.hour-price {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 0 6px;
+    padding-top: 0px;
+    scrollbar-width: none; 
+}
+
+.hour-price div {
+    display: flex;
+    scroll-snap-align: start;
+    flex: 0 0 auto; 
+    width: 5.9rem;
+    height: 4.2rem; 
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+
+.hour-price div h2{
+    position: absolute;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    color: #111;
+}
+.hour-price div p{
+    display: flex;
+    position: absolute;
+    font-size: 0.8rem;
+    color: #8a8a8a;
+    left: 7px;
+    margin-top: 1.5rem;
+
+
+}
+.hour.active {
+    background-color: #FE0000;
+}
+
+.hour.active h2,
+.hour.active p {
+    color: white; 
+}
+
+.hour-price div.active-state {
+    transform: scale(1.05);
+    border-radius: 11px; 
+}
+
+
+.days::-webkit-scrollbar,
+.hour-price::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.day.selected, .hour.selected {
+    background-color: red;
+   
+}
+.hour.selected h2,
+.day.selected h2{
+    color: white;
+}
+.hour.selected p,
+.day.selected p{
+    color: white;
+}
+
+#seats-container, #seats-container-f {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.seat {
+    
+    background-color: #323232;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.front__seat {
+    background-color: red;
+    color: red;
+}
+
+button.ocupado {
+    background-color: #cecece !important; 
+    color: transparent;
+    cursor: not-allowed;
+    border: none;
+    font-size: 1rem;
+    opacity: 1;
+}
+
+
+.asientos__lista button.selected {
+    background-color: #FE0000;
+    color: white;
+    font-size: 1rem;
+
+}

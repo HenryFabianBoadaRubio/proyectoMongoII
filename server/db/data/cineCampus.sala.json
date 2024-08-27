@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e93"
+  },
+  "numero": 1,
+  "capacidad": 100,
+  "tipo": "2d"
+},
+{
+  "_id": {
+    "$oid": "66a12e9a1219e115c8e79e94"
+  },
+  "numero": 2,
+  "capacidad": 80,
+  "tipo": "3d"
+}]
