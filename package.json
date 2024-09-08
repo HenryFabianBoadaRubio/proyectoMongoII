@@ -13,7 +13,7 @@
   "main": "main.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "node --watch --env-file=.env app.js"
+    "dev": "node --watch app.js"
   },
   "keywords": [],
   "author": "",
